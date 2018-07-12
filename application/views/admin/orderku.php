@@ -16,100 +16,72 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body> 
-                     <h2> Order </h2>  
-                        <a href="<?php echo base_url('index.php/admin/order'); ?>"></a> 
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                    </div>
-                </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="panel panel-default">
+<div class="panel panel-default">
                         <div class="panel-heading">
-                             Advanced Tables
+                             <h2> Data Order </h2>
+                            <a href="<?php echo base_url('index.php/admin/order'); ?>"></a>
+                        </div>
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <a href="<?php echo base_url ('index.php/admin/saveord');?>" class="btn btn-success ">Tambah</a>
+                        </button>
+                        <br><br>
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Id Order</th>
+                                            <th>Id User</th>
+                                            <th>Id Produk</th>
+                                            <th>Tanggal Bayar</th>
+                                            <th>Total Bayar</th>
+                                            <th>Bayar Via</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
+                                <?php if (!empty ($list)): ?>
+                                    <?php foreach ($list as $key=>$a) : ?>
+                                        <tr>
+                                        <td>
+                                        <?php echo $key+1 ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['id_order']; ?>
+                                        </td><td>
+                                        <?php echo $a['id_user']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['id_produk']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['tgl_byr']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['total_byr']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['bayar_via']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['keterangan']; ?>
+                                        </td>
+                                        <td align="center">
+                                        <a href="<?php echo base_url ('index.php/admin/editprod/').$a['id_produk'];?>" class="btn btn-primary ">Edit</a> | 
+                                        <a href="<?php echo base_url ('index.php/admin/happrod/').$a['id_produk'];?>" class="btn btn-danger ">Delete</a>
+                                        <a href="<?php echo base_url ('index.php/admin/detprod/').$a['id_produk'];?>" class="btn btn-default ">Detail</a>
+                                        </td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.5</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 6</td>
-                                            <td>Win 98+</td>
-                                            <td class="center">6</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 7</td>
-                                            <td>Win XP SP2+</td>
-                                            <td class="center">7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                            <td>Win XP</td>
-                                            <td class="center">6</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.5</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <?php endforeach ?>
+                                <?php else : ?>
+                                    <tr>
+                                    <td colspan="3">Data Kosong</td>
+                                    </tr>
+                                <?php endif ?>
+                                </tbody>
+                            </table>
+                                </div>
                             </div>
-                            
-                        </div>
-                    </div>
-                    <!--End Advanced Tables -->
-                </div>
-            </div>
-                    </div>
-                </div>
                  <!-- /. ROW  -->
                  <hr />
      <!-- /. WRAPPER  -->

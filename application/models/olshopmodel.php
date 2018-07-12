@@ -1,6 +1,10 @@
 <?php defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Olshopmodel extends CI_Model 
 {
+	public function cek_login($a)
+	{
+		return $this->db->get_a('adminku',$a);
+	}
 	public function get_customerku ()
 	{
 		$data = $this->db->query('select * from customerku');

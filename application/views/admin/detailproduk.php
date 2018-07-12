@@ -7,7 +7,8 @@
                            <!--<a href="<?php echo base_url ('index.php/admin/produk/').$a['id_produk'];?>" class="btn btn-default ">Kembali</a>-->
                         </div>
                         <br>
-                        <img src="<?php echo base_url(); ?>assets/backend/assets/img/dress.JPEG" class="image img-responsive"/>
+                        <div>
+                        <img src="<?php echo base_url(); ?>assets/img/dress.JPEG" class="image img-responsive"/>
                         </div>
                         <a href="<?php echo base_url ('index.php/admin/produk');?>" class="btn btn-default "> Kembali </a>
 

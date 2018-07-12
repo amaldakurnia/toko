@@ -15,6 +15,34 @@ class Admin extends CI_Controller {
 	{	
 		$this->tem_olshop->tampil('admin/dashboardku');
 	}
+	public function login()
+	{
+		$this->load->view('admin/formlogin');
+	}
+	public function loginku()
+	{
+		$email = $this->input->post('email');
+		$password = $this->inp->post('password');
+		$a = array(
+			'email'=>$email,
+			'password'=> md5($password));
+		$cek = $this->olshopmodel->cek_login("admin",$a)->num_rows();
+		if($cek > 0) {
+			$dt_session = array (
+				'nama'=>$email,
+				'status'=>"login");
+		$this->session->set_admdata($dt_session);
+		redirect (base_url("admin"));
+		}
+		else {
+			echo "Email dan password salah!";
+		}
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('login'));
+	}
 	public function dashboard()
 	{
 		$this->tem_olshop->tampil('admin/dashboardku');

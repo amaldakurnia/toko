@@ -26,10 +26,23 @@
                 </div>
                  <!-- /. ROW  -->
                  <hr />
+                    <b><p> Nama Website </p></b>
+                    www.onlineshopcerrezdistro.com
+                    <b><p> Deskripsi Website </p></b>
+                    CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
+                    <b><p> Email </p></b>
+                    cerrezstore31@gmail.com
+                    <b><p> Telepon </p></b>
+                    089616693303
+                    <b><p> Link Share </p></b>
+                    <div class="row">
+                    <a  href="https://m.me/amalda.kurnia"><i class="fa fa-facebook fa-4x" ></i>
+                    <a  href="https://www.instagram.com"><i class="fa fa-instagram fa-4x" ></i>
+                    </div>
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+             </div> <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->

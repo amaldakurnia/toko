@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Admin Dashboard</h2>   
-                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                        <h5>Welcome Yaskun Amalda , Love to see you back. </h5>
                         <a href="<?php echo base_url('index.php/admin/dashboard'); ?>"></a> 
                     </div>
                 </div>              
@@ -32,106 +32,79 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fa fa-shopping-cart"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">120 New</p>
-                    <p class="text-muted">Messages</p>
+                    <p class="main-text">User</p>
+                    <p class="text-muted" ></p>
+                    <a href="<?php echo base_url ('index.php/admin/admin');?>">User</a>
                 </div>
              </div>
 		     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-edit"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">30 Tasks</p>
-                    <p class="text-muted">Remaining</p>
+                    <p class="main-text">Kategori</p>
+                    <p class="text-muted"></p>
+                    <a href="<?php echo base_url ('index.php/admin/kategori');?>">Kategori</a>
                 </div>
              </div>
 		     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-bell-o"></i>
+                    <i class="fa fa-barcode"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">240 New</p>
-                    <p class="text-muted">Notifications</p>
+                    <p class="main-text">Merk Produk</p>
+                    <p class="text-muted"></p>
+                    <a href="<?php echo base_url ('index.php/admin/merk');?>"> Merk Produk</a>
                 </div>
              </div>
 		     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-rocket"></i>
+                    <i class="fa fa-pencil"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">3 Orders</p>
-                    <p class="text-muted">Pending</p>
+                    <p class="main-text">Produk</p>
+                    <p class="text-muted"></p>
+                    <a href="<?php echo base_url ('index.php/admin/produk');?>">Produk</a>
                 </div>
              </div>
 		     </div>
-			</div>
-                 <!-- /. ROW  -->
-                <hr />                
+			</div>               
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">           
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue">
-                    <i class="fa fa-warning"></i>
+                <span class="icon-box bg-color-blue set-icon">
+                    <i class="fa fa-user"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">52 Important Issues to Fix </p>
-                    <p class="text-muted">Please fix these issues to work smooth</p>
-                    <p class="text-muted">Time Left: 30 mins</p>
-                    <hr />
-                    <p class="text-muted">
-                          <span class="text-muted color-bottom-txt"><i class="fa fa-edit"></i>
-                               Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit gthn. 
-                               </span>
-                    </p>
+                    <p class="main-text">Customer</p>
+                    <p class="text-muted"></p>
+                    <a href="<?php echo base_url ('index.php/admin/customer');?>">Customer</a>
                 </div>
              </div>
 		     </div>
-                    
-                    
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel back-dash">
-                               <i class="fa fa-dashboard fa-3x"></i><strong> &nbsp; SPEED</strong>
-                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing sit ametsit amet elit ftr. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                       
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12 ">
-                        <div class="panel ">
-          <div class="main-temp-back">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-xs-6"> <i class="fa fa-cloud fa-3x"></i> Newyork City </div>
-                <div class="col-xs-6">
-                  <div class="text-temp"> 10° </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-                     <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-desktop"></i>
+         <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+      <div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-brown set-icon">
+                    <i class="fa fa-tasks"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">Display</p>
-                    <p class="text-muted">Looking Good</p>
+                    <p class="main-text">Order</p>
+                    <p class="text-muted"></p>
+                    <a href="<?php echo base_url ('index.php/admin/order');?>">Order</a>
                 </div>
              </div>
-			
-    </div>
-         <!-- /. PAGE WRAPPER  -->
-        </div>
+         </div>
+
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
