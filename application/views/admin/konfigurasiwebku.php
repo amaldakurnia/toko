@@ -36,7 +36,7 @@
                     089616693303
                     <b><p> Link Share </p></b>
                     <div class="row">
-                    <a  href="https://m.me/amalda.kurnia"><i class="fa fa-facebook fa-4x" ></i>
+                    <a  href="https://facebook.com"><i class="fa fa-facebook fa-4x" ></i>
                     <a  href="https://www.instagram.com"><i class="fa fa-instagram fa-4x" ></i>
                     </div>
      <!-- /. WRAPPER  -->

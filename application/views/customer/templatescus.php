@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a class="active" href="<?php echo base_url ('index.php/customer/shopcart');?>"> <span class="icon-home"></span> Home</a> 
+				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
@@ -90,12 +90,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home</a></li>
+			  <li class="active"><a href="index.html">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="three-col.html">Three Column</a></li>
+			  <li class=""><a href="four-col.html">Four Column</a></li>
+			  <li class=""><a href="general.html">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -132,16 +132,16 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url ('index.php/customer/prod')?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="<?php echo base_url ('index.php/customer/shopcart');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
 		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>

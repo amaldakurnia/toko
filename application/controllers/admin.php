@@ -21,18 +21,18 @@ class Admin extends CI_Controller {
 	}
 	public function loginku()
 	{
-		$email = $this->input->post('email');
-		$password = $this->inp->post('password');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 		$a = array(
-			'email'=>$email,
+			'username'=>$username,
 			'password'=> md5($password));
-		$cek = $this->olshopmodel->cek_login("admin",$a)->num_rows();
+		$cek = $this->model->cek_login("username",$a)->num_rows();
 		if($cek > 0) {
 			$dt_session = array (
-				'nama'=>$email,
+				'nama'=>$username,
 				'status'=>"login");
 		$this->session->set_admdata($dt_session);
-		redirect (base_url("admin"));
+		redirect (base_url("username"));
 		}
 		else {
 			echo "Email dan password salah!";
@@ -199,7 +199,7 @@ class Admin extends CI_Controller {
 	{
 		$simadm = array (
 				'id_admin'=>$this->input->post('id_admin'),
-				'email'=>$this->input->post('email'),
+				'username'=>$this->input->post('username'),
 				'password'=>$this->input->post('password'));
 
 		$this->model->gettamadm($simadm);
@@ -210,7 +210,7 @@ class Admin extends CI_Controller {
 		$adm = $this->input->post('id_admin');
 		$simadm = array (
 				'id_admin'=>$this->input->post('id_admin'),
-				'email'=>$this->input->post('email'),
+				'username'=>$this->input->post('username'),
 				'password'=>$this->input->post('password'));
 
 		$this->model->geteditadm($simadm,$adm);

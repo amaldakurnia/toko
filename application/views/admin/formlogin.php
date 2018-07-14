@@ -35,11 +35,11 @@
                             <div class="panel-heading"> 
                             </div>
                             <div class="panel-body">
-                                <form role="form">
+                                <form role="form" action="<?php echo base_url ('index.php/admin/loginku') ?>" method="post">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" name="email" class="form-control" placeholder="Your Email " />
+                                            <input type="text" name="username" class="form-control" placeholder="Your Username " />
                                         </div>
                                       <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
@@ -47,6 +47,7 @@
                                         </div>
                                         <input type="submit" value="Login" class="btn btn-success">
                                      <!--<a href="<?php echo base_url ('index.php/admin/index');?>" class="btn btn-primary "> Login </a>-->
+                                     Not register ? <a href="registeration.html" >click here </a>
                                     </form>
                             </div>
                            

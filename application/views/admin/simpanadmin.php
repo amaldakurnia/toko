@@ -31,8 +31,8 @@
                                         <input type="text" name="id_admin" class="form-control">
                                     </div>
                                      <div class="form-group">
-                                         <label> Email </label>
-                                         <input type="text" name="email" class="form-control">
+                                         <label> Username </label>
+                                         <input type="text" name="username" class="form-control">
                                      </div>
                                      <div class="form-group">
                                          <label> Password </label>

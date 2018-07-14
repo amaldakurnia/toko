@@ -32,7 +32,7 @@
                                     <thead>
                                         <tr>
                                             <th>Id Admin</th>
-                                            <th>Email</th>
+                                            <th>Username</th>
                                             <th>Password</th>
                                         </tr>
                                     </thead>
@@ -44,7 +44,7 @@
                                         <?php echo $key+1 ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['email']; ?>
+                                        <?php echo $a['username']; ?>
                                         </td>
                                         <td>
                                         <?php echo $a['password']; ?>

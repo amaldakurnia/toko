@@ -32,8 +32,8 @@
                                         <input type="text" name="id_admin" value="<?php echo $key['id_admin']; ?>" class="form-control">
                                     </div>
                                      <div class="form-group">
-                                         <label> Email </label>
-                                         <input type="text" name="email" value="<?php echo $key['email']; ?>" class="form-control">
+                                         <label> Username </label>
+                                         <input type="text" name="username" value="<?php echo $key['username']; ?>" class="form-control">
                                      </div>
                                      <div class="form-group">
                                          <label> Password </label>

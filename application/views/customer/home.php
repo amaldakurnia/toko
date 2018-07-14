@@ -7,11 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
-    <link href="style.css" rel="stylesheet"/>
+    <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
-	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/fronted/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
 			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
@@ -37,7 +37,7 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a> 
+				<a class="active" href="<?php echo base_url ('index.php/customer/shopcart');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
@@ -58,6 +58,7 @@ Lower Header Section
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<a href="<?php echo base_url ('index.php/customer/shopcart');?>">
 	</a>
 	</h1>
 	</div>
@@ -92,12 +93,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="index.html">Home	</a></li>
-			  <li class=""><a href="list-view.html">List View</a></li>
-			  <li class=""><a href="grid-view.html">Grid View</a></li>
-			  <li class=""><a href="three-col.html">Three Column</a></li>
-			  <li class=""><a href="four-col.html">Four Column</a></li>
-			  <li class=""><a href="general.html">General Content</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>"">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>"">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>"">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>"">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -134,7 +135,7 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>

@@ -3,7 +3,7 @@ class Olshopmodel extends CI_Model
 {
 	public function cek_login($a)
 	{
-		return $this->db->get_a('adminku',$a);
+		return $this->db->get_where('adminku',$a);
 	}
 	public function get_customerku ()
 	{

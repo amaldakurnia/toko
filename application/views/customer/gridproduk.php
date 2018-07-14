@@ -7,11 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+     <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
-    <link href="style.css" rel="stylesheet"/>
+    <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
-	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/fronted/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
 			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
@@ -93,12 +93,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="index.html">Home	</a></li>
-			  <li class=""><a href="list-view.html">List View</a></li>
-			  <li class="active"><a href="grid-view.html">Grid View</a></li>
-			  <li class=""><a href="three-col.html">Three Column</a></li>
-			  <li class=""><a href="four-col.html">Four Column</a></li>
-			  <li class=""><a href="general.html">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -135,7 +135,7 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
@@ -165,9 +165,9 @@ Body Section
 			<li>
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<img src="assets/img/images_(22).jpeg" alt="bootstrap ecommerce templates">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url ('index.php/customer/detprod');?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -204,9 +204,9 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="product_details.html" class="overlay"></a>
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="assets/img/a.jpg" alt=""></a>
+				<a href="<?php echo base_url ('index.php/customer/produk')?>" class="overlay"></a>
+				<a class="zoomTool" href="<?php echo base_url ('index.php/customer/produk')?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="<?php echo base_url ('index.php/customer/produk')?>"><img src="assets\fronted\assets\img/images_(22).jpeg" alt=""></a>
 				<div class="caption cntr">
 					<p>Manicure & Pedicure</p>
 					<p><strong> $22.00</strong></p>

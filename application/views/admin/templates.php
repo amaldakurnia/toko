@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php echo base_url ('templates'); ?>" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php echo base_url ('customer'); ?>" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
