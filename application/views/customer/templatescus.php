@@ -40,11 +40,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a class="active" href="<?php echo base_url ('index.php/customer/shopcart');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('index.php/customer/checkout');?>">><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
@@ -90,12 +90,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="index.html">Home	</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="three-col.html">Three Column</a></li>
-			  <li class=""><a href="four-col.html">Four Column</a></li>
-			  <li class=""><a href="general.html">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -143,7 +143,7 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/checkout');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
@@ -153,7 +153,7 @@ Body Section
 					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
 				  </p>
 			  </div>
-			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/images_(27).jpeg" alt="payment method paypal"></a></div>
+			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
 			
 			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 			<br>
@@ -241,9 +241,9 @@ New Products
 			  <ul class="thumbnails">
 				<li class="span3">
 				<div class="thumbnail">
-					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+					<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod');?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a href="product_details.html"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/dress3.jpeg" alt="bootstrap-ring"></a>
+					<a href="<?php echo base_url('index.php/customer/detprod');?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/dress3.jpeg" alt="bootstrap-ring"></a>
 				</div>
 				</li>
 				<li class="span3">

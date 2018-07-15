@@ -7,11 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-     <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
 	<link href="<?php echo base_url(); ?>assets/fronted/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
 		<!--[if IE 7]>
 			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
@@ -58,11 +59,17 @@ Lower Header Section
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/general');?>">
+		<a href="<?php echo base_url ('index.php/customer/contact');?>">
 	</a>
 	</h1>
 	</div>
 	<div class="span4">
+	<div class="offerNoteWrapper">
+	<h1 class="dotmark">
+	<i class="icon-cut"></i>
+	Twitter Bootstrap shopping cart HTML template is available @ $14
+	</h1>
+	</div>
 	</div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
@@ -87,12 +94,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class="active"><a href="index.html">Home	</a></li>
+			  <li class=""><a href="list-view.html">List View</a></li>
+			  <li class=""><a href="grid-view.html">Grid View</a></li>
+			  <li class=""><a href="three-col.html">Three Column</a></li>
+			  <li class=""><a href="four-col.html">Four Column</a></li>
+			  <li class=""><a href="general.html">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -125,111 +132,63 @@ Navigation Bar Section
 <!-- 
 Body Section 
 -->
-	<div class="row">
-		<div id="sidebar" class="span3">
-		<div class="well well-small">
-			<ul class="nav nav-list">
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-				<li style="border:0"> &nbsp;</li>
-				<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
-			</ul>
+	<hr class="soften">
+	<div class="well well-small">
+	<h1>Visit us</h1>
+	<hr class="soften"/>	
+	<div class="row-fluid">
+		<div class="span8 relative">
+		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Newbury+Street,+Boston,+MA,+United+States&amp;aq=1&amp;oq=NewBoston,+MA,+United+States&amp;sll=42.347238,-71.084011&amp;sspn=0.014099,0.033023&amp;ie=UTF8&amp;hq=Newbury+Street,+Boston,+MA,+United+States&amp;t=m&amp;ll=42.348994,-71.088248&amp;spn=0.001388,0.006276&amp;z=18&amp;iwloc=A&amp;output=embed"></iframe>
+
+		<div class="absoluteBlk">
+		<div class="well wellsmall">
+		<h4>Contact Details</h4>
+		<h5>
+			2601 Mission St.<br/>
+			San Francisco, CA 94110<br/><br/>
+			 
+			info@mysite.com<br/>
+			﻿Tel 123-456-6780<br/>
+			Fax 123-456-5679<br/>
+			web:wwwmysitedomain.com
+		</h5>
 		</div>
-		  <div class="well well-small alert alert-warning cntr">
-			  <h2>50% Discount</h2>
-			  <p> 
-				 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
-			  </p>
-		  </div>
-		  <div class="well well-small" ><a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a></div>
-			
-			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
-			<br>
-			<br>
-			<ul class="nav nav-list promowrapper">
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-		  </ul>
+		</div>
+		</div>
+		
+		<div class="span4">
+		<h4>Email Us</h4>
+		<form class="form-horizontal">
+        <fieldset>
+          <div class="control-group">
+           
+              <input type="text" placeholder="name" class="input-xlarge"/>
+           
+          </div>
+		   <div class="control-group">
+           
+              <input type="text" placeholder="email" class="input-xlarge"/>
+           
+          </div>
+		   <div class="control-group">
+           
+              <input type="text" placeholder="subject" class="input-xlarge"/>
+          
+          </div>
+          <div class="control-group">
+              <textarea rows="3" id="textarea" class="input-xlarge"></textarea>
+           
+          </div>
 
+            <button class="shopBtn" type="submit">Send email</button>
+
+        </fieldset>
+      </form>
+		</div>
 	</div>
-	<div class="span9">
-    <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Page Title</li>
-    </ul>
-<div class="well well-small">
-	<h1> Ini adalah onlineshop CerrezDistro </h1>	
-	<h2> Ini adalah onlineshop CerrezDistro </h2>	
-	<h3> Ini adalah onlineshop CerrezDistro </h3>	
-	<h4> Ini adalah onlineshop CerrezDistro </h4>	
-	<h5> Ini adalah onlineshop CerrezDistro </h5>	
-	<h6> Ini adalah onlineshop CerrezDistro </h6>	
-	<hr class="soft"/>
-	<h2>List of the text</h2>
+
 	
-	<h3>Unordered List</h3><br/>
-	    <ul>
-        <li> Ini adalah onlineshop CerrezDistro . </li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-    </ul>
-    <h3>Ordered List</h3><br/>
-    <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis .</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis at sollicitudin.</li>
-    </ol>
-
-    <h2>Paragraph</h2>
-<p>CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
-</p>
-
-<h5>Lorem ipsum dolor sit amet</h5><br/>
-<p>
-CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
- </p>
-
-<hr class="soft"/>
-	
+</div>
 <!-- 
 Clients 
 -->
@@ -239,7 +198,7 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url();?>assets/fronted/assets/img/unnamed_(2).jpg"></a>
+			<a href="#"><img alt="" src="assets/img/1.png"></a>
 		</div>
 		<div class="span2">
 			<a href="#"><img alt="" src="assets/img/2.png"></a>

@@ -24,7 +24,7 @@
                 <h2> Admin Login</h2>
                
                 <h5>( Login yourself to get access )</h5>
-                 <a href="<?php echo base_url('index.php/admin/login'); ?>"></a> 
+                 <a href="<?php echo base_url('index.php/login/loginku'); ?>"></a> 
                  <br />
             </div>
         </div>
@@ -35,7 +35,7 @@
                             <div class="panel-heading"> 
                             </div>
                             <div class="panel-body">
-                                <form role="form" action="<?php echo base_url ('index.php/admin/loginku') ?>" method="post">
+                                <form role="form" action="<?php echo base_url ('index.php/login/loginku') ?>" method="post">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>

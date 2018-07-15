@@ -21,7 +21,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url();?> assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -57,18 +57,12 @@ Lower Header Section
 	<div class="span4">
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<img src="<?php echo base_url();?> assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/gridprod');?>">
 	</a>
 	</h1>
 	</div>
 	<div class="span4">
-	<div class="offerNoteWrapper">
-	<h1 class="dotmark">
-	<i class="icon-cut"></i>
-	Twitter Bootstrap shopping cart HTML template is available @ $14
-	</h1>
-	</div>
 	</div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>

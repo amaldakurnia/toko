@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Bootstrap styles -->
-     <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
+ 	<link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
@@ -41,7 +40,7 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a class="active" href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
@@ -58,11 +57,17 @@ Lower Header Section
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/general');?>">
+		<a href="<?php echo base_url ('index.php/customer/pembayaran');?>">
 	</a>
 	</h1>
 	</div>
 	<div class="span4">
+	<div class="offerNoteWrapper">
+	<h1 class="dotmark">
+	<i class="icon-cut"></i>
+	Twitter Bootstrap shopping cart HTML template is available @ $14
+	</h1>
+	</div>
 	</div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
@@ -87,12 +92,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="index.html">Home	</a></li>
+			  <li class=""><a href="list-view.html">List View</a></li>
+			  <li class=""><a href="grid-view.html">Grid View</a></li>
+			  <li class=""><a href="three-col.html">Three Column</a></li>
+			  <li class=""><a href="four-col.html">Four Column</a></li>
+			  <li class=""><a href="general.html">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -126,110 +131,58 @@ Navigation Bar Section
 Body Section 
 -->
 	<div class="row">
-		<div id="sidebar" class="span3">
-		<div class="well well-small">
-			<ul class="nav nav-list">
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-				<li style="border:0"> &nbsp;</li>
-				<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
-			</ul>
-		</div>
-		  <div class="well well-small alert alert-warning cntr">
-			  <h2>50% Discount</h2>
-			  <p> 
-				 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
-			  </p>
-		  </div>
-		  <div class="well well-small" ><a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a></div>
-			
-			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
-			<br>
-			<br>
-			<ul class="nav nav-list promowrapper">
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-		  </ul>
-
-	</div>
-	<div class="span9">
+	<div class="span12">
     <ul class="breadcrumb">
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Page Title</li>
+		<li class="active">Check Out</li>
     </ul>
-<div class="well well-small">
-	<h1> Ini adalah onlineshop CerrezDistro </h1>	
-	<h2> Ini adalah onlineshop CerrezDistro </h2>	
-	<h3> Ini adalah onlineshop CerrezDistro </h3>	
-	<h4> Ini adalah onlineshop CerrezDistro </h4>	
-	<h5> Ini adalah onlineshop CerrezDistro </h5>	
-	<h6> Ini adalah onlineshop CerrezDistro </h6>	
-	<hr class="soft"/>
-	<h2>List of the text</h2>
-	
-	<h3>Unordered List</h3><br/>
-	    <ul>
-        <li> Ini adalah onlineshop CerrezDistro . </li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-    </ul>
-    <h3>Ordered List</h3><br/>
-    <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis .</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis at sollicitudin.</li>
-    </ol>
 
-    <h2>Paragraph</h2>
-<p>CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
-</p>
+			<table class="table table-bordered">
+			<tbody>
+                <tr><td>PEMBAYARAN</td></tr>
+                 <tr> 
+				 <td>
+					<form class="form-horizontal">
+					  <div class="control-group">
+						<label class="span2 control-label" for="inputEmail"> Detail Order </label>
+						<div class="controls">
+						  <input type="text" placeholder="Detail Order">
+						</div>
+					  </div>
+					  <div class="control-group">
+						<label class="span2 control-label" for="inputEmail"> Bayar Via </label>
+						<div class="controls">
+						  <input type="text" placeholder="Bayar Via">
+						</div>
+					  </div>
+					  <!--<div class="control-group">
+						<label class="span2 control-label" for="inputEmail">Kabupaten</label>
+						<div class="controls">
+						  <input type="text" placeholder="Country">
+						</div>
+					  </div>
+					  <div class="control-group">
+						<label class="span2 control-label" for="inputEmail">Alamat Lengkap</label>
+						<div class="controls">
+						  <input type="text" placeholder="Country">
+						</div>
+					  </div>
+					  <div class="control-group">
+						<div class="controls">
+						  <button type="submit" class="shopBtn">Click to check the price</button>
+						</div>
+					  </div>-->
+					</form> 
+				  </td>
+				  </tr>
+              </tbody>
+            </table>		
+	<a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="login.html" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
-<h5>Lorem ipsum dolor sit amet</h5><br/>
-<p>
-CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
- </p>
-
-<hr class="soft"/>
-	
+</div>
+</div>
+</div>
 <!-- 
 Clients 
 -->
@@ -239,7 +192,7 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url();?>assets/fronted/assets/img/unnamed_(2).jpg"></a>
+			<a href="#"><img alt="" src="assets/img/1.png"></a>
 		</div>
 		<div class="span2">
 			<a href="#"><img alt="" src="assets/img/2.png"></a>

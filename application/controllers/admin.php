@@ -6,6 +6,11 @@ class Admin extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('olshopmodel', 'model');
+
+		/*if($this->session->userdata('status') != "login")
+		{
+			redirect (base_url("index.php/login/"));
+		}
 	}
 	/*public function index()
 	{
@@ -14,35 +19,9 @@ class Admin extends CI_Controller {
 	public function index() 
 	{	
 		$this->tem_olshop->tampil('admin/dashboardku');
+		$this->load->view('admin/flogin');
 	}
-	public function login()
-	{
-		$this->load->view('admin/formlogin');
-	}
-	public function loginku()
-	{
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$a = array(
-			'username'=>$username,
-			'password'=> md5($password));
-		$cek = $this->model->cek_login("username",$a)->num_rows();
-		if($cek > 0) {
-			$dt_session = array (
-				'nama'=>$username,
-				'status'=>"login");
-		$this->session->set_admdata($dt_session);
-		redirect (base_url("username"));
-		}
-		else {
-			echo "Email dan password salah!";
-		}
-	}
-	public function logout()
-	{
-		$this->session->sess_destroy();
-		redirect(base_url('login'));
-	}
+
 	public function dashboard()
 	{
 		$this->tem_olshop->tampil('admin/dashboardku');

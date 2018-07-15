@@ -21,7 +21,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -39,9 +39,9 @@
 				</div>
 				<a class="active" href="<?php echo base_url ('index.php/customer/shopcart');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('index.php/customer/checkout');?>"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
@@ -57,18 +57,12 @@ Lower Header Section
 	<div class="span4">
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/shopcart');?>">
 	</a>
 	</h1>
 	</div>
 	<div class="span4">
-	<div class="offerNoteWrapper">
-	<h1 class="dotmark">
-	<i class="icon-cut"></i>
-	Twitter Bootstrap shopping cart HTML template is available @ $14
-	</h1>
-	</div>
 	</div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
@@ -156,7 +150,7 @@ Body Section
 					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
 				  </p>
 			  </div>
-			  <div class="well well-small" ><a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/paypal.jpg"alt="payment method paypal"></a></div>
 			
 			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 			<br>
@@ -164,8 +158,18 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
+				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/images_(22).jpeg" alt="bootstrap ecommerce templates">
+				<div class="caption">
+				  <h4><a class="defaultBtn" href="<?php echo base_url('index.php/customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+			<li style="border:0"> &nbsp;</li>
+			<li>
+			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/dress3.jpeg" alt="shopping cart template">
 				<div class="caption">
 				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
@@ -175,17 +179,7 @@ Body Section
 			<li>
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/jilbab_satin.jpeg" alt="bootstrap template">
 				<div class="caption">
 				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
@@ -199,28 +193,28 @@ Body Section
 		<div id="myCarousel" class="carousel slide homCar">
             <div class="carousel-inner">
 			  <div class="item">
-                <img style="width:100%" src="assets/img/bootstrap_free-ecommerce.png" alt="bootstrap ecommerce templates">
+                <img style="width:100%" src="<?php echo base_url(); ?>assets/fronted/assets/img/images_(19).jpeg" alt="bootstrap ecommerce templates">
                 <div class="carousel-caption">
                       <h4>Bootstrap shopping cart</h4>
                       <p><span>Very clean simple to use</span></p>
                 </div>
               </div>
 			  <div class="item">
-                <img style="width:100%" src="assets/img/carousel1.png" alt="bootstrap ecommerce templates">
+                <img style="width:100%" src=" <?php echo base_url(); ?>assets/fronted/assets/img/images_(22).jpeg" alt="bootstrap ecommerce templates">
                 <div class="carousel-caption">
                       <h4>Bootstrap Ecommerce template</h4>
                       <p><span>Highly Google seo friendly</span></p>
                 </div>
               </div>
 			  <div class="item active">
-                <img style="width:100%" src="assets/img/carousel3.png" alt="bootstrap ecommerce templates">
+                <img style="width:100%" src=" <?php echo base_url(); ?>assets/fronted/assets/img/jilbab_satin.jpeg" alt="bootstrap ecommerce templates">
                 <div class="carousel-caption">
                       <h4>Twitter Bootstrap cart</h4>
                       <p><span>Very easy to integrate and expand.</span></p>
                 </div>
               </div>
               <div class="item">
-                <img style="width:100%" src="assets/img/bootstrap-templates.png" alt="bootstrap templates">
+                <img style="width:100%" src=" <?php echo base_url(); ?>assets/fronted/assets/img/images_(27).jpeg" alt="bootstrap templates">
                 <div class="carousel-caption">
                       <h4>Bootstrap templates integration</h4>
                       <p><span>Compitable to many more opensource cart</span></p>
@@ -246,27 +240,27 @@ New Products
 				<div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a href="product_details.html"><img src="assets/img/bootstrap-ring.png" alt="bootstrap-ring"></a>
+					<a href="product_details.html"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/dress3.jpeg" alt="bootstrap-ring"></a>
 				</div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a  href="product_details.html"><img src="assets/img/i.jpg" alt=""></a>
+					<a  href="product_details.html"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/images_(27).jpeg" alt=""></a>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a  href="product_details.html"><img src="assets/img/g.jpg" alt=""></a>
+					<a  href="product_details.html"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/images_(22).jpeg" alt=""></a>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-					<a  href="product_details.html"><img src="assets/img/s.png" alt=""></a>
+					<a  href="product_details.html"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/jilbab_satin.jpeg" alt=""></a>
 				  </div>
 				</li>
 			  </ul>
@@ -276,25 +270,25 @@ New Products
 			<li class="span3">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/i.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images (26).jpeg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/f.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/jilbab_satin.jpeg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/h.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images_(19).jpeg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/j.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images (26).jpeg" alt=""></a>
 			  </div>
 			</li>
 		  </ul>
@@ -310,7 +304,7 @@ New Products
 			  <div class="thumbnail">
 				 
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="assets/img/b.jpg" alt=""></a>
+				<a href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images (26).jpeg" alt=""></a>
 				<div class="caption cntr">
 					<p>Manicure & Pedicure</p>
 					<p><strong> $22.00</strong></p>
@@ -326,7 +320,7 @@ New Products
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="assets/img/c.jpg" alt=""></a>
+				<a href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/jilbab_satin.jpeg" alt=""></a>
 				<div class="caption cntr">
 					<p>Manicure & Pedicure</p>
 					<p><strong> $22.00</strong></p>
@@ -342,7 +336,7 @@ New Products
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="assets/img/a.jpg" alt=""></a>
+				<a href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images_(19).jpeg" alt=""></a>
 				<div class="caption cntr">
 					<p>Manicure & Pedicure</p>
 					<p><strong> $22.00</strong></p>
@@ -369,7 +363,7 @@ New Products
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/d.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images (26).jpeg" alt=""></a>
 				<div class="caption">
 				  <h5>Manicure & Pedicure</h5>
 				  <h4>
@@ -383,7 +377,7 @@ New Products
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/e.jpg" alt=""></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/images_(27).jpeg" alt=""></a>
 				<div class="caption">
 				  <h5>Manicure & Pedicure</h5>
 				  <h4>
@@ -397,7 +391,7 @@ New Products
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="assets/img/f.jpg" alt=""/></a>
+				<a  href="product_details.html"><img src="<?php echo base_url();?>assets/fronted/assets/img/jilbab_satin.jpeg" alt=""/></a>
 				<div class="caption">
 				  <h5>Manicure & Pedicure</h5>
 				  <h4>

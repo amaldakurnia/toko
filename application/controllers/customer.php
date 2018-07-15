@@ -12,6 +12,22 @@ class Customer extends CI_Controller {
 	{
 		$this->load->view('customer/home');
 	}
+	public function checkout()
+	{
+		$this->load->view('customer/cart');
+	}
+	public function pembayaran()
+	{
+		$this->load->view('customer/pembayaran');
+	}
+	public function contact()
+	{
+		$this->load->view('customer/contact');
+	}
+	public function register()
+	{
+		$this->load->view('customer/register');
+	}
 	public function listprod()
 	{
 		$this->load->view('customer/listproduk');
