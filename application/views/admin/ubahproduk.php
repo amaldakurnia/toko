@@ -40,12 +40,12 @@
                                          <input type="text" name="warna" value="<?php echo $key['warna']; ?>" class="form-control">
                                      </div>
                                      <div class="form-group">
-                                         <label> Kategori </label>
-                                         <input type="text" name="kategori" value="<?php echo $key['kategori']; ?>" class="form-control">
+                                         <label> Id Kategori </label>
+                                         <input type="text" name="id_kategori" value="<?php echo $key['id_kategori']; ?>" class="form-control">
                                      </div>
                                      <div class="form-group">
-                                         <label> Merk </label>
-                                         <input type="text" name="merk" value="<?php echo $key['merk']; ?>" class="form-control">
+                                         <label> Id Merk </label>
+                                         <input type="text" name="id_merk" value="<?php echo $key['id_merk']; ?>" class="form-control">
                                      </div>
                                      <div class="form-group">
                                          <label> Bahan </label>

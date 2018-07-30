@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrasiku</title>
+    <title> Order </title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -20,48 +20,43 @@
 
     <div class="container">
         <div class="row">
-             <h2> Tambah Produk</h2>
+             <h2> Tambah Order</h2>
         </div>
     </div>
         <div class="col-lg-4">
              <div class="page-header">  
-                                    <form role="form" class="form-horizontal" action="<?php echo base_url ('index.php/admin/tamprod') ?>" method="post" enctype="multipart/form-data">
+                                    <form role="form" class="form-horizontal" action="<?php echo base_url ('index.php/admin/tamord') ?>" method="post">
                                     <div class="form-group">
-                                        <label> Id Produk </label>
-                                        <input type="text" name="id_produk" class="form-control">
+                                        <label> Id Order </label>
+                                        <input type="text" name="id_order" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                         <label> Nama Produk </label>
-                                         <input type="text" name="nm_produk" class="form-control">
-                                     </div>
-                                     <div class="form-group">
-                                         <label> Warna </label>
-                                         <input type="text" name="warna" class="form-control">
-                                     </div>
-                                     <div class="form-group">
-                                         <label> Bahan </label>
-                                         <input type="text" name="bahan" class="form-control">
-                                     </div>
-                                     <div class="form-group">
-                                         <label> Deskripsi </label>
-                                         <input type="text" name="deskripsi" class="form-control">
-                                     </div>
-                                     <div class="form-group">
-                                         <label> Gambar </label>
-                                         <input type="file" name="gambar" class="form-control">
-                                     </div>
-                                      <div class="form-group">
-                                         <label> Id Kategori </label>
-                                         <input type="text" name="id_kategori" class="form-control">
+                                        <label> Id Customer </label>
+                                        <input type="text" name="id_customer" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                         <label> Id Merk </label>
-                                         <input type="text" name="id_merk" class="form-control">
+                                         <label> Id Produk </label>
+                                         <input type="text" name="id_produk" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Tanggal Bayar </label>
+                                         <input type="date" name="tgl_byr" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Total Bayar </label>
+                                         <input type="text" name="total_byr" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Bayar Via </label>
+                                         <input type="text" name="bayar_via" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Keterangan </label>
+                                         <input type="text" name="ket" class="form-control">
                                      </div>
 <br/>                                       
-                                     <input type="submit" value="Simpan" class="btn btn-success">
-                                     <a href="<?php echo base_url ('index.php/admin/produk');?>" class="btn btn-default "> Batal </a>
-                                         
+                                    <input type="submit" value="Simpan" class="btn btn-success">
+                                    <a href="<?php echo base_url ('index.php/admin/order');?>" class="btn btn-default "> Batal </a>     
                                     <hr />
                                 </form>
                             </div>               

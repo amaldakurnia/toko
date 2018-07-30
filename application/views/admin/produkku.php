@@ -38,6 +38,8 @@
                                             <th>Bahan</th>
                                             <th>Deskripsi</th>
                                             <th>Gambar</th>
+                                            <th>Harga</th>
+                                            <th>Stok</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,14 +51,15 @@
                                         </td>
                                         <td>
                                         <?php echo $a['nm_produk']; ?>
-                                        </td><td>
+                                        </td>
+                                        <td>
                                         <?php echo $a['warna']; ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['kategori']; ?>
+                                        <?php echo $a['nm_kategori']; ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['merk']; ?>
+                                        <?php echo $a['nm_merk']; ?>
                                         </td>
                                         <td>
                                         <?php echo $a['bahan']; ?>
@@ -66,6 +69,12 @@
                                         </td>
                                         <td>
                                         <?php echo $a['gambar']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['harga']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['stok']; ?>
                                         </td>
                                         <td align="center">
                                         <a href="<?php echo base_url ('index.php/admin/editprod/').$a['id_produk'];?>" class="btn btn-primary ">Edit</a> | 

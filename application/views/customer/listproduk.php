@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title> Shopping Cart </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -21,7 +21,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -37,11 +37,12 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
 	</div>
@@ -56,8 +57,8 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href=""><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+	<a class="logo" href="<?php echo base_url ('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/listprod');?>">
 	</a>
 	</h1>
@@ -87,7 +88,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/shopcart');?>">Home</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home</a></li>
 			  <li class="active"><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
@@ -129,18 +130,18 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<li><a href="<?php echo base_url('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Watches</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Loose Beads</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
 	</ul>
 </div>
 
@@ -150,7 +151,7 @@ Body Section
 					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
 				  </p>
 			  </div>
-			  <div class="well well-small" ><a href="#"><img src="assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
 			
 			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 			<br>
@@ -158,30 +159,30 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod');?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url();?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('index.php/customer/detprod');?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
 			<li style="border:0"> &nbsp;</li>
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
+				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod');?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url();?>assets/fronted/assets/img/shopping-cart-template.png" alt="shopping cart template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('index.php/customer/detprod');?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
 			<li style="border:0"> &nbsp;</li>
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
+				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod');?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url();?>assets/fronted/assets/img/bootstrap-template.png" alt="bootstrap template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('index.php/customer/detprod');?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -190,291 +191,33 @@ Body Section
 	</div>
 <div class="span9">
 <div class="well well-small">
-	<div class="row-fluid">	  
+	<?php foreach ($data->result_array() as $key => $value) : ?> 
+	<div class="row-fluid">	 
+	
 		<div class="span2">
-			<img src="assets/img/a.jpg" alt="">
+			<img src="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>" alt="">
 		</div>
 		<div class="span6">
-			<h5>Product Name </h5>
+			<h5><?php echo $value['nm_produk'];?></h5>
 			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
+			<?php echo $value['deskripsi'];?>
 			</p>
 		</div>
 		<div class="span4 alignR">
 		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
+		<h3> Rp. <?php echo $value['harga'];?></h3>
 		<label class="checkbox">
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="<?php echo base_url('index.php/customer/addcart');?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="<?php echo base_url('index.php/customer/detprod');?>" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
 	</div>
 	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/b.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/c.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/d.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/e.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/f.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/g.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/h.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/i.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/a.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
-	<hr class="soften">
-	<div class="row-fluid">	  
-		<div class="span2">
-			<img src="assets/img/b.jpg" alt="">
-		</div>
-		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
-		</div>
-		<div class="span4 alignR">
-		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
-		<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-		</label><br>
-		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
-		 </div>
-			</form>
-		</div>
-	</div>
+		<?php endforeach; ?>
 </div>
 </div>
 </div>
@@ -487,22 +230,22 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/1.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/2.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/3.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/4.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/5.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/6.png"></a>
+			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
 		</div>
 	</div>
 </section>
@@ -522,11 +265,11 @@ Footer
  </div>
 <div class="span2">
 <h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
+<a href="<?php echo base_url ('index.php/customer/contact');?>">CONTACT</a><br>
 <a href="#">SITEMAP</a><br>
 <a href="#">LEGAL NOTICE</a><br>
 <a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
+<a href="<?php echo base_url ('index.php/customer/about');?>">ABOUT US</a><br>
  </div>
 <div class="span2">
 <h5>Our Offer</h5>
@@ -550,21 +293,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/shop.js"></script>
   </body>
 </html>

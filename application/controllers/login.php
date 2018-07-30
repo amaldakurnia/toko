@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->model('olshopmodel', 'model');
 		}
-
+	//login admin
 	public function index()
 	{
 		$this->load->view('admin/formlogin');
@@ -16,16 +16,16 @@ class Login extends CI_Controller {
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$a = array(
-			'username'=>$username,
-			'password'=>$password);
-		$cek = $this->model->cek_login("username",$a)->num_rows();
+
+
+		$cek = $this->model->cek_login($username,$password)->num_rows();
 		if($cek==1) {
-			$dt_session = array (
-				'nama'=>$username,
-				'status'=>"login");
-		$this->session->set_userdata($dt_session);
-		redirect (base_url("username"));
+			$row = $this->model->cek_login($username,$password)->row();
+			$data_session = array (
+				'logged' => true,
+				'username' => $row->username);
+		$this->session->set_userdata($data_session); 
+		redirect (base_url('admin/index'));
 		}
 		else {
 			echo "Email dan password salah!";
@@ -34,6 +34,35 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(base_url('login'));
+		redirect(base_url('login/'));
 	}
+	//login customer
+	public function indexcus()
+	{
+		$this->load->view('customer/logincustomer');
 	}
+	public function logincuss()
+	{
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+
+
+		$cek = $this->model->cek_logincus($email,$password)->num_rows();
+		if($cek==1) {
+			$row = $this->model->cek_logincus($email,$password)->row();
+			$data_session = array (
+				'logged' => true,
+				'email' => $row->email);
+		$this->session->set_userdata($data_session);
+		redirect (base_url('customer/index'));
+		}
+		else {
+			echo "Email dan password salah!";
+		}
+	}
+	public function logoutcus()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url('login/indexcus/'));
+	}
+}

@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> Shopping Cart </title>
+    <title>Twitter Bootstrap shopping cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-     <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
@@ -21,7 +21,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="<?php echo base_url ();?>assets/fronted/assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -41,8 +41,9 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
-				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
+				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span>
+				 Item <span class="badge badge-warning"> Rp. </span></a>
+				 <a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
 	</div>
@@ -58,9 +59,8 @@ Lower Header Section
 	<div class="span4">
 	<h1>
 	<a class="logo" href="<?php echo base_url ('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="<?php echo base_url ();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/three');?>">
-	</a>
+		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<a href="<?php echo base_url ('index.php/customer/about');?>"></a>
 	</h1>
 	</div>
 	<div class="span4">
@@ -90,8 +90,8 @@ Navigation Bar Section
 			<ul class="nav">
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridview');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
@@ -126,34 +126,33 @@ Navigation Bar Section
 <!-- 
 Body Section 
 -->
-<!-- 
-Three column view
--->
-	<h3>Three Column Product view </h3>
-		<ul class="thumbnails">
-		<?php foreach ($data->result_array() as $key => $value) : ?>
-			<li class="span4">
-			  <div class="thumbnail">
-			  
-				<a href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>" class="overlay"></a>
-				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>">
-				<img src="<?php echo base_url ();?>assets/img/<?php echo $value['gambar'];?>" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $value['nm_produk'];?></p>
-					<p><strong> Rp. <?php echo $value['harga'];?></strong></p>
-					<h4><a class="shopBtn" href="<?php echo base_url('index.php/customer/addcart/');?>" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<?php endforeach; ?>
-		  </ul>
-
+	<hr class="soften">
+	<div>
+		<h1>About us</h1>
+	</div>
+	<hr class="soften">
+	<div class="row">
+		<div class="span8">
+		  <h6>
+			I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.
+		  </h6>
+		  <p>
+			It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br>
+			<br>
+			This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
+			<br><br>
+			Sometimes I'm right and I can be wrong. My own beliefs are in my song. The butcher, the banker, the drummer and then, makes no difference what group I'm in. I am everyday people! Yeah. Yeah.<br>
+		  </p>
+		</div>
+		<div class="span4">
+			Monday - Friday<br/>
+			09:00am - 09:00pm<br/>
+			Saturday<br/>
+			09:00am - 07:00pm<br/>
+			Sunday<br/>
+			12:30pm - 06:00pm<br/>
+		</div>
+	</div>
 <!-- 
 Clients 
 -->
@@ -163,22 +162,22 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
 		</div>
 	</div>
 </section>
@@ -198,11 +197,11 @@ Footer
  </div>
 <div class="span2">
 <h5>Iinformation</h5>
-<a href="<?php echo base_url ('index.php/customer/contact');?>">CONTACT</a><br>
+<a href="<?php echo base_url('index.php/customer/contact');?>">CONTACT</a><br>
 <a href="#">SITEMAP</a><br>
 <a href="#">LEGAL NOTICE</a><br>
 <a href="#">TERMS AND CONDITIONS</a><br>
-<a href="<?php echo base_url ('index.php/customer/about');?>">ABOUT US</a><br>
+<a href="<?php echo base_url('index.php/customer/about');?>">ABOUT US</a><br>
  </div>
 <div class="span2">
 <h5>Our Offer</h5>
@@ -226,21 +225,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>
-	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/shop.js"></script>
+    <script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="assets/js/shop.js"></script>
   </body>
 </html>

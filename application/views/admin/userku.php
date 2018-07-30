@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template : Binary Admin</title>
+    <title>Userku</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -15,29 +15,25 @@
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body> 
-<div class="panel panel-default">
+<body>
+                    <div class="panel panel-default">
                         <div class="panel-heading">
-                             <h2> Data Order </h2>
-                            <a href="<?php echo base_url('index.php/admin/order'); ?>"></a>
+                             <h2> Data User </h2>
+                            <a href="<?php echo base_url('index.php/admin/user'); ?>"></a>
                         </div>
                         </div>
                         <div class="panel-body">
-                        <a href="<?php echo base_url ('index.php/admin/saveord');?>" class="btn btn-success ">Tambah</a>
+                        <a href="<?php echo base_url ('index.php/admin/saveuser');?>" class="btn btn-success ">Tambah</a>
                         </button>
-                        <br><br>
+                        <br>
+                        <br>
                             <div class="table-responsive table-bordered">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Id Order</th>
-                                            <th>Id Customer</th>
-                                            <th>Id Produk</th>
-                                            <th>Tanggal Bayar</th>
-                                            <th>Total Bayar</th>
-                                            <th>Bayar Via</th>
-                                            <th>Keterangan</th>
-                                            <th></th>
+                                            <th>Id Admin</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,26 +44,14 @@
                                         <?php echo $key+1 ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['id_customer']; ?>
+                                        <?php echo $a['username']; ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['id_produk']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['tgl_byr']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['total_byr']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['bayar_via']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['ket']; ?>
+                                        <?php echo $a['password']; ?>
                                         </td>
                                         <td align="center">
-                                        <a href="<?php echo base_url ('index.php/admin/editord/').$a['id_order'];?>" class="btn btn-primary ">Edit</a> | 
-                                        <a href="<?php echo base_url ('index.php/admin/hapord/').$a['id_order'];?>" class="btn btn-danger ">Delete</a>
+                                        <a href="<?php echo base_url ('index.php/admin/edituser/').$a['id_user'];?>" class="btn btn-primary ">Edit</a> | 
+                                        <a href="<?php echo base_url ('index.php/admin/hapuser/').$a['id_user'];?>" class="btn btn-danger ">Delete</a>
                                         </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -80,17 +64,23 @@
                             </table>
                                 </div>
                             </div>
-                 <!-- /. ROW  -->
-                 <hr />
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+
+
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-      <!-- CUSTOM SCRIPTS -->
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     
    

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrasiku</title>
-	<!-- BOOTSTRAP STYLES-->
+    <!-- BOOTSTRAP STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/font-awesome.css" rel="stylesheet" />
@@ -20,35 +20,31 @@
 
     <div class="container">
         <div class="row">
-             <h2> Tambah Kategori</h2>
+             <h2> Ubah Admin</h2>
+                <?php foreach($list->result_array() as $key){?>
         </div>
     </div>
         <div class="col-lg-4">
              <div class="page-header">  
-                                    <form role="form" class="form-horizontal" action="<?php echo base_url ('index.php/admin/tamkat') ?>" method="post">
+                    <form role="form" class="form-horizontal" action="<?php echo base_url('index.php/admin/ubahuser'); ?>" method="post">
                                     <div class="form-group">
-                                        <label> Id Kategori </label>
-                                        <input type="text" name="id_kategori" class="form-control">
+                                        <label> Id Admin </label>
+                                        <input type="text" name="id_user" value="<?php echo $key['id_user']; ?>" class="form-control">
                                     </div>
                                      <div class="form-group">
-                                         <label> Nama Kategori </label>
-                                         <select class="span11" name="nm_kategori">
-                                          <option>Pakaian Wanita</option>
-                                          <option>Tas Wanita</option>
-                                          <option>Handpone & Aksesoris</option>
-                                          <option>Kecantikan</option>
-                                          <option>Aksesoris Fashion</option>
-                                          <option>Fashion Muslim</option>
-                                          <option>Sepatu Wanita</option>
-                                        </select>
-                                    </div>
-<br/>                                       
-                                     <input type="submit" value="Simpan" class="btn btn-success">
-                                      <a href="<?php echo base_url ('index.php/admin/kategori');?>" class="btn btn-default "> Batal </a>   
-                                    <hr />
-                                </form>
-                            </div>               
-                        </div>
+                                         <label> Username </label>
+                                         <input type="text" name="username" value="<?php echo $key['username']; ?>" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Password </label>
+                                         <input type="text" name="password" value="<?php echo $key['password']; ?>" class="form-control">
+                                     </div>
+<br/>                                    <input type="submit" value="Simpan" class="btn btn-success">   
+                                         <a href="<?php echo base_url ('index.php/admin/user');?>" class="btn btn-default "> Batal </a>                    
+                                    <?php }?>
+                                       </form>
+                                 </div>               
+                            </div>
 
 
      <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

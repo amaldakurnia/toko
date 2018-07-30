@@ -6,22 +6,19 @@ class Admin extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('olshopmodel', 'model');
-
-		/*if($this->session->userdata('status') != "login")
-		{
-			redirect (base_url("index.php/login/"));
+		if ($this->session->userdata('logged')<>1) {
+			redirect(base_url('login/'));
 		}
-	}
+
+		
 	/*public function index()
 	{
-		$this->load->view('admin/templates');
-	}*/
+		$this->load->view('admin/templates');*/
+	}
 	public function index() 
 	{	
-		$this->tem_olshop->tampil('admin/dashboardku');
-		$this->load->view('admin/flogin');
+		$this->tem_olshop->tampil('admin/dashboardku');	
 	}
-
 	public function dashboard()
 	{
 		$this->tem_olshop->tampil('admin/dashboardku');
@@ -81,7 +78,54 @@ class Admin extends CI_Controller {
 	}
 	public function order()
 	{
-		$this->tem_olshop->tampil('admin/orderku');
+		$datao = $this->model->get_orderku();
+		$this->tem_olshop->tampil('admin/orderku',array('list'=>$datao));
+	}
+	public function saveord()
+	{
+		$this->tem_olshop->tampil('admin/simpanorder');
+	}
+	public function tamord()
+	{
+		$simord = array (
+				'id_order'=>$this->input->post('id_order'),
+				'id_customer'=>$this->input->post('id_customer'),
+				'id_produk'=>$this->input->post('id_produk'),
+				'tgl_byr'=>$this->input->post('tgl_byr'),
+				'total_byr'=>$this->input->post('total_byr'),
+				'bayar_via'=>$this->input->post('bayar_via'),
+				'ket'=>$this->input->post('ket'));
+
+		$this->model->gettamord($simord);
+		redirect (base_url ('index.php/admin/order'));
+	}
+	public function ubahord()
+	{
+		$order = $this->input->post('id_order');
+		$simord = array (
+				'id_order'=>$this->input->post('id_order'),
+				'id_customer'=>$this->input->post('id_customer'),
+				'id_produk'=>$this->input->post('id_produk'),
+				'tgl_byr'=>$this->input->post('tgl_byr'),
+				'total_byr'=>$this->input->post('total_byr'),
+				'bayar_via'=>$this->input->post('bayar_via'),
+				'ket'=>$this->input->post('ket'));
+
+		$this->model->geteditorder($simord,$order);
+		redirect (base_url ('index.php/admin/order')); 
+	}
+	public function editord ()
+	{
+		$order = $this->uri->segment (3);
+		$o ['list'] = $this->model->getubahord($order);
+		$this->tem_olshop->tampil('admin/ubahorder', $o);
+	}
+	public function hapord ()
+	{
+		$order = $this->uri->segment(3);
+		$o = $this->model->gethapord($order);
+
+		redirect (base_url ('index.php/admin/order'));
 	}
 	public function produk()
 	{
@@ -94,7 +138,9 @@ class Admin extends CI_Controller {
 	}
 	public function detprod()
 	{
-		$this->tem_olshop->tampil('admin/detailproduk');
+		$prod = $this->uri->segment(3);
+		$data['data'] = $this->model->getubahprod($prod);
+		$this->tem_olshop->tampil('admin/detailproduk',$data);
 	}
 	public function tamprod()
 	{
@@ -114,8 +160,6 @@ class Admin extends CI_Controller {
 				'id_produk'=>$this->input->post('id_produk'),
 				'nm_produk'=>$this->input->post('nm_produk'),
 				'warna'=>$this->input->post('warna'),
-				'kategori'=>$this->input->post('kategori'),
-				'merk'=>$this->input->post('merk'),
 				'bahan'=>$this->input->post('bahan'),
 				'deskripsi'=>$this->input->post('deskripsi'),
 				'gambar'=>$file['file_name']);
@@ -142,8 +186,6 @@ class Admin extends CI_Controller {
 				'id_produk'=>$this->input->post('id_produk'),
 				'nm_produk'=>$this->input->post('nm_produk'),
 				'warna'=>$this->input->post('warna'),
-				'kategori'=>$this->input->post('kategori'),
-				'merk'=>$this->input->post('merk'),
 				'bahan'=>$this->input->post('bahan'),
 				'deskripsi'=>$this->input->post('deskripsi'),
 				'gambar'=>$file['file_name']);
@@ -165,48 +207,48 @@ class Admin extends CI_Controller {
 
 		redirect (base_url ('index.php/admin/produk'));
 	}
-	public function admin()
+	public function user()
 	{
-		$dataa = $this->model->get_adminku();
-		$this->tem_olshop->tampil('admin/adminku',array('list'=>$dataa));
+		$dataa = $this->model->get_userku();
+		$this->tem_olshop->tampil('admin/userku',array('list'=>$dataa));
 	}
-	public function saveadm()
+	public function saveuser()
 	{
-		$this->tem_olshop->tampil('admin/simpanadmin');
+		$this->tem_olshop->tampil('admin/simpanuser');
 	}
-	public function tamadm()
+	public function tamuser()
 	{
-		$simadm = array (
-				'id_admin'=>$this->input->post('id_admin'),
+		$simuser = array (
+				'id_user'=>$this->input->post('id_user'),
 				'username'=>$this->input->post('username'),
 				'password'=>$this->input->post('password'));
 
-		$this->model->gettamadm($simadm);
-		redirect (base_url ('index.php/admin/admin'));
+		$this->model->gettamuser($simuser);
+		redirect (base_url ('index.php/admin/user'));
 	}
-	public function ubahadm()
+	public function ubahuser()
 	{
-		$adm = $this->input->post('id_admin');
-		$simadm = array (
-				'id_admin'=>$this->input->post('id_admin'),
+		$user = $this->input->post('id_user');
+		$simuser = array (
+				'id_user'=>$this->input->post('id_user'),
 				'username'=>$this->input->post('username'),
 				'password'=>$this->input->post('password'));
 
-		$this->model->geteditadm($simadm,$adm);
-		redirect (base_url ('index.php/admin/admin')); 
+		$this->model->getedituser($simuser,$user);
+		redirect (base_url ('index.php/admin/user')); 
 	}
-	public function editadm ()
+	public function edituser ()
 	{
-		$adm = $this->uri->segment (3);
-		$b ['list'] = $this->model->getubahadm($adm);
-		$this->tem_olshop->tampil('admin/ubahadmin', $b);
+		$user = $this->uri->segment (3);
+		$b ['list'] = $this->model->getubahuser($user);
+		$this->tem_olshop->tampil('admin/ubahuser', $b);
 	}
-	public function hapadm ()
+	public function hapuser ()
 	{
-		$adm = $this->uri->segment(3);
-		$b = $this->model->gethapadm($adm);
+		$user = $this->uri->segment(3);
+		$b = $this->model->gethapuser($user);
 
-		redirect (base_url ('index.php/admin/admin'));
+		redirect (base_url ('index.php/admin/user'));
 	}
 	public function kategori()
 	{
@@ -283,6 +325,18 @@ class Admin extends CI_Controller {
 	}
 	public function ubahmerk()
 	{
+		$config['upload_path'] = './assets/img/';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['max-size'] = '8000';
+		$config['max-width'] = '8000';
+		$config['max-height'] = '8000';
+
+		$this->upload->initialize($config);
+		$this->load->library('upload',$config);
+		$this->upload->do_upload('gambar');
+
+		$file = $this->upload->data();
+
 		$merk = $this->input->post('id_merk');
 		$simmerk = array (
 				'id_merk'=>$this->input->post('id_merk'),

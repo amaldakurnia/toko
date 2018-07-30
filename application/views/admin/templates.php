@@ -33,14 +33,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php echo base_url ('customer'); ?>" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php echo base_url ('login/logout'); ?>" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="<?php echo base_url(); ?>assets/backend/assets/img/akuww.JPG" class="user-image img-responsive"/>
+                    <img src="<?php echo base_url(); ?>assets/backend/assets/img/find_user.png" class="user-image img-responsive"/>
 					</li>
 				
 					
@@ -48,7 +48,7 @@ font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php 
                         <a class="active-menu"  href="<?php echo base_url ('index.php/admin/dashboard');?>"><i class="fa fa-dashboard fa-3x"></i> Dashboard </a>
                     </li>
                     <li>
-                        <a  href="<?php echo base_url('index.php/admin/admin'); ?>"><i class="fa fa-user fa-3x"></i> User </a>
+                        <a  href="<?php echo base_url('index.php/admin/user'); ?>"><i class="fa fa-user fa-3x"></i> User </a>
                     </li>
                      <li>
                         <a  href="<?php echo base_url('index.php/admin/halaman'); ?>"><i class="fa fa-book fa-3x"></i> Halaman </a>

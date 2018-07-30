@@ -35,10 +35,6 @@
                                          <label> Nama Merk </label>
                                          <input type="text" name="nm_merk" value="<?php echo $key['nm_merk']; ?>" class="form-control">
                                      </div>
-                                      <div class="form-group">
-                                         <label> Gambar Produk </label>
-                                         <input type="file" name="gambar" class="form-control">
-                                     </div>
 <br/>                                    <input type="submit" value="Simpan" class="btn btn-success">   
                                           <a href="<?php echo base_url ('index.php/admin/merk');?>" class="btn btn-default "> Batal </a>                   
                                     <?php }?>

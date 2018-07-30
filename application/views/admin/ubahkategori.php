@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrasiku</title>
+    <title>Ketegori</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -20,7 +20,7 @@
 
     <div class="container">
         <div class="row">
-             <h2> Ubah Admin</h2>
+             <h2> Ubah Kategori</h2>
                 <?php foreach($list->result_array() as $key){?>
         </div>
     </div>

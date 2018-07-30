@@ -20,31 +20,26 @@
 
     <div class="container">
         <div class="row">
-             <h2> Tambah Kategori</h2>
+             <h2> Tambah Admin</h2>
         </div>
     </div>
         <div class="col-lg-4">
              <div class="page-header">  
-                                    <form role="form" class="form-horizontal" action="<?php echo base_url ('index.php/admin/tamkat') ?>" method="post">
+                                    <form role="form" class="form-horizontal" action="<?php echo base_url ('index.php/admin/tamuser') ?>" method="post">
                                     <div class="form-group">
-                                        <label> Id Kategori </label>
-                                        <input type="text" name="id_kategori" class="form-control">
+                                        <label> Id Admin </label>
+                                        <input type="text" name="id_user" class="form-control">
                                     </div>
                                      <div class="form-group">
-                                         <label> Nama Kategori </label>
-                                         <select class="span11" name="nm_kategori">
-                                          <option>Pakaian Wanita</option>
-                                          <option>Tas Wanita</option>
-                                          <option>Handpone & Aksesoris</option>
-                                          <option>Kecantikan</option>
-                                          <option>Aksesoris Fashion</option>
-                                          <option>Fashion Muslim</option>
-                                          <option>Sepatu Wanita</option>
-                                        </select>
-                                    </div>
+                                         <label> Username </label>
+                                         <input type="text" name="username" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                         <label> Password </label>
+                                         <input type="text" name="password" class="form-control">
 <br/>                                       
                                      <input type="submit" value="Simpan" class="btn btn-success">
-                                      <a href="<?php echo base_url ('index.php/admin/kategori');?>" class="btn btn-default "> Batal </a>   
+                                     <a href="<?php echo base_url ('index.php/admin/user');?>" class="btn btn-default "> Batal </a>    
                                     <hr />
                                 </form>
                             </div>               

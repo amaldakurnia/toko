@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Shopping Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,11 +37,12 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
 	</div>
@@ -56,8 +57,10 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+	<a class="logo" href="<?php echo base_url('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<a href="<?php echo base_url ('index.php/customer/cart');?>">
+				
 	</a>
 	</h1>
 	</div>
@@ -86,12 +89,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="index.html">Home	</a></li>
-			  <li class=""><a href="list-view.html">List View</a></li>
-			  <li class=""><a href="grid-view.html">Grid View</a></li>
-			  <li class=""><a href="three-col.html">Three Column</a></li>
-			  <li class=""><a href="four-col.html">Four Column</a></li>
-			  <li class=""><a href="general.html">General Content</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -128,7 +131,7 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
@@ -157,30 +160,30 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<a class="zoomTool" href="" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
 			<li style="border:0"> &nbsp;</li>
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
+				<a class="zoomTool" href="" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/shopping-cart-template.png" alt="shopping cart template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
 			<li style="border:0"> &nbsp;</li>
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
+				<a class="zoomTool" href="" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/bootstrap-template.png" alt="bootstrap template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -189,8 +192,8 @@ Body Section
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
-    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-    <li><a href="products.html">Items</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo base_url('index.php/customer/index');?>">Home</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo base_url('index.php/customer/prod');?>">Items</a> <span class="divider">/</span></li>
     <li class="active">Preview</li>
     </ul>	
 	<div class="well well-small">
@@ -199,61 +202,64 @@ Body Section
 			<div id="myCarousel" class="carousel slide cntr">
                 <div class="carousel-inner">
                   <div class="item active">
-                   <a href="#"> <img src="<?php echo base_url();?> assets/fronted/assets/img/dress3.jpeg" alt="" style="width:100%"></a>
-                  </div>
-                  <div class="item">
-                     <!--<a href="#"> <img src="assets/img/b.jpg" alt="" style="width:100%"></a>
-                  </div>
-                  <div class="item">
-                    <!--<a href="#"> <img src="assets/img/e.jpg" alt="" style="width:100%"></a>-->
+                  <?php foreach ($data->result_array() as $key => $value) : ?>
+
+                   <a href="#"> <img src="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>" alt="" style="width:100%"></a>
                   </div>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                <a class="left carousel-control" href="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>" data-slide="next">›</a>
             </div>
 			</div>
 			<div class="span7">
-				<h3>Name of the Item [$140.00]</h3>
+				<h3><?php echo $value['nm_produk'];?> </h3>
 				<hr class="soft"/>
 				
-				<form class="form-horizontal qtyFrm">
-				  <div class="control-group">
-					<label class="control-label"><span>$140.00</span></label>
+				<form class="form-horizontal qtyFrm" action="<?php echo base_url ('index.php/customer/addcart');?>" method="post">
+				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
+				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
+				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
 					<div class="controls">
-					<input type="number" class="span6" placeholder="Qty.">
+					<input type="hidden" class="span11" name="id" class="span6" placeholder="Id">
+				  </div>
+				  <div class="control-group">
+					<label class="control-label"><span>  Rp.  <?php echo $value['harga'];?></span></label>
+					<div class="controls">
+					<input type="text" class="span11" name="jumlah" class="span6" placeholder="Qty.">
 					</div>
 				  </div>
 				
 				  <div class="control-group">
 					<label class="control-label"><span>Color</span></label>
 					<div class="controls">
-					  <select class="span11">
-						  <option>Red</option>
-						  <option>Purple</option>
-						  <option>Pink</option>
-						  <option>Red</option>
+					  <select class="span11" name="warna">
+						  <option><?php echo $value['warna'];?></option>
+						  <option>Silver</option>
+						  <option>Black</option>
+						  <option>Coklat</option>
+						  <option>White</option> 
 						</select>
 					</div>
 				  </div>
 				  <div class="control-group">
-					<label class="control-label"><span>Materials</span></label>
+					<label class="control-label"><span>Bahan</span></label>
 					<div class="controls">
-					  <select class="span11">
-						  <option>Material 1</option>
-						  <option>Material 2</option>
-						  <option>Material 3</option>
-						  <option>Material 4</option>
+					<select class="span11" name="bahan">
+						  <option><?php echo $value['bahan'];?></option>
+						  <option>Emas</option>
+						  <option>Perak</option>
+						  <option>Berlian</option>
+						  <option>Emas dan Berlian</option> 
 						</select>
 					</div>
 				  </div>
-				  <h4>100 items in stock</h4>
-				  <p>Nowadays the lingerie industry is one of the most successful business spheres.
-				  Nowadays the lingerie industry is one of ...
+				  <h4><?php echo $value['stok'];?> items in stock</h4>
 				  <p>
 				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
 				</form>
 			</div>
 			</div>
+			<?php endforeach; ?>
 				<hr class="softn clr"/>
 
 
@@ -273,12 +279,11 @@ Body Section
 			  <h4>Product Information</h4>
                 <table class="table table-striped">
 				<tbody>
-				<tr class="techSpecRow"><td class="techSpecTD1">Color:</td><td class="techSpecTD2">Black</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Style:</td><td class="techSpecTD2">Apparel,Sports</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Season:</td><td class="techSpecTD2">spring/summer</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Usage:</td><td class="techSpecTD2">fitness</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Sport:</td><td class="techSpecTD2">122855031</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Brand:</td><td class="techSpecTD2">Shock Absorber</td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Color:</td><td class="techSpecTD2"></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Kategori:</td><td class="techSpecTD2"></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Merk:</td><td class="techSpecTD2"></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Deskripsi:</td><td class="techSpecTD2"></td></tr>
+				</tr>
 				</tbody>
 				</table>
 
@@ -306,7 +311,7 @@ Body Section
 				<input type="checkbox">  Adds product to compair
 			</label><br>
 			<div class="btn-group">
-			  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+			  <a href="<?php echo base_url('index.php/customer/addcart/');?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
 			  <a href="product_details.html" class="shopBtn">VIEW</a>
 			 </div>
 				</form>
@@ -596,22 +601,22 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/1.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/2.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/3.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/4.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/5.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/6.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
 		</div>
 	</div>
 </section>
@@ -659,21 +664,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="assets/js/shop.js"></script>
+     <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/shop.js"></script>
   </body>
 </html>

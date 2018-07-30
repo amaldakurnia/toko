@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="text-box" >
                     <p class="main-text">User</p>
                     <p class="text-muted" ></p>
-                    <a href="<?php echo base_url ('index.php/admin/admin');?>">User</a>
+                    <a href="<?php echo base_url ('index.php/admin/user');?>">User</a>
                 </div>
              </div>
 		     </div>

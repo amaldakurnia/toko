@@ -32,7 +32,6 @@
                                         <tr>
                                             <th>Id Merk</th>
                                             <th>Nama Merk</th>
-                                            <th>Gambar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -44,9 +43,6 @@
                                         </td>
                                         <td>
                                         <?php echo $a['nm_merk']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['gambar']; ?>
                                         </td>
                                         <td align="center">
                                         <a href="<?php echo base_url ('index.php/admin/editmerk/').$a['id_merk'];?>" class="btn btn-primary ">Edit</a> | 

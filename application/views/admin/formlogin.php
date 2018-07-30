@@ -24,7 +24,7 @@
                 <h2> Admin Login</h2>
                
                 <h5>( Login yourself to get access )</h5>
-                 <a href="<?php echo base_url('index.php/login/loginku'); ?>"></a> 
+                 <a href="<?php echo base_url('index.php/login/loginku') ?>"></a> 
                  <br />
             </div>
         </div>
@@ -46,7 +46,6 @@
                                             <input type="password" name="password" class="form-control"  placeholder="Your Password" />
                                         </div>
                                         <input type="submit" value="Login" class="btn btn-success">
-                                     <!--<a href="<?php echo base_url ('index.php/admin/index');?>" class="btn btn-primary "> Login </a>-->
                                      Not register ? <a href="registeration.html" >click here </a>
                                     </form>
                             </div>
