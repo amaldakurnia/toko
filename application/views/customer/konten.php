@@ -37,7 +37,7 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('index.php/customer/index'); ?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('index.php/customer/'); ?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact'); ?>"><span class="icon-envelope"></span> Contact us</a>
@@ -88,16 +88,19 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
 			  <li class="active"><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
+			
+			<form action="<?php echo base_url ('customer/search_data') ; ?> " class="navbar-search pull-left" method="post">
+			  <input type="text" name="keywoard" placeholder="Search" class="search-query span1">
+			  <input type="hidden" name="search_submit">
 			</form>
+			
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
@@ -141,7 +144,7 @@ Body Section
 				<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 				<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 				<li style="border:0"> &nbsp;</li>
-				<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+				<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
 			</ul>
 		</div>
 		  <div class="well well-small alert alert-warning cntr">

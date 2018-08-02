@@ -142,7 +142,7 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
@@ -192,7 +192,7 @@ Body Section
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
-    <li><a href="<?php echo base_url('index.php/customer/index');?>">Home</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo base_url('index.php/customer/');?>">Home</a> <span class="divider">/</span></li>
     <li><a href="<?php echo base_url('index.php/customer/prod');?>">Items</a> <span class="divider">/</span></li>
     <li class="active">Preview</li>
     </ul>	
@@ -220,12 +220,12 @@ Body Section
 				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
 				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
 					<div class="controls">
-					<input type="hidden" class="span11" name="id" class="span6" placeholder="Id">
+					<input type="hidden" class="span11" name="id_cart" class="span6" placeholder="Id">
 				  </div>
 				  <div class="control-group">
 					<label class="control-label"><span>  Rp.  <?php echo $value['harga'];?></span></label>
 					<div class="controls">
-					<input type="text" class="span11" name="jumlah" class="span6" placeholder="Qty.">
+					<input type="number" class="span11" name="jumlah" min="1" max="100" class="span6" placeholder="Qty.">
 					</div>
 				  </div>
 				
@@ -279,10 +279,10 @@ Body Section
 			  <h4>Product Information</h4>
                 <table class="table table-striped">
 				<tbody>
-				<tr class="techSpecRow"><td class="techSpecTD1">Color:</td><td class="techSpecTD2"></td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Kategori:</td><td class="techSpecTD2"></td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Merk:</td><td class="techSpecTD2"></td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Deskripsi:</td><td class="techSpecTD2"></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Color : </td><td class="techSpecTD2"> <?php echo $value['warna'];?></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Kategori : </td><td class="techSpecTD2"> <?php echo $value['id_kategori'];?></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Merk : </td><td class="techSpecTD2"> <?php echo $value['id_merk'];?></td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">Deskripsi : </td><td class="techSpecTD2"> <?php echo $value['deskripsi'];?></td></tr>
 				</tr>
 				</tbody>
 				</table>

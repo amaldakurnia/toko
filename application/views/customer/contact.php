@@ -38,8 +38,8 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url ('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('index.php/customer/account');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
 				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
@@ -58,7 +58,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('index.php/customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/contact');?>">
 	</a>
@@ -89,7 +89,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
@@ -140,12 +140,12 @@ Body Section
 		<h4>Contact Details</h4>
 		<h5>
 			2601 Mission St.<br/>
-			San Francisco, CA 94110<br/><br/>
+			Bantul, Yogyakarta 55714<br/><br/>
 			 
-			info@mysite.com<br/>
+			info@cerilodiprasta.com<br/>
 			﻿Tel 123-456-6780<br/>
 			Fax 123-456-5679<br/>
-			web:wwwmysitedomain.com
+			web:www.cerilodiprasta.com
 		</h5>
 		</div>
 		</div>

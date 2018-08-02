@@ -135,7 +135,6 @@ Body Section
                 <a href=""></a>
                 <hr><h5> Detail Order </h5>
 			<table class="table table-bordered">
-			<tbody>
               <thead>
                 <tr>
                   <th>Id Order</th>
@@ -164,7 +163,6 @@ Body Section
             <div>
             <hr><h5> Detail Shipping </h5>
 			<table class="table table-bordered">
-			<tbody>
               <thead>
                 <tr>
                   <th>Negara</th>
@@ -204,9 +202,7 @@ Body Section
 	<a href="<?php echo base_url ('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
 	<a href="<?php echo base_url('index.php/customer/konfirm');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
-</div>
-</div>
-</div>
+
 <!-- 
 Clients 
 -->

@@ -23,7 +23,7 @@ class Olshopmodel extends CI_Model
 		}
 		return $this->db->get('produkku');
 	}
-	public function get_product_keyword($keyword)
+	public function get_search($keyword)
 	{
 		$this->db->select('*');
 		$this->db->like('nm_produk',$keyword);
@@ -61,7 +61,7 @@ class Olshopmodel extends CI_Model
 	}
 	public function get_hapcart($cart)
 	{
-		$this->db->where('id',$cart);
+		$this->db->where('id_cart',$cart);
 		$c = $this->db->delete('cartku');
 	}
 	/*public function search_prod()
@@ -227,5 +227,28 @@ class Olshopmodel extends CI_Model
 	{
 		$this->db->where ('id_order',$order);
 		return $this->db->delete ('orderku');
+	}
+	public function get_merk($merk)
+	{
+		/*$this->db->select('*');
+		$this->db->from('merkku');
+		$data = $this->db->get();
+		return $data->result_array();*/
+		if (!empty($merk)) {
+			$this->db->where('id_merk',$merk);
+		}
+		return $this->db->get('merkku');
+	}
+	public function get_account()
+	{
+		$akun = $this->db->query('select * from customerku');
+		return $akun->result_array();
+	}
+	public function get_kategori()
+	{
+		if (!empty($kat)) {
+			$this->db->where('id_kategori',$kat);
+		}
+		return $this->db->get('kategoriku');
 	}
 }

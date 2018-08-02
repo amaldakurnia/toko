@@ -37,7 +37,7 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
@@ -88,16 +88,19 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class="active"><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
 			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
+			
+			<form action="<?php echo base_url ('customer/search_data') ; ?> " class="navbar-search pull-left" method="post">
+			  <input type="text" name="keywoard" placeholder="Search" class="search-query span1">
+			  <input type="hidden" name="search_submit">
 			</form>
+
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
@@ -141,7 +144,23 @@ Three column view
 				<div class="caption cntr">
 					<p><?php echo $value['nm_produk'];?></p>
 					<p><strong> Rp. <?php echo $value['harga'];?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+					<form class="form-horizontal qtyFrm" action="<?php echo base_url ('index.php/customer/addcart');?>" method="post">
+				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
+				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
+				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
+
+					<div class="controls">
+					<input type="hidden" class="span11" name="id_cart" class="span6" placeholder="Id">
+					</div>
+					<div class="controls">
+					<input type="hidden" class="span11" name="jumlah" class="span6" value="1">
+					</div>
+					<div class="controls">
+					  <input type="hidden" class="span11" name="warna" class="span6" value="<?php echo $value['warna'];?>">
+				  </div>
+				  <p>
+				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+				</form>
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 
 						<a class="pull-left" href="#"> Add to Compare </a>

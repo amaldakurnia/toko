@@ -40,8 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a class="active" href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-user"></span> My Account</a> 
+				<a class="active" href="<?php echo base_url ('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('index.php/customer/account');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
 				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"></span></a>
@@ -91,27 +91,19 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">Konfirmasi</a></li>
 			</ul>
 
-			<form action="<?php echo base_url ('customer/searchprod')?>" class="navbar-search pull-left">
-			  <input type="text" name="keywoard" placeholder="Search" class="search-query span2">
-			  <input type="submit" name="search_submit" value="Search">
-			  <?php echo form_close()?>
+			<form action="<?php echo base_url ('customer/search_data') ; ?> " class="navbar-search pull-left" method="post">
+			  <input type="text" name="keywoard" placeholder="Search" class="search-query span1">
+			  <input type="hidden" name="search_submit">
 			</form>
-
-			<table>
-				<?php foreach ($produk as $product ) : ?>
-					<tr>
-					<td><?php echo $produk->nm_produk ?></td>
-					</tr>
-				<?php endforeach; ?>
-			</table>
+			
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
@@ -144,7 +136,8 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
+
+		<li><a href="<?php echo base_url ('index.php/customer/kategori');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
@@ -155,7 +148,8 @@ Body Section
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/checkout');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
+
+		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
 	</ul>
 </div>
 
@@ -329,20 +323,17 @@ New Products
 					
 					<form class="form-horizontal qtyFrm" action="<?php echo base_url ('index.php/customer/addcart');?>" method="post">
 				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
-				<input type="hidden" name="nm_produk" value="<?php echo $value['nm_produk'];?>">
+				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
 				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
 
 					<div class="controls">
-					<input type="hidden" class="span11" name="id" class="span6" placeholder="Id">
+					<input type="hidden" class="span11" name="id_cart" class="span6" placeholder="Id">
 					</div>
 					<div class="controls">
-					<input type="hidden" class="span11" name="jumlah" class="span6" value="<?php echo $value['harga'];?>">
+					<input type="hidden" class="span11" name="jumlah" class="span6" value="1">
 					</div>
 					<div class="controls">
 					  <input type="hidden" class="span11" name="warna" class="span6" value="<?php echo $value['warna'];?>">
-				  </div>
-					<div class="controls">
-					  <input type="hidden" class="span11" name="jumlah" class="span6" value="<?php echo $value['deskripsi'];?>">
 				  </div>
 				  <p>
 				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
@@ -434,25 +425,24 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+			<div class="span2">
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
 		</div>
 		<div class="span2">
-			<a href="<?php echo base_url ('index.php/customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
+			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
 		</div>
-	</div>
 </section>
 
 <!--

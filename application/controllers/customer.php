@@ -13,28 +13,28 @@ class Customer extends CI_Controller {
 		}
 	}
 	public function index()
-	{
+	{//tampilan awal 
 		$a['data'] = $this->model->get_produkku();
 		$this->load->view('customer/templatescus',$a);
 	}
 	public function cart()
-	{
+	{//menampilkan data cart 
 		$cart = $this->uri->segment(3);
 		$checkout['data'] = $this->model->get_cart($cart);
 		$this->load->view('customer/cart',$checkout);
 	}
-	public function indexx(){
+	public function indexx()
+	{//menampilkan data produk
 		$data['data']=$this->model->get_all_produk();
 		$this->load->view('customer/cartku',array('list'=>$data));
 	}
 	 public function addcart(){ //fungsi Add To Cart
 	 	$harga = $this->input->post('jumlah');
 		$data = array(
-			'id' => $this->input->post('id'), 
+			'id_cart' => $this->input->post('id_cart'), 
 			'produk' => $this->input->post('produk'),  
 			'deskripsi' => $this->input->post('deskripsi'),
 			'warna' => $this->input->post('warna'),
-			'bahan' => $this->input->post('bahan'),
 			'harga' => $this->input->post('harga'), 
 			'jumlah_barang' => $harga,
 			'total' => $harga*$this->input->post('harga'));
@@ -43,42 +43,12 @@ class Customer extends CI_Controller {
 		redirect (base_url ('index.php/customer/cart'));
 		echo $this->show_cart( ); //tampilkan cart setelah added
 	}
-	public function searchprod()
-	{	
-		/*$search = $this->input->post('search');
-		return $this->load->view('index.php/customer/produk');*/
-
+	public function search_data()
+	{	//search data produk
 		$keyword = $this->input->post('keywoard');
-		$data['produk'] = $this->model->get_product_keyword($keyword);
-		$this->load->view('search',$data);
+		$data['produk'] = $this->model->get_search($keyword);
+		$this->load->view('customer/search_view',$data);
 	}
-	/*public function showcart(){ //Fungsi untuk menampilkan Cart
-		$output = '';
-		$no = 0;
-		foreach ($this->model->contents() as $items) {
-			$no++;
-			$output .='
-				<tr>
-					<td>'.$items['name'].'</td>
-					<td>'.number_format($items['price']).'</td>
-					<td>'.$items['qty'].'</td>
-					<td>'.number_format($items['subtotal']).'</td>
-					<td><button type="button" id="'.$items['rowid'].'" class="hapus_cart btn btn-danger btn-xs">Batal</button></td>
-				</tr>
-			';
-		}
-		$output .= '
-			<tr>
-				<th colspan="3">Total</th>
-				<th colspan="2">'.'Rp '.number_format($this->model->total()).'</th>
-			</tr>
-		';
-		return $output;
-	}
-
-	public function loadcart(){ //load data cart
-		echo $this->show_cart();
-	}*/
 
 	public function hapcart()
 	{ //fungsi untuk menghapus item cart
@@ -199,5 +169,23 @@ class Customer extends CI_Controller {
 		$produk['data'] = $this->model->get_all_produk($prod);
 		$this->load->view('customer/produk',$produk);
 	}
+	public function merk()
+	{
+		$merk = $this->uri->segment(3);
+		$merkku['data'] = $this->model->get_merk($merk);
+		$this->load->view('customer/merk',$merkku);
+	}
+	public function kategori()
+	{
+		$kat = $this->uri->segment(3);
+		$kategori['kat'] = $this->model->get_kategori($kat);
+		$this->load->view('customer/kategori',$kategori);
 
+	}
+	public function account()
+	{
+		$akun = $this->uri->segment(3);
+		$account['akun'] = $this->model->get_account($akun);
+		$this->load->view('customer/account',$account);
+	}
 }

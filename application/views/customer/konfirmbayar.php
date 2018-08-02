@@ -194,7 +194,7 @@ Body Section
             </table>
 
 	<a href="<?php echo base_url('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('index.php/customer/selesai');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<a href="<?php echo base_url('index.php/customer/berhasil');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 
 </div>

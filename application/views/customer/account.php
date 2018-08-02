@@ -20,7 +20,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="<?php echo base_url ();?>assets/fronted/assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -36,11 +36,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a class="active" href="<?php echo base_url ('index.php/customer/account');?>><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href=<?php echo base_url ('index.php/customer/contact/');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a class="" href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -56,14 +56,13 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url ('index.php/customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/checkout');?>">
+	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
+		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<a href="<?php echo base_url ('index.php/customer/pembayaran');?>">
 	</a>
 	</h1>
 	</div>
-	<div class="span4">
-	</div>
+	<div class="span4"></div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
 	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
@@ -71,7 +70,7 @@ Lower Header Section
 	<span class="btn btn-mini">&pound;</span>
 	<span class="btn btn-mini">&euro;</span>
 	</div>
-</div>
+	</div>
 </header>
 
 <!--
@@ -113,7 +112,7 @@ Navigation Bar Section
 					<input type="checkbox"> Remember me
 					</label>
 					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
+				  </div>f
 				</form>
 				</div>
 			</li>
@@ -129,102 +128,47 @@ Body Section
 	<div class="span12">
     <ul class="breadcrumb">
 		<li><a href="<?php echo base_url ('index.php/customer/index');?>">Home</a> <span class="divider">/</span></li>
-		<li class="active">Check Out</li>
+		<li class="">My Account</li>
     </ul>
-	<div class="well well-small">
-		<h1>Check Out <small class="pull-right"> Items are in the cart </small></h1>
-	<hr class="soften"/>	
-
-	<table class="table table-bordered table-condensed">
-	<a href="<?php echo base_url ('index.php/customer/addcart');?>"></a>
+			<tr><td><h4> My Account </h4></td></tr>
+                <a href=""></a>
+                <hr><h5> Detail Order </h5>
+			<table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-                  <th>Warna</th>
-				  <th>Unit Price</th>
-                  <th>Qty</th>
-                  <th>Total</th>
+                  <th>Id Customer</th>
+                  <th>Nama Depan</th>
+                  <th>Nama Belakang</th>
+				  <th>Email</th>
+                  <th>Password</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Rekening</th>
+                  <th>No.Rek</th>
 				</tr>
               </thead>
-              <tbody>
-                <tr>
-                <?php foreach ($data->result_array() as $key => $value) : ?>
-                  <td><img width="100" src="<?php echo base_url();?>assets/img/<?php echo $value['produk'];?>" alt=""></td>
-                  <td><?php echo $value['deskripsi'];?></td>
-                  <td><?php echo $value['warna'];?></td>
-                  <td><?php echo $value['harga'];?></td>
-                  <td>
-                  <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button>
-					<button class="btn btn-mini" type="button"> + </button>
-					<a href="<?php echo base_url('index.php/customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
 
-				  </div>
-				 </td>
-				 <td><?php echo $value['total'];?></td>
+             <tbody>
+              <?php foreach ($akun as $key => $value) : ?>
+                <tr>
+                
+                  <td><?php echo $value['id_customer'];?></td>
+                  <td><?php echo $value['nama_dpn'];?></td>
+                  <td><?php echo $value['nama_blkng'];?></td>
+                  <td><?php echo $value['email'];?></td>
+                  <td><?php echo $value['password'];?></td>
+                  <td><?php echo $value['tgl_lahir'];?></td>
+                  <td><?php echo $value['rek'];?></td>
+                  <td><?php echo $value['no_rek'];?></td>
                 </tr>
                 <?php endforeach; ?>
-                <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td></td>
-                </tr>
 				</tbody>
-            </table><br/>
+            </table>	
+</div>
+</div>
+	<a href="<?php echo base_url ('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="<?php echo base_url('index.php/customer/konfirm');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
-			<table class="table table-bordered">
-			<tbody>
-                <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
-                 <tr> 
-				 <td>
-					<form class="form-horizontal" action="<?php echo base_url('index.php/customer/tamship');?>" method="post">
-					  <div class="control-group">
-						<label class="span2 control-label" for="inputEmail">Negara</label>
-						<div class="controls">
-						  <input type="text" name="negara" placeholder="Negara">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="span2 control-label" for="inputEmail">Provinsi</label>
-						<div class="controls">
-						  <input type="text" name="provinsi" placeholder="Provinsi">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="span2 control-label" for="inputEmail">Kabupaten</label>
-						<div class="controls">
-						  <input type="text" name="kabupaten" placeholder="Kabupaten">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="span2 control-label" for="inputEmail">Alamat Lengkap</label>
-						<div class="controls">
-						  <input type="text" name="alamat_lengkap" placeholder="alamat Lengkap">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="span2 control-label" for="inputPassword">Kode Pos</label>
-						<div class="controls">
-						  <input type="text" name="kode_pos" placeholder="Kode Pos">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<div class="controls">
-						  <button type="submit" class="shopBtn">Click to check the price</button>
-						</div>
-					  </div>
-					</form> 
-				  </td>
-				  </tr>
-              </tbody>
-            </table>		
-	<a href="<?php echo base_url('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('index.php/customer/pembayaran');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
-</div>
-</div>
-</div>
 <!-- 
 Clients 
 -->
@@ -297,22 +241,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url ();?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url ();?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url ();?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
- 
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>
-	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/shop.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/shop.js"></script>
   </body>
 </html>
