@@ -149,7 +149,7 @@ Body Section
               <?php foreach ($data->result_array() as $key => $value) : ?>
                 <tr>
                 
-                  <td><?php echo $value['id'];?></td>
+                  <td><?php echo $value['id_cart'];?></td>
                   <td><?php echo $value['produk'];?></td>
                   <td><?php echo $value['deskripsi'];?></td>
                   <td><?php echo $value['harga'];?></td>
@@ -175,7 +175,7 @@ Body Section
               <tbody>
                 <tr>
                 
-                  <td><?php echo $value['id'];?></td>
+                  <td><?php echo $value['id_cart'];?></td>
                   <td><?php echo $value['produk'];?></td>
                   <td><?php echo $value['deskripsi'];?></td>
                   <td><?php echo $value['harga'];?></td>
@@ -185,6 +185,7 @@ Body Section
             </table>
             </div>
 
+            	<from action="<?php echo base_url('index.php/customer/tamcheck');?>">
 				<div class="control-group">
 						<label class="span2 control-label" for="inputEmail"> Bayar Via </label>
 						<div class="controls">

@@ -157,8 +157,8 @@ Body Section
                   <td>
                   <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
 				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button>
-					<button class="btn btn-mini" type="button"> + </button>
+					<a href="<?php echo base_url('index.php/customer/min/').$value['id_cart'];?>"><span class="btn btn-mini"> - </span></a>
+					<a href="<?php echo base_url('index.php/customer/plus/').$value['id_cart'];?>"><span class="btn btn-mini"> + </span></a>
 					<a href="<?php echo base_url('index.php/customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
 
 				  </div>
@@ -178,7 +178,15 @@ Body Section
                 <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
                  <tr> 
 				 <td>
-					<form class="form-horizontal" action="<?php echo base_url('index.php/customer/tamship');?>" method="post">
+					<form class="form-horizontal" action="<?php echo base_url('index.php/customer/tamcheck');?>" method="post">
+						  <input type="hidden" name="id_checkout" placeholder="Id Checkout">
+						  <input type="hidden" name="id_order" placeholder="Id Order">
+						  <input type="hidden" name="id_customer" placeholder="Id Customer">
+						  <input type="hidden" name="nm_produk" placeholder="Nama Produk">
+						  <input type="hidden" name="jumlah_barang" placeholder="Jumlah Barang">
+					      <input type="hidden" name="total" placeholder="Total">
+					      <input type="hidden" name="bayar_via" placeholder="Bayar Via">
+						
 					  <div class="control-group">
 						<label class="span2 control-label" for="inputEmail">Negara</label>
 						<div class="controls">
@@ -208,7 +216,7 @@ Body Section
 						<div class="controls">
 						  <input type="text" name="kode_pos" placeholder="Kode Pos">
 						</div>
-					  </div>
+
 					  <div class="control-group">
 						<div class="controls">
 						  <button type="submit" class="shopBtn">Click to check the price</button>

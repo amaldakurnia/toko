@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2018 at 08:21 AM
+-- Generation Time: Aug 03, 2018 at 03:37 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -43,7 +43,6 @@ CREATE TABLE `cartku` (
 --
 
 INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
-(5, 1, 0, 'a1.jpg', 'Jam Tangan', 'Emas', 475000, 4, 1900000),
 (6, 0, 0, 'g1.jpg', 'Cincin S112', 'Emas', 800000, 2, 1600000),
 (28, 0, 0, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 1, 300000),
 (44, 0, 0, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 1, 1000000);
@@ -68,6 +67,13 @@ CREATE TABLE `checkoutku` (
   `alamat_lengkap` text NOT NULL,
   `bayar_via` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `checkoutku`
+--
+
+INSERT INTO `checkoutku` (`id_checkout`, `id_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`) VALUES
+(2, 0, 0, '', 0, 0, 'Indonesia', 'Banten', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', '');
 
 -- --------------------------------------------------------
 
@@ -95,7 +101,8 @@ INSERT INTO `customerku` (`id_customer`, `nama_dpn`, `nama_blkng`, `email`, `pas
 (2, 'Mahrez', 'Adipashaa', 'mahrezadipasha124@gmail.com', 'Mahrez_20', '2018-07-20', 'CIMB NIAGA', '0708651245'),
 (3, 'Amalda', 'Nia', 'amalda@gmail.com', 'Amalda_02', '2018-07-17', 'BNI', '0506427066'),
 (4, 'Latif', 'Hendrawan', 'atep974@gmail.com', 'atep123', '1992-05-21', 'CIMB NIAGA', '0700213476'),
-(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725');
+(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725'),
+(8, 'a', 'b', 'aaaa', '122', '2018-08-10', 'BNi', '1234567');
 
 -- --------------------------------------------------------
 
@@ -130,15 +137,22 @@ INSERT INTO `kategoriku` (`id_kategori`, `nm_kategori`) VALUES
 --
 
 CREATE TABLE `konfirmasiku` (
-  `id_order` varchar(20) NOT NULL,
-  `id_produk` varchar(20) NOT NULL,
+  `id_order` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `kode_order` varchar(50) NOT NULL,
+  `kode_order` int(11) NOT NULL,
   `nominal` bigint(30) NOT NULL,
   `tgl_byr` date NOT NULL,
   `bayar_via` varchar(30) NOT NULL,
   `ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `konfirmasiku`
+--
+
+INSERT INTO `konfirmasiku` (`id_order`, `id_produk`, `nama`, `kode_order`, `nominal`, `tgl_byr`, `bayar_via`, `ket`) VALUES
+(1, 1, 'gelang', 2, 479000, '2018-08-14', 'BCA', 'bn\r\n');
 
 -- --------------------------------------------------------
 
@@ -315,12 +329,12 @@ ALTER TABLE `cartku`
 -- AUTO_INCREMENT for table `checkoutku`
 --
 ALTER TABLE `checkoutku`
-  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `customerku`
 --
 ALTER TABLE `customerku`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --
@@ -336,6 +350,16 @@ ALTER TABLE `merkku`
 --
 ALTER TABLE `orderku`
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `produkku`
+--
+ALTER TABLE `produkku`
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `userku`
+--
+ALTER TABLE `userku`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

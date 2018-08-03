@@ -147,7 +147,7 @@ Body Section
 					  <div class="control-group">
 						<label class="control-label" for="inputKodeOrder">Kode Order <sup>*</sup></label>
 						<div class="controls">
-						  <input type="text" id="inputKodeOrder" name="kode_order" placeholder="Kode Order">
+			 			  <input type="text" id="inputKodeOrder" name="kode_order" placeholder="Kode Order">
 						</div>
 					 </div>
 					 <div class="control-group">

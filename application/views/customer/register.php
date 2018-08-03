@@ -37,11 +37,12 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index'); ?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('index.php/customer/'); ?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('index.php/customer/account'); ?>"><span class="icon-user"></span> My Account</a> 
 				<a class="active" href="<?php echo base_url('index.php/customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('index.php/customer/contact'); ?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url('index.php/customer/cart'); ?>"><span class="icon-shopping-cart"></span> Item(s) <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url('index.php/customer/cart'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
+				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
 	</div>
@@ -56,7 +57,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('index.php/customer/'); ?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/register');?>">
 	</a>
@@ -87,7 +88,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url('index.php/customer/index'); ?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url('index.php/customer/'); ?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url('index.php/customer/listprod'); ?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url('index.php/customer/gridprod'); ?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url('index.php/customer/three'); ?>">Three Column</a></li>
@@ -140,7 +141,7 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/cart'); ?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
 	</ul>
 </div>
 
@@ -190,7 +191,7 @@ Body Section
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+		<li><a href="<?php echo base_url('index.php/customer/'); ?>">Home</a> <span class="divider">/</span></li>
 		<li class="active">Registration</li>
     </ul>
 	<h3> Registration</h3>	
@@ -265,7 +266,19 @@ Body Section
 			<input type="date" name="tgl_lahir">
 		</div>
 	  </div>
-	<div class="control-group">
+	  <div class="control-group">
+		<label class="control-label"> Rekening <sup>*</sup></label>
+		<div class="controls">
+		  <input type="text" name="rek" placeholder="Rekening">
+		</div>
+		</div>
+		<div class="control-group">
+		<label class="control-label"> No.Rekening <sup>*</sup></label>
+		<div class="controls">
+		  <input type="text" name="no_rek" placeholder="No.Rekening">
+		</div>
+		</div> 
+	<div    class="control-group">
 		<div class="controls">
 		 <input type="submit" name="submitAccount" value="Register" class="exclusive shopBtn">
 		</div>

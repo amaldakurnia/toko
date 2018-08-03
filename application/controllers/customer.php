@@ -43,6 +43,23 @@ class Customer extends CI_Controller {
 		redirect (base_url ('index.php/customer/cart'));
 		echo $this->show_cart( ); //tampilkan cart setelah added
 	}
+	/*public function plus()
+	{
+		$plus = $this->uri->segment(3);
+		$cart = $this->db->get_where('cartku',array ('id_cart'=>$plus));
+		$jml = $this->input->post('jumlah_barang')+1;
+		foreach ($cart->result_array() as $key => $value) 
+		{
+			$harga = $value->harga;
+			$data = array (
+					'id_cart'		=>$value->id_cart,
+					/*'harga'			=>$harga,
+					'jumlah_barang'	=>$jml,
+					'total'			=>$jml*$harga);
+			$this->model->get_ubah($plus,$data);
+		}
+		redirect (base_url('index.php/customer/cart'));
+	}*/
 	public function search_data()
 	{	//search data produk
 		$keyword = $this->input->post('keywoard');
@@ -62,17 +79,24 @@ class Customer extends CI_Controller {
 		$shipping['data'] = $this->model->get_shipping($ship);
 		$this->load->view('customer/cart',$shipping);
 	}
-	public function tamship()
+	public function tamcheck()
 	{
-		$savship = array (
+		$savcheck = array (
+				'id_checkout'=>$this->input->post('id_checkout'),
+				'id_order'=>$this->input->post('id_order'),
+				'id_customer'=>$this->input->post('id_customer'),
+				'nm_produk'=>$this->input->post('nm_produk'),
+				'jumlah_barang'=>$this->input->post('jumlah_barang'),
+				'total'=>$this->input->post('total'),
 				'negara'=>$this->input->post('negara'),
 				'provinsi'=>$this->input->post('provinsi'),
 				'kabupaten'=>$this->input->post('kabupaten'),
 				'kode_pos'=>$this->input->post('kode_pos'),
-				'alamat_lengkap'=>$this->input->post('alamat_lengkap'));
+				'alamat_lengkap'=>$this->input->post('alamat_lengkap'),
+				'bayar_via'=>$this->input->post('bayar_via'));
 
-		$this->model->gettamship($savship);
-		redirect (base_url ('index.php/customer/cart'));
+		$this->model->gettamcheck($savcheck);
+		redirect (base_url ('index.php/customer/pembayaran'));
 	}
 	public function pembayaran()
 	{
@@ -91,7 +115,7 @@ class Customer extends CI_Controller {
 				'id_customer'=>$this->input->post('id_customer'),
 				'id_produk'=>$this->input->post('id_produk'),
 				'tgl_byr'=>$this->input->post('tgl_byr'),
-				'total_byr'=>$this->input->post('total_byr'),
+			 	'total_byr'=>$this->input->post('total_byr'),
 				'bayar_via'=>$this->input->post('bayar_via'),
 				'ket'=>$this->input->post('ket'));
 
@@ -124,7 +148,9 @@ class Customer extends CI_Controller {
 				'nama_blkng'=>$this->input->post('nama_blkng'),
 				'email'=>$this->input->post('email'),
 				'password'=>$this->input->post('password'),
-				'tgl_lahir'=>$this->input->post('tgl_lahir'));
+				'tgl_lahir'=>$this->input->post('tgl_lahir'),
+				'rek'=>$this->input->post('rek'),
+				'no_rek'=>$this->input->post('no_rek'));
 
 		$this->model->gettamreg($simreg);
 		redirect (base_url ('index.php/login/indexcus'));
