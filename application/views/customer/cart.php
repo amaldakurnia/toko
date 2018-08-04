@@ -40,7 +40,7 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a class="active" href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -153,17 +153,27 @@ Body Section
                   <td><img width="100" src="<?php echo base_url();?>assets/img/<?php echo $value['produk'];?>" alt=""></td>
                   <td><?php echo $value['deskripsi'];?></td>
                   <td><?php echo $value['warna'];?></td>
-                  <td><?php echo $value['harga'];?></td>
+                  <td>Rp. <?php echo $value['harga'];?></td>
                   <td>
-                  <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
+                  <input class="span" style="max-width:34px" placeholder="" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
 				  <div class="input-append">
-					<a href="<?php echo base_url('index.php/customer/min/').$value['id_cart'];?>"><span class="btn btn-mini"> - </span></a>
-					<a href="<?php echo base_url('index.php/customer/plus/').$value['id_cart'];?>"><span class="btn btn-mini"> + </span></a>
+				  <form action="<?php echo base_url('index.php/customer/plus/').$value['id_cart'];?>" method="post">
+				  <input type="hidden" name="plus" value="<?php echo $value['id_cart'];?>">
+					<input class="span" name="jumlah_barang" placeholder="0" id="number" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
+					<input type="submit" class="btn btn-mini" value="+">
+				  </form>
+
+				  <form action="<?php echo base_url('index.php/customer/min/').$value['id_cart'];?>" method="post">
+				  <input type="hidden" name="min" value="<?php echo $value['id_cart'];?>">
+					<input class="span" name="jumlah_barang" placeholder="0" id="number1" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
+					<input type="submit" class="btn btn-mini" value="-">
+				  </form>
+					
 					<a href="<?php echo base_url('index.php/customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
 
 				  </div>
 				 </td>
-				 <td><?php echo $value['total'];?></td>
+				 <td>Rp. <?php echo $value['total'];?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>

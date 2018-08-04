@@ -41,7 +41,7 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact'); ?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('index.php/customer/cart'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('index.php/customer/cart'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -279,21 +279,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/shop.js"></script>
   </body>
 </html>

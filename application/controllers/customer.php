@@ -43,23 +43,40 @@ class Customer extends CI_Controller {
 		redirect (base_url ('index.php/customer/cart'));
 		echo $this->show_cart( ); //tampilkan cart setelah added
 	}
-	/*public function plus()
+	public function plus()
 	{
 		$plus = $this->uri->segment(3);
 		$cart = $this->db->get_where('cartku',array ('id_cart'=>$plus));
 		$jml = $this->input->post('jumlah_barang')+1;
 		foreach ($cart->result_array() as $key => $value) 
 		{
-			$harga = $value->harga;
+			$harga = $value['harga'];
 			$data = array (
-					'id_cart'		=>$value->id_cart,
-					/*'harga'			=>$harga,
+					'id_cart'		=>$value['id_cart'],
+					'harga'			=>$harga,
 					'jumlah_barang'	=>$jml,
 					'total'			=>$jml*$harga);
-			$this->model->get_ubah($plus,$data);
+			$this->model->get_plus($plus,$data);
 		}
 		redirect (base_url('index.php/customer/cart'));
-	}*/
+	}
+	public function min()
+	{
+		$min = $this->uri->segment(3);
+		$cart = $this->db->get_where('cartku',array ('id_cart'=>$min));
+		$jml = $this->input->post('jumlah_barang')-1;
+		foreach ($cart->result_array() as $key => $value) 
+		{
+			$harga = $value['harga'];
+			$data = array (
+					'id_cart'		=>$value['id_cart'],
+					'harga'			=>$harga,
+					'jumlah_barang'	=>$jml,
+					'total'			=>$jml*$harga);
+			$this->model->get_min($min,$data);
+		}
+		redirect (base_url('index.php/customer/cart'));
+	}
 	public function search_data()
 	{	//search data produk
 		$keyword = $this->input->post('keywoard');
@@ -214,4 +231,38 @@ class Customer extends CI_Controller {
 		$account['akun'] = $this->model->get_account($akun);
 		$this->load->view('customer/account',$account);
 	}
+	/*public function lupapassword()
+	{
+		$this->form_validation->set_rules('email','Email','required|valid_email');
+		if($this->form_validation->run() == False)
+		{
+			$data ['title'] = 'halaman reset password';
+			$this->load->view('customer/lupa_password',$data);
+		}
+		else
+		{
+			$email = $this->input->post('email');
+			$clean = $this->security->xss_clean->($email);
+			$userInfo = $this->model->getUserInfoByEmail($clean);
+
+			if(!$userInfo)
+			{
+				$this->session->set_flashdata('sukses','email address salah, coba lagi.');
+				redirect(base_url('login'),'refresh');
+			}
+		}
+	}
+		$token = $this->model->insertToken($userInfo->id_user);
+		$qstring = $this->base64url_encode($token);
+		$url = site_url().'/lupa_password/reset_password/token/'.$qstring;
+		$link = '<a href="'.$url.'">'.$url.'</a>';
+
+
+		$message = '';
+		$message. = '<strong> Perbarui password anda </strong>';
+		$message. = '<strong> Klik link </strong> '.$link;
+
+		echo $message;
+		exit;
+	}*/
 }

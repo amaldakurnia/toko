@@ -149,7 +149,7 @@ Body Section
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
 
-		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
 	</ul>
 </div>
 

@@ -64,10 +64,14 @@ class Olshopmodel extends CI_Model
 		$this->db->where('id_cart',$cart);
 		$c = $this->db->delete('cartku');
 	}
-	/*public function get_ubah($plus,$data)
+	public function get_plus($plus,$data)
 	{
 		return $this->db->where('id_cart',$plus)->update('cartku',$data);
-	}*/
+	}
+	public function get_min($min,$data)
+	{
+		return $this->db->where('id_cart',$min)->update('cartku',$data);
+	}
 	public function gettamcheck($savcheck)
 	{
 		return $this->db->insert('checkoutku', $savcheck);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2018 at 03:37 PM
+-- Generation Time: Aug 04, 2018 at 04:31 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -43,9 +43,8 @@ CREATE TABLE `cartku` (
 --
 
 INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
-(6, 0, 0, 'g1.jpg', 'Cincin S112', 'Emas', 800000, 2, 1600000),
-(28, 0, 0, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 1, 300000),
-(44, 0, 0, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 1, 1000000);
+(28, 2, 2, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 3, 900000),
+(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 2, 2000000);
 
 -- --------------------------------------------------------
 
@@ -237,6 +236,19 @@ INSERT INTO `produkku` (`id_produk`, `nm_produk`, `warna`, `bahan`, `deskripsi`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` int(11) NOT NULL,
+  `token` varchar(100) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `created` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userku`
 --
 
@@ -311,6 +323,12 @@ ALTER TABLE `produkku`
   ADD PRIMARY KEY (`id_produk`);
 
 --
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `userku`
 --
 ALTER TABLE `userku`
@@ -355,6 +373,11 @@ ALTER TABLE `orderku`
 --
 ALTER TABLE `produkku`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `userku`
 --

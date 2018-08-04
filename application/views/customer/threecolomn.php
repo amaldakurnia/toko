@@ -41,7 +41,7 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
