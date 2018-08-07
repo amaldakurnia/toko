@@ -5,7 +5,7 @@ class Customer extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model('olshopmodel', 'model');
+		$this->load->model('Olshopmodel', 'model');
 
 		if ($this->session->userdata('logged')<>1) 
 		{
@@ -15,13 +15,13 @@ class Customer extends CI_Controller {
 	public function index()
 	{//tampilan awal 
 		$a['data'] = $this->model->get_produkku();
-		$this->load->view('customer/templatescus',$a);
+		$this->load->view('customer/awal',$a);
 	}
-	public function cart()
+	public function keranjang()
 	{//menampilkan data cart 
 		$cart = $this->uri->segment(3);
-		$checkout['data'] = $this->model->get_cart($cart);
-		$this->load->view('customer/cart',$checkout);
+		$k['data'] = $this->model->get_keranjang($cart);
+		$this->load->view('customer/keranjang',$k);
 	}
 	public function indexx()
 	{//menampilkan data produk
@@ -35,7 +35,7 @@ class Customer extends CI_Controller {
 	 		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 	 		<strong> Silakan login terlebih dahulu !</strong>
 	 		</div>");
-	 		redirect (base_url('index.php/login/'));
+	 		redirect (base_url('login/'));
 	 	}
 	 	$harga = $this->input->post('jumlah');
 		$data = array(
@@ -48,8 +48,8 @@ class Customer extends CI_Controller {
 			'total' => $harga*$this->input->post('harga'));
 
 		$this->model->getaddcart($data);
-		redirect (base_url ('index.php/customer/cart'));
-		echo $this->show_cart( ); //tampilkan cart setelah added
+		redirect (base_url ('customer/keranjang'));
+		//tampilkan cart setelah added
 	}
 	public function plus()
 	{
@@ -66,7 +66,7 @@ class Customer extends CI_Controller {
 					'total'			=>$jml*$harga);
 			$this->model->get_plus($plus,$data);
 		}
-		redirect (base_url('index.php/customer/cart'));
+		redirect (base_url('customer/keranjang'));
 	}
 	public function min()
 	{
@@ -83,7 +83,7 @@ class Customer extends CI_Controller {
 					'total'			=>$jml*$harga);
 			$this->model->get_min($min,$data);
 		}
-		redirect (base_url('index.php/customer/cart'));
+		redirect (base_url('customer/keranjang'));
 	}
 	public function search_data()
 	{	//search data produk
@@ -96,13 +96,13 @@ class Customer extends CI_Controller {
 	{ //fungsi untuk menghapus item cart
 		$cart = $this->uri->segment(3);
 		$c = $this->model->get_hapcart($cart);
-		redirect (base_url('index.php/customer/cart'));
+		redirect (base_url('customer/keranjang'));
 	}
 	public function shipping()
 	{
 		$ship = $this->uri->segment(3);
 		$shipping['data'] = $this->model->get_shipping($ship);
-		$this->load->view('customer/cart',$shipping);
+		$this->load->view('customer/keranjang',$shipping);
 	}
 	public function tamcheck()
 	{
@@ -121,12 +121,12 @@ class Customer extends CI_Controller {
 				'bayar_via'=>$this->input->post('bayar_via'));
 
 		$this->model->gettamcheck($savcheck);
-		redirect (base_url ('index.php/customer/pembayaran'));
+		redirect (base_url ('customer/pembayaran'));
 	}
 	public function pembayaran()
 	{
 		$bayar = $this->uri->segment(3);
-		$pembayaran['data'] = $this->model->get_cart($bayar);
+		$pembayaran['data'] = $this->model->get_keranjang($bayar);
 		$this->load->view('customer/pembayaran',$pembayaran);
 
 		/*$check = $this->uri->segment(3);
@@ -145,7 +145,7 @@ class Customer extends CI_Controller {
 				'ket'=>$this->input->post('ket'));
 
 		$this->model->gettam_bayar($simbyr);
-		redirect (base_url ('index.php/customer/pembayaran'));
+		redirect (base_url ('customer/pembayaran'));
 	}
 	public function konfirm()
 	{
@@ -153,12 +153,14 @@ class Customer extends CI_Controller {
 		$konfirmasi['data'] = $this->model->get_konfirm($konfirm);
 		$this->load->view('customer/konfirmbayar',$konfirmasi);
 	}
-	public function contact()
+	public function kontak()
 	{
-		$this->load->view('customer/contact');
+		$this->load->view('customer/kontak');
 	}
-	public function about()
+	public function tentang()
 	{
+		$hal = $this->uri->segment(3);
+		$halaman['data'] = $this->model->get_halamanku($hal);
 		$this->load->view('customer/info_olshop');
 	}
 	public function register()
@@ -178,33 +180,33 @@ class Customer extends CI_Controller {
 				'no_rek'=>$this->input->post('no_rek'));
 
 		$this->model->gettamreg($simreg);
-		redirect (base_url ('index.php/login/indexcus'));
+		redirect (base_url ('login/indexcus'));
 	}
-	public function listprod()
+	public function daftar()
 	{
 		$prod = $this->uri->segment(3);
-		$list['data'] = $this->model->get_all_produk($prod);
-		$this->load->view('customer/listproduk',$list);
+		$daftar['data'] = $this->model->get_all_produk($prod);
+		$this->load->view('customer/daftarproduk',$daftar);
 	}
-	public function gridprod()
+	public function tampilgrid()
 	{
 		$prod = $this->uri->segment(3);
 		$grid['data'] = $this->model->get_all_produk($prod);
-		$this->load->view('customer/gridproduk',$grid);
+		$this->load->view('customer/gridkolom',$grid);
 	}
-	public function three()
+	public function tiga()
 	{
 		$prod = $this->uri->segment(3);
-		$three['data'] = $this->model->get_all_produk($prod);
-		$this->load->view('customer/threecolomn',$three);
+		$tiga['data'] = $this->model->get_all_produk($prod);
+		$this->load->view('customer/tigakolom',$tiga);
 	}
-	public function four()
+	public function empat()
 	{
 		$prod = $this->uri->segment(3);
-		$four['data'] = $this->model->get_all_produk($prod);
-		$this->load->view('customer/fourcolomn',$four);
+		$empat['data'] = $this->model->get_all_produk($prod);
+		$this->load->view('customer/empatkolom',$empat);
 	}
-	public function general()
+	public function rekonfirm()
 	{
 		$this->load->view('customer/konten');
 	}
@@ -233,10 +235,10 @@ class Customer extends CI_Controller {
 		$this->load->view('customer/kategori',$kategori);
 
 	}
-	public function account()
+	public function akun()
 	{
 		$akun = $this->uri->segment(3);
-		$account['akun'] = $this->model->get_account($akun);
-		$this->load->view('customer/account',$account);
+		$akunn['akun'] = $this->model->get_account($akun);
+		$this->load->view('customer/akun',$akunn);
 	}
 }

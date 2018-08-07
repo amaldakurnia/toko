@@ -37,11 +37,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('customer/');?>"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url ('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -57,9 +57,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/cart');?>">
+		<a href="<?php echo base_url ('customer/keranjang');?>">
 				
 	</a>
 	</h1>
@@ -89,12 +89,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class="active"><a href="<?php echo base_url ('customer/');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/daftar');?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tampilgrid');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tiga');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/empat');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/rekonfirm');?>">Rekonfirmasi</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -131,7 +131,7 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url('customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
@@ -142,7 +142,7 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
@@ -192,8 +192,8 @@ Body Section
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
-    <li><a href="<?php echo base_url('index.php/customer/');?>">Home</a> <span class="divider">/</span></li>
-    <li><a href="<?php echo base_url('index.php/customer/prod');?>">Items</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo base_url('customer/');?>">Home</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo base_url('customer/prod');?>">Items</a> <span class="divider">/</span></li>
     <li class="active">Preview</li>
     </ul>	
 	<div class="well well-small">
@@ -215,7 +215,7 @@ Body Section
 				<h3><?php echo $value['nm_produk'];?> </h3>
 				<hr class="soft"/>
 				
-				<form class="form-horizontal qtyFrm" action="<?php echo base_url ('index.php/customer/addcart');?>" method="post">
+				<form class="form-horizontal qtyFrm" action="<?php echo base_url ('customer/addcart');?>" method="post">
 				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
 				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
 				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
@@ -311,7 +311,7 @@ Body Section
 				<input type="checkbox">  Adds product to compair
 			</label><br>
 			<div class="btn-group">
-			  <a href="<?php echo base_url('index.php/customer/addcart/');?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+			  <a href="<?php echo base_url('customer/addcart/');?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
 			  <a href="product_details.html" class="shopBtn">VIEW</a>
 			 </div>
 				</form>

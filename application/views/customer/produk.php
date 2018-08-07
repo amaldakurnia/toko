@@ -37,11 +37,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url ('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url ('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -57,9 +57,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url ('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/prod');?>">
+		<a href="<?php echo base_url ('customer/prod');?>">
 	</a>
 	</h1>
 	</div>
@@ -88,12 +88,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url('index.php/customer/index'); ?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/listprod'); ?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/gridprod'); ?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/three'); ?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/four'); ?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/general'); ?>">General Content</a></li>
+			  <li class="active"><a href="<?php echo base_url('customer/'); ?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/daftar'); ?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/tampilgrid'); ?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/tiga'); ?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/empat'); ?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/rekonfirm'); ?>">Rekonfirmasi</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -130,18 +130,18 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<li><a href="<?php echo base_url ('customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Watches</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Loose Beads</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url ('index.php/customer/checkout');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url ('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
@@ -159,10 +159,10 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 				<img src="<?php echo base_url();?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url('index.php/customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -200,9 +200,9 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>" class="overlay"></a>
-				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>"><img src="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>"></a>
+				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>" class="overlay"></a>
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>"><img src="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>"></a>
 				<div class="caption cntr">
 					<p><?php echo $value['nm_produk'];?></p>
 					<p><strong> Rp. <?php echo $value['harga'];?></strong></p>

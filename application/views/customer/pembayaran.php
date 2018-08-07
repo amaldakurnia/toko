@@ -87,12 +87,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/daftar');?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tampilgrid');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tiga');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/empat');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/rekonfirm');?>">Rekonfirmasi</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -128,7 +128,7 @@ Body Section
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-		<li><a href="<?php echo base_url ('index.php/customer/index');?>">Home</a> <span class="divider">/</span></li>
+		<li><a href="<?php echo base_url ('customer/');?>">Home</a> <span class="divider">/</span></li>
 		<li class="active">Check Out</li>
     </ul>
 			<tr><td><h4> PEMBAYARAN </h4></td></tr>
@@ -200,8 +200,8 @@ Body Section
 					  </div>-->
 </div>
 </div>
-	<a href="<?php echo base_url ('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('index.php/customer/konfirm');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<a href="<?php echo base_url ('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="<?php echo base_url('customer/konfirm');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 
 <!-- 

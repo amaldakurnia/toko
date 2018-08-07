@@ -27,6 +27,40 @@ class Admin extends CI_Controller {
 	{
 		$this->tem_olshop->tampil('admin/halamanku');
 	}
+	public function hal()
+	{
+		$data = $this->model->get_halamanku();
+		$this->tem_olshop->tampil('admin/halamanku',array('list'=>$data));
+	}
+	public function tam_hal()
+	{
+		$savehal = array(
+			'id_halaman' => $this->input->post('id_halaman'), 
+			'id_menu' => $this->input->post('id_menu'),  
+			'judul_halaman' => $this->input->post('judul_halaman'),
+			'deskripsi' => $this->input->post('deskripsi'));
+
+		$this->model->gettamhal($savehal);
+		redirect (base_url ('index.php/admin/halaman'));
+	}
+	public function ubahhal()
+	{
+		$hall = $this->input->post('id_halaman');
+		$savehal = array(
+			'id_halaman' => $this->input->post('id_halaman'), 
+			'id_menu' => $this->input->post('id_menu'),  
+			'judul_halaman' => $this->input->post('judul_halaman'),
+			'deskripsi' => $this->input->post('deskripsi'));
+
+		$this->model->getedithal($savehal);
+		redirect (base_url ('index.php/admin/halamanku')); 
+	}
+	public function edithal ()
+	{
+		$hall = $this->uri->segment (3);
+		$a ['list'] = $this->model->getubahhal($hall);
+		$this->tem_olshop->tampil('admin/ubahhalaman', $a);
+	}
 	public function customer()
 	{
 		$data = $this->model->get_customerku();

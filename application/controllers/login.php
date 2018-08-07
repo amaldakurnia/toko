@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		$this->load->model('olshopmodel', 'model');
 		}
 	//login admin
-	public function index()
+	public function indexx()
 	{
 		$this->load->view('admin/formlogin');
 	}
@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 		redirect(base_url('login/'));
 	}
 	//login customer
-	public function indexcus()
+	public function index()
 	{
 		$this->load->view('customer/logincustomer');
 	}

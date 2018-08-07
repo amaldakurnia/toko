@@ -29,9 +29,7 @@ class Olshopmodel extends CI_Model
 		$this->db->like('nm_produk',$keyword);
 		return $this->db->get('produkku')->result_array();
 	}
-	public function get_cart($cart){
-		//$hasil=$this->db->query('select * from produkku');
-//		return $hasil->result_array();
+	public function get_keranjang($cart){
 		if (!empty($cart)) {
 			$this->db->where('id',$cart);
 		}
@@ -54,6 +52,24 @@ class Olshopmodel extends CI_Model
 			$this->db->where('id_customer',$konfirm);
 		}
 		return $this->db->get('customerku');
+	}
+	public function get_halamanku ()
+	{
+		$data = $this->db->query('select * from halamanku');
+		return $data->result_array();
+	} 
+	public function gettamhal($savehal)
+	{
+		return $this->db->insert('halamanku', $savehal);
+	}
+	public function getubahhal ($hall)
+	{
+		return $this->db->get_where('halamanku', array('id_halaman'=>$hall));
+	}
+	public function getedithal ($savehal, $hal)
+	{
+		$this->db->where ('id_halaman', $hall);
+		return $this->db->update ('halamanku',$savehal);
 	}
 	public function getaddcart($simcart)
 	{
@@ -248,84 +264,10 @@ class Olshopmodel extends CI_Model
 		}
 		return $this->db->get('kategoriku');
 	}
-
-	//lupapassword
-   /*public function daftar($data) {   
-    $this->db->insert('users',$data);   
-   }  
-   
-   //Start: method tambahan untuk reset code  
-   public function getUserInfo($id)  
-   {  
-     $q = $this->db->get_where('users', array('id_user' => $id), 1);   
-     if($this->db->affected_rows() > 0){  
-       $row = $q->row();  
-       return $row;  
-     }else{  
-       error_log('no user found getUserInfo('.$id.')');  
-       return false;  
-     }  
-   }  
-   
-  public function getUserInfoByEmail($email){  
-     $q = $this->db->get_where('users', array('email' => $email), 1);   
-     if($this->db->affected_rows() > 0){  
-       $row = $q->row();  
-       return $row;  
-     }  
-   }  
-   
-   public function insertToken($user_id)  
-   {    
-     $token = substr(sha1(rand()), 0, 30);   
-     $date = date('Y-m-d');  
-       
-     $string = array(  
-         'token'=> $token,  
-         'user_id'=>$user_id,  
-         'created'=>$date  
-       );  
-     $query = $this->db->insert_string('tokens',$string);  
-     $this->db->query($query);  
-     return $token . $user_id;  
-       
-   }  
-   
-   public function isTokenValid($token)  
-   {  
-     $tkn = substr($token,0,30);  
-     $uid = substr($token,30);     
-       
-     $q = $this->db->get_where('tokens', array(  
-       'tokens.token' => $tkn,   
-       'tokens.user_id' => $uid), 1);               
-           
-     if($this->db->affected_rows() > 0){  
-       $row = $q->row();         
-         
-       $created = $row->created;  
-       $createdTS = strtotime($created);  
-       $today = date('Y-m-d');   
-       $todayTS = strtotime($today);  
-         
-       if($createdTS != $todayTS){  
-         return false;  
-       }  
-         
-       $user_info = $this->getUserInfo($row->user_id);  
-       return $user_info;  
-         
-     }else{  
-       return false;  
-     }  
-       
-   }   
-   
-   public function updatePassword($post)  
-   {    
-     $this->db->where('id_user', $post['id_user']);  
-     $this->db->update('users', array('password' => $post['password']));      
-     return true;  
-   }*/
-   //End: method tambahan untuk reset code  
- }   
+	public function get_hal($hal){
+		if (!empty($hal)) {
+			$this->db->where('id_halaman',$hal);
+		}
+		return $this->db->get('halamanku');
+	}
+}

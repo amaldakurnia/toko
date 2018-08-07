@@ -20,7 +20,7 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-	<!-- Favicons -->
+	<!-- Favicons -->  
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
@@ -37,11 +37,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a> 
+				<a href="#"> <span class="icon-home"></span> Home</a> 
 				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<a href="#"><span class="icon-edit"></span> Free Register </a> 
+				<a href="#"><span class="icon-envelope"></span> Contact us</a>
+				<a href="#"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
@@ -58,7 +58,7 @@ Lower Header Section
 	<h1>
 	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/logincus');?>">
+		<a href="<?php echo base_url ('customer/logincus');?>">
 	</a>
 	</h1>
 	</div>
@@ -87,12 +87,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url('index.php/customer/index'); ?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/listprod'); ?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/gridprod'); ?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/three'); ?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/four'); ?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/general'); ?>">General Content</a></li>
+			  <li class="active"><a href="#">Home	</a></li>
+			  <li class=""><a href="#">List View</a></li>
+			  <li class=""><a href="#">Grid View</a></li>
+			  <li class=""><a href="#">Three Column</a></li>
+			  <li class=""><a href="#">Four Column</a></li>
+			  <li class=""><a href="#?>">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -129,18 +129,18 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url('index.php/customer/prod'); ?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Watches</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>Loose Beads</a></li>
+		<li><a href="#"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/checkout'); ?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="#"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
@@ -194,13 +194,13 @@ Body Section
 		<li class="active">Login</li>
     </ul>
 		<h3> Login</h3>
-		<a href="<?php echo base_url('index.php/login/logincuss'); ?>"></a>	
+		<a href="<?php echo base_url('login/logincuss'); ?>"></a>	
 	
 		<div class="span1"> &nbsp;</div>
 		<div class="span4">
 			<div class="well">
 			<h5>ALREADY REGISTERED ?</h5>
-			<form action="<?php echo base_url ('index.php/login/logincuss'); ?>" method="post">
+			<form action="<?php echo base_url ('login/logincuss'); ?>" method="post">
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail">Email</label>
 				<div class="controls">

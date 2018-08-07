@@ -36,11 +36,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index'); ?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url('index.php/customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url('index.php/customer/contact'); ?>"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="<?php echo base_url('index.php/customer/cart'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url('customer/'); ?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url('customer/kontak'); ?>"><span class="icon-envelope"></span> Contact us</a>
+				<a class="active" href="<?php echo base_url('customer/keranjang'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -56,9 +56,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url('index.php/customer/index'); ?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('customer/'); ?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/konfirm');?>">
+		<a href="<?php echo base_url ('customer/konfirm');?>">
 	</a>
 	</h1>
 	</div>
@@ -87,12 +87,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url('index.php/customer/index'); ?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/listprod'); ?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/gridprod'); ?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/three'); ?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/four'); ?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url('index.php/customer/general'); ?>">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/'); ?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/daftar'); ?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/tampilgrid'); ?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/tiga'); ?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/empat'); ?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url('customer/rekonfirm'); ?>">Rekonfirmasi</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -128,7 +128,7 @@ Body Section
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-		<li><a href="<?php echo base_url('index.php/customer/index'); ?>">Home</a> <span class="divider">/</span></li>
+		<li><a href="<?php echo base_url('customer/'); ?>">Home</a> <span class="divider">/</span></li>
 		<li class="active">Check Out</li>
     </ul>
 
@@ -137,7 +137,7 @@ Body Section
                 <tr><td><h3>Konfirmasi Pembayaran</h3></td></tr>
                  <tr> 
 				 <td>
-					<form class="form-horizontal" action="<?php echo base_url('index.php/customer/tamkonfirm');?>" method="post">
+					<form class="form-horizontal" action="<?php echo base_url('customer/tamkonfirm');?>" method="post">
 					  <div class="control-group">
 						<label class="control-label" for="inputNama">Nama<sup>*</sup></label>
 						<div class="controls">
@@ -193,8 +193,8 @@ Body Section
               </tbody>
             </table>
 
-	<a href="<?php echo base_url('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('index.php/customer/berhasil');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="<?php echo base_url('customer/berhasil');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 
 </div>

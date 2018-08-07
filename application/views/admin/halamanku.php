@@ -15,46 +15,59 @@
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body> 
-        <!-- /. NAV SIDE  -->
-                <div class="row">
-                    <div class="col-md-12">
-                     <h2> Halaman </h2>  
-                        <a href="<?php echo base_url('index.php/admin/halaman'); ?>"></a> 
-                    </div>
-                </div>
-                 <!-- /. ROW  -->
-                 <hr />
+<body>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <h2> Data Halaman</h2>
+                            <a href="<?php echo base_url('index.php/admin/halaman'); ?>"></a>
+                        </div>
+                        </div>
+                        <div class="panel-body">
+                        <a href="<?php echo base_url ('index.php/admin/hal');?>" class="btn btn-success ">Tambah</a>
+                        </button>
+                        <br><br>
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Id Halaman</th>
+                                            <th>Id Menu</th>
+                                            <th>Judul Halaman</th>
+                                            <th>Deskripsi</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <?php if (!empty ($list)): ?>
+                                    <?php foreach ($list as $key=>$a) : ?>
+                                        <tr>
+                                        <td>
+                                        <?php echo $key+1 ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['id_menu']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['judul_halaman']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['deskripsi']; ?>
+                                        </td>
+                                        <td align="center">
+                                    <a href="<?php echo base_url ('index.php/admin/edithal/').$a['id_halaman'];?>" class="btn btn-primary ">Edit</a> | 
+                                    <a href="<?php echo base_url ('index.php/admin/haphal/').$a['id_halaman'];?>" class="btn btn-danger ">Delete</a>
+                                        </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php else : ?>
+                                    <tr>
+                                    <td colspan="3">Data Kosong</td>
+                                    </tr>
+                                <?php endif ?>
+                                </tbody>
+                                </table>
+                                </div>
 
-                 <div >
-
-    <h2>List of the text</h2>
-    
-    <h3>Unordered List</h3><br/>
-    <ul>
-        <li> Ini adalah onlineshop CerrezDistro . </li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-        <li>Ini adalah onlineshop CerrezDistro .</li>
-    </ul>
-    <h3>Ordered List</h3><br/>
-    <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis .</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum varius dapibus. Sed hendrerit porta felis at sollicitudin.</li>
-    </ol>
-
-    <h2>Paragraph</h2>
-<p>CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
-</p>
-
-<h5>Lorem ipsum dolor sit amet</h5><br/>
-<p>
-CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
- </p>
 
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

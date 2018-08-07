@@ -36,11 +36,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
+				<a href="<?php echo base_url('customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a class="active" href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -56,9 +56,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url ('index.php/customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url ('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/checkout');?>">
+		<a href="<?php echo base_url ('customer/checkout');?>">
 	</a>
 	</h1>
 	</div>
@@ -87,12 +87,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/daftar');?>">List View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tampilgrid');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tiga');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/empat');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/rekonfirm');?>">Rekonfirmasi</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -128,7 +128,7 @@ Body Section
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-		<li><a href="<?php echo base_url ('index.php/customer/index');?>">Home</a> <span class="divider">/</span></li>
+		<li><a href="<?php echo base_url ('customer/');?>">Home</a> <span class="divider">/</span></li>
 		<li class="active">Check Out</li>
     </ul>
 	<div class="well well-small">
@@ -136,7 +136,7 @@ Body Section
 	<hr class="soften"/>	
 
 	<table class="table table-bordered table-condensed">
-	<a href="<?php echo base_url ('index.php/customer/addcart');?>"></a>
+	<a href="<?php echo base_url ('customer/addcart');?>"></a>
               <thead>
                 <tr>
                   <th>Product</th>
@@ -157,19 +157,19 @@ Body Section
                   <td>
                   <input class="span" style="max-width:34px" placeholder="" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
 				  <div class="input-append">
-				  <form action="<?php echo base_url('index.php/customer/plus/').$value['id_cart'];?>" method="post">
+				  <form action="<?php echo base_url('customer/plus/').$value['id_cart'];?>" method="post">
 				  <input type="hidden" name="plus" value="<?php echo $value['id_cart'];?>">
 					<input class="span" name="jumlah_barang" placeholder="0" id="number" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
 					<input type="submit" class="btn btn-mini" value="+">
 				  </form>
 
-				  <form action="<?php echo base_url('index.php/customer/min/').$value['id_cart'];?>" method="post">
+				  <form action="<?php echo base_url('customer/min/').$value['id_cart'];?>" method="post">
 				  <input type="hidden" name="min" value="<?php echo $value['id_cart'];?>">
 					<input class="span" name="jumlah_barang" placeholder="0" id="number1" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
 					<input type="submit" class="btn btn-mini" value="-">
 				  </form>
 					
-					<a href="<?php echo base_url('index.php/customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
+					<a href="<?php echo base_url('customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
 
 				  </div>
 				 </td>
@@ -188,7 +188,7 @@ Body Section
                 <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
                  <tr> 
 				 <td>
-					<form class="form-horizontal" action="<?php echo base_url('index.php/customer/tamcheck');?>" method="post">
+					<form class="form-horizontal" action="<?php echo base_url('customer/tamcheck');?>" method="post">
 						  <input type="hidden" name="id_checkout" placeholder="Id Checkout">
 						  <input type="hidden" name="id_order" placeholder="Id Order">
 						  <input type="hidden" name="id_customer" placeholder="Id Customer">
@@ -237,8 +237,8 @@ Body Section
 				  </tr>
               </tbody>
             </table>		
-	<a href="<?php echo base_url('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('index.php/customer/pembayaran');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="<?php echo base_url('customer/pembayaran');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 </div>
 </div>

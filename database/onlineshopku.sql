@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2018 at 04:29 AM
+-- Generation Time: Aug 07, 2018 at 11:16 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -43,9 +43,8 @@ CREATE TABLE `cartku` (
 --
 
 INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
-(28, 2, 2, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 3, 900000),
-(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 2, 2000000),
-(54, 0, 0, 'a1.jpg', 'Jam Tangan', 'Emas', 475000, 1, 475000);
+(28, 2, 2, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 5, 1500000),
+(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 4, 4000000);
 
 -- --------------------------------------------------------
 
@@ -73,7 +72,8 @@ CREATE TABLE `checkoutku` (
 --
 
 INSERT INTO `checkoutku` (`id_checkout`, `id_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`) VALUES
-(2, 0, 0, '', 0, 0, 'Indonesia', 'Banten', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', '');
+(2, 0, 0, '', 0, 0, 'Indonesia', 'Banten', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', ''),
+(3, 0, 0, '', 0, 0, 'Singapura', 'Sedney', 'Tangerang', '15370', 'Sragan Trirenggo Bantul', '');
 
 -- --------------------------------------------------------
 
@@ -106,6 +106,27 @@ INSERT INTO `customerku` (`id_customer`, `nama_dpn`, `nama_blkng`, `email`, `pas
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `halamanku`
+--
+
+CREATE TABLE `halamanku` (
+  `id_halaman` int(5) NOT NULL,
+  `id_menu` int(5) NOT NULL,
+  `judul_halaman` varchar(50) NOT NULL,
+  `deskripsi` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `halamanku`
+--
+
+INSERT INTO `halamanku` (`id_halaman`, `id_menu`, `judul_halaman`, `deskripsi`) VALUES
+(1, 1, 'About Us', 'I''m a paragraph. Click here to add your own text and edit me.'),
+(2, 2, 'New Products', 'Produk ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kategoriku`
 --
 
@@ -128,6 +149,23 @@ INSERT INTO `kategoriku` (`id_kategori`, `nm_kategori`) VALUES
 (7, 'Vintage & Antique'),
 (8, 'Loose Diamonds'),
 (9, 'Loose Beads');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `konfigwebku`
+--
+
+CREATE TABLE `konfigwebku` (
+  `id_konfig` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `deskripsi` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tlp` int(30) NOT NULL,
+  `share1` varchar(50) NOT NULL,
+  `share2` varchar(50) NOT NULL,
+  `share3` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -236,19 +274,6 @@ INSERT INTO `produkku` (`id_produk`, `nm_produk`, `warna`, `bahan`, `deskripsi`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tokens`
---
-
-CREATE TABLE `tokens` (
-  `id` int(11) NOT NULL,
-  `token` varchar(100) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `created` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `userku`
 --
 
@@ -290,6 +315,12 @@ ALTER TABLE `customerku`
   ADD PRIMARY KEY (`id_customer`);
 
 --
+-- Indexes for table `halamanku`
+--
+ALTER TABLE `halamanku`
+  ADD PRIMARY KEY (`id_halaman`);
+
+--
 -- Indexes for table `kategoriku`
 --
 ALTER TABLE `kategoriku`
@@ -323,12 +354,6 @@ ALTER TABLE `produkku`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indexes for table `tokens`
---
-ALTER TABLE `tokens`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `userku`
 --
 ALTER TABLE `userku`
@@ -342,17 +367,22 @@ ALTER TABLE `userku`
 -- AUTO_INCREMENT for table `cartku`
 --
 ALTER TABLE `cartku`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `checkoutku`
 --
 ALTER TABLE `checkoutku`
-  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `customerku`
 --
 ALTER TABLE `customerku`
   MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `halamanku`
+--
+ALTER TABLE `halamanku`
+  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --
@@ -373,11 +403,6 @@ ALTER TABLE `orderku`
 --
 ALTER TABLE `produkku`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `tokens`
---
-ALTER TABLE `tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `userku`
 --
