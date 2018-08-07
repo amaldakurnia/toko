@@ -37,8 +37,8 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('index.php/customer/account');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
 				<a href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
@@ -57,7 +57,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('index.php/customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/gridprod');?>">
 	</a>
@@ -88,12 +88,12 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class="active"><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/general');?>">Konfirmasi</a></li>
 			</ul>
 			<form action="<?php echo base_url('index.php/customer/search_data');?>" class="navbar-search pull-left">
 			  <input type="text" name="keyword" placeholder="Search" class="search-query span2">
@@ -142,7 +142,7 @@ Body Section
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Loose Beads</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url('index.php/customer/cart');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
 	</ul>
 </div>
 

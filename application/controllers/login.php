@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 				'logged' => true,
 				'username' => $row->username);
 		$this->session->set_userdata($data_session); 
-		redirect (base_url('admin/index'));
+		redirect (base_url('admin/index/'));
 		}
 		else {
 			echo "Email dan password salah!";

@@ -160,7 +160,7 @@ Body Section
 				</tbody>
             </table>	
 
-            <div>
+            <!--<div>
             <hr><h5> Detail Shipping </h5>
 			<table class="table table-bordered">
               <thead>
@@ -175,17 +175,17 @@ Body Section
               <tbody>
                 <tr>
                 
-                  <td><?php echo $value['id_cart'];?></td>
-                  <td><?php echo $value['produk'];?></td>
-                  <td><?php echo $value['deskripsi'];?></td>
-                  <td><?php echo $value['harga'];?></td>
-                  <td><?php echo $value['jumlah_barang'];?></td>
+                  <td><?php //echo $value['id_cart'];?></td>
+                  <td><?php //echo $value['produk'];?></td>
+                  <td><?php //echo $value['deskripsi'];?></td>
+                  <td><?php //echo $value['harga'];?></td>
+                  <td><?php //echo $value['jumlah_barang'];?></td>
                   </tr>
 				</tbody>
             </table>
             </div>
 
-            	<from action="<?php echo base_url('index.php/customer/tamcheck');?>">
+            	<from action="<?php //echo base_url('index.php/customer/tamcheck');?>">
 				<div class="control-group">
 						<label class="span2 control-label" for="inputEmail"> Bayar Via </label>
 						<div class="controls">
@@ -197,7 +197,7 @@ Body Section
 						  <option></option>
 						</select>
 						</div>
-					  </div>
+					  </div>-->
 </div>
 </div>
 	<a href="<?php echo base_url ('index.php/customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>

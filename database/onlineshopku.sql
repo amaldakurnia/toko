@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2018 at 04:31 PM
+-- Generation Time: Aug 07, 2018 at 04:29 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -44,7 +44,8 @@ CREATE TABLE `cartku` (
 
 INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
 (28, 2, 2, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 3, 900000),
-(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 2, 2000000);
+(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 2, 2000000),
+(54, 0, 0, 'a1.jpg', 'Jam Tangan', 'Emas', 475000, 1, 475000);
 
 -- --------------------------------------------------------
 
@@ -100,8 +101,7 @@ INSERT INTO `customerku` (`id_customer`, `nama_dpn`, `nama_blkng`, `email`, `pas
 (2, 'Mahrez', 'Adipashaa', 'mahrezadipasha124@gmail.com', 'Mahrez_20', '2018-07-20', 'CIMB NIAGA', '0708651245'),
 (3, 'Amalda', 'Nia', 'amalda@gmail.com', 'Amalda_02', '2018-07-17', 'BNI', '0506427066'),
 (4, 'Latif', 'Hendrawan', 'atep974@gmail.com', 'atep123', '1992-05-21', 'CIMB NIAGA', '0700213476'),
-(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725'),
-(8, 'a', 'b', 'aaaa', '122', '2018-08-10', 'BNi', '1234567');
+(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725');
 
 -- --------------------------------------------------------
 
@@ -342,7 +342,7 @@ ALTER TABLE `userku`
 -- AUTO_INCREMENT for table `cartku`
 --
 ALTER TABLE `cartku`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `checkoutku`
 --
@@ -352,7 +352,7 @@ ALTER TABLE `checkoutku`
 -- AUTO_INCREMENT for table `customerku`
 --
 ALTER TABLE `customerku`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --

@@ -39,7 +39,7 @@
 				<a href="<?php echo base_url ('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
 				<a class="active" href="<?php echo base_url ('index.php/customer/account');?>><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href=<?php echo base_url ('index.php/customer/contact/');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url ('index.php/customer/contact/');?>"><span class="icon-envelope"></span> Contact us</a>
 				<a class="" href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
@@ -86,7 +86,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>

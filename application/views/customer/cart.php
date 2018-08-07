@@ -87,7 +87,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="<?php echo base_url ('index.php/customer/index');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('index.php/customer/');?>">Home	</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/listprod');?>">List View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>

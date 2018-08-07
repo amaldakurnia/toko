@@ -57,7 +57,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url ('index.php/customer/index');?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url ('index.php/customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url ();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 		<a href="<?php echo base_url ('index.php/customer/general');?>">
 	</a>
@@ -93,7 +93,7 @@ Navigation Bar Section
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/gridprod');?>">Grid View</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/three');?>">Three Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('index.php/customer/four');?>">Four Column</a></li>
-			  <li class="active"><a href="<?php echo base_url ('index.php/customer/general');?>">General Content</a></li>
+			  <li class="active"><a href="<?php echo base_url ('index.php/customer/general');?>">Konfirmasi</a></li>
 			</ul>
 			
 			<form action="<?php echo base_url ('customer/search_data') ; ?> " class="navbar-search pull-left" method="post">

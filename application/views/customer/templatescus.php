@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- font awesome styles -->
 	<link href="<?php echo base_url(); ?>assets/fronted/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
+			<link href="css/fon  t-awesome-ie7.min.css" rel="stylesheet">
 		<![endif]-->
 
 		<!--[if lt IE 9]>
@@ -60,7 +60,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url('index.php/customer/index'); ?>"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url('index.php/customer/'); ?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 	</a>
 	</h1>
@@ -137,7 +137,7 @@ Body Section
 <div class="well well-small">
 	<ul class="nav nav-list">
 
-		<li><a href="<?php echo base_url ('index.php/customer/kategori');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
+		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Watches</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
 		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>

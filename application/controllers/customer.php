@@ -29,6 +29,14 @@ class Customer extends CI_Controller {
 		$this->load->view('customer/cartku',array('list'=>$data));
 	}
 	 public function addcart(){ //fungsi Add To Cart
+	 	if ($this->session->userdata('logged')<>1)
+	 	{
+	 		$this->session->set_flashdata("erorr","<div class='alert alert-danger alert-dismissable'>
+	 		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+	 		<strong> Silakan login terlebih dahulu !</strong>
+	 		</div>");
+	 		redirect (base_url('index.php/login/'));
+	 	}
 	 	$harga = $this->input->post('jumlah');
 		$data = array(
 			'id_cart' => $this->input->post('id_cart'), 
@@ -231,38 +239,4 @@ class Customer extends CI_Controller {
 		$account['akun'] = $this->model->get_account($akun);
 		$this->load->view('customer/account',$account);
 	}
-	/*public function lupapassword()
-	{
-		$this->form_validation->set_rules('email','Email','required|valid_email');
-		if($this->form_validation->run() == False)
-		{
-			$data ['title'] = 'halaman reset password';
-			$this->load->view('customer/lupa_password',$data);
-		}
-		else
-		{
-			$email = $this->input->post('email');
-			$clean = $this->security->xss_clean->($email);
-			$userInfo = $this->model->getUserInfoByEmail($clean);
-
-			if(!$userInfo)
-			{
-				$this->session->set_flashdata('sukses','email address salah, coba lagi.');
-				redirect(base_url('login'),'refresh');
-			}
-		}
-	}
-		$token = $this->model->insertToken($userInfo->id_user);
-		$qstring = $this->base64url_encode($token);
-		$url = site_url().'/lupa_password/reset_password/token/'.$qstring;
-		$link = '<a href="'.$url.'">'.$url.'</a>';
-
-
-		$message = '';
-		$message. = '<strong> Perbarui password anda </strong>';
-		$message. = '<strong> Klik link </strong> '.$link;
-
-		echo $message;
-		exit;
-	}*/
 }
