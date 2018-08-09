@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2018 at 11:16 AM
+-- Generation Time: Aug 09, 2018 at 06:25 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -44,7 +44,8 @@ CREATE TABLE `cartku` (
 
 INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
 (28, 2, 2, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 5, 1500000),
-(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 4, 4000000);
+(44, 3, 3, 'bootstrap-ring.png', 'Cincin C79', 'Silver', 1000000, 4, 4000000),
+(47, 0, 0, 'b.jpg', 'Gelang', 'Emas', 950000, 1, 950000);
 
 -- --------------------------------------------------------
 
@@ -54,7 +55,7 @@ INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskrips
 
 CREATE TABLE `checkoutku` (
   `id_checkout` int(11) NOT NULL,
-  `id_order` int(11) NOT NULL,
+  `kode_order` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `nm_produk` varchar(20) NOT NULL,
   `jumlah_barang` int(11) NOT NULL,
@@ -71,7 +72,7 @@ CREATE TABLE `checkoutku` (
 -- Dumping data for table `checkoutku`
 --
 
-INSERT INTO `checkoutku` (`id_checkout`, `id_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`) VALUES
+INSERT INTO `checkoutku` (`id_checkout`, `kode_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`) VALUES
 (2, 0, 0, '', 0, 0, 'Indonesia', 'Banten', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', ''),
 (3, 0, 0, '', 0, 0, 'Singapura', 'Sedney', 'Tangerang', '15370', 'Sragan Trirenggo Bantul', '');
 
@@ -101,7 +102,8 @@ INSERT INTO `customerku` (`id_customer`, `nama_dpn`, `nama_blkng`, `email`, `pas
 (2, 'Mahrez', 'Adipashaa', 'mahrezadipasha124@gmail.com', 'Mahrez_20', '2018-07-20', 'CIMB NIAGA', '0708651245'),
 (3, 'Amalda', 'Nia', 'amalda@gmail.com', 'Amalda_02', '2018-07-17', 'BNI', '0506427066'),
 (4, 'Latif', 'Hendrawan', 'atep974@gmail.com', 'atep123', '1992-05-21', 'CIMB NIAGA', '0700213476'),
-(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725');
+(5, 'Cerilo', 'Diprasta', 'cerrez124@gmail.com', 'cerilo_15', '2018-07-19', 'BNI', '0705411725'),
+(6, 'Yaskun', 'Amalda', 'amaldakurnia@gmail.com', '023321', '2018-08-07', 'BNi', '506274571');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,7 @@ CREATE TABLE `halamanku` (
 
 INSERT INTO `halamanku` (`id_halaman`, `id_menu`, `judul_halaman`, `deskripsi`) VALUES
 (1, 1, 'About Us', 'I''m a paragraph. Click here to add your own text and edit me.'),
-(2, 2, 'New Products', 'Produk ');
+(4, 4, 'Features Products', 'Kualitas Bagus');
 
 -- --------------------------------------------------------
 
@@ -222,10 +224,8 @@ INSERT INTO `merkku` (`id_merk`, `nm_merk`, `gambarr`) VALUES
 --
 
 CREATE TABLE `orderku` (
-  `id_order` int(11) NOT NULL,
+  `kode_order` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
-  `nama_customer` varchar(20) NOT NULL,
-  `id_produk` varchar(20) NOT NULL,
   `tgl_order` date NOT NULL,
   `total` bigint(30) NOT NULL,
   `ket` text NOT NULL
@@ -235,10 +235,11 @@ CREATE TABLE `orderku` (
 -- Dumping data for table `orderku`
 --
 
-INSERT INTO `orderku` (`id_order`, `id_customer`, `nama_customer`, `id_produk`, `tgl_order`, `total`, `ket`) VALUES
-(1, 1, 'Amalda', '1', '2018-07-23', 700000, 'Belum Bayar'),
-(2, 2, 'Amalia', '2', '2018-07-20', 475000, 'Sudah Bayar'),
-(3, 3, 'Annisa', '3', '2018-07-26', 500000, 'Sudah Bayar');
+INSERT INTO `orderku` (`kode_order`, `id_customer`, `tgl_order`, `total`, `ket`) VALUES
+(1, 1, '2018-07-23', 700000, 'Belum Bayar'),
+(13, 4, '2018-08-09', 0, 'Belum bayar'),
+(14, 4, '2018-08-09', 0, 'Belum bayar'),
+(16, 4, '2018-08-09', 0, 'Belum bayar');
 
 -- --------------------------------------------------------
 
@@ -344,8 +345,7 @@ ALTER TABLE `merkku`
 -- Indexes for table `orderku`
 --
 ALTER TABLE `orderku`
-  ADD PRIMARY KEY (`id_order`),
-  ADD UNIQUE KEY `id_produk` (`id_produk`);
+  ADD PRIMARY KEY (`kode_order`);
 
 --
 -- Indexes for table `produkku`
@@ -367,7 +367,7 @@ ALTER TABLE `userku`
 -- AUTO_INCREMENT for table `cartku`
 --
 ALTER TABLE `cartku`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `checkoutku`
 --
@@ -377,12 +377,12 @@ ALTER TABLE `checkoutku`
 -- AUTO_INCREMENT for table `customerku`
 --
 ALTER TABLE `customerku`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `halamanku`
 --
 ALTER TABLE `halamanku`
-  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --
@@ -397,7 +397,7 @@ ALTER TABLE `merkku`
 -- AUTO_INCREMENT for table `orderku`
 --
 ALTER TABLE `orderku`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kode_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `produkku`
 --

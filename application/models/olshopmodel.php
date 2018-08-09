@@ -30,6 +30,7 @@ class Olshopmodel extends CI_Model
 		return $this->db->get('produkku')->result_array();
 	}
 	public function get_keranjang($cart){
+		$this->db->join('produkku','produkku.id_produk=cartku.id_produk');
 		if (!empty($cart)) {
 			$this->db->where('id',$cart);
 		}
@@ -78,7 +79,7 @@ class Olshopmodel extends CI_Model
 	public function get_hapcart($cart)
 	{
 		$this->db->where('id_cart',$cart);
-		$c = $this->db->delete('cartku');
+		$c = $this->db->dezzlete('cartku');
 	}
 	public function get_plus($plus,$data)
 	{
@@ -88,17 +89,17 @@ class Olshopmodel extends CI_Model
 	{
 		return $this->db->where('id_cart',$min)->update('cartku',$data);
 	}
-	public function gettamcheck($savcheck)
+	public function gettamcheck($simcheck)
 	{
-		return $this->db->insert('checkoutku', $savcheck);
+		return $this->db->insert('checkoutku', $simcheck);
 	}
 	public function gettamreg($simreg)
 	{
 		return $this->db->insert('customerku', $simreg);
 	}
 	public function gettam_bayar($simbyr)
-	{
-		return $this->db->insert('pembayaranku', $simbyr);
+	{  
+		return $this->db->insert('orderku', $simbyr);
 	}
 	public function get_customerku ()
 	{
@@ -229,16 +230,16 @@ class Olshopmodel extends CI_Model
 	}
 	public function getubahord ($order)
 	{
-		return $this->db->get_where('orderku', array('id_order'=>$order));
+		return $this->db->get_where('orderku', array('kode_order'=>$order));
 	}
 	public function geteditorder ($simord, $order)
 	{
-		$this->db->where ('id_order', $order);
+		$this->db->where ('kode_order', $order);
 		return $this->db->update ('orderku',$simord);
 	}
 	public function gethapord ($order)
 	{
-		$this->db->where ('id_order',$order);
+		$this->db->where ('kode_order',$order);
 		return $this->db->delete ('orderku');
 	}
 	public function get_merk($merk)

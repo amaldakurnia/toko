@@ -44,7 +44,7 @@
                                      </div>
 <br/>                                       
                                     <input type="submit" value="Simpan" class="btn btn-success">
-                                    <a href="<?php echo base_url ('index.php/admin/halaman');?>" class="btn btn-default "> Batal </a>     
+                                    <a href="<?php echo base_url ('index.php/admin/hal');?>" class="btn btn-default "> Batal </a>     
                                     <hr />
                                 </form>
                             </div>               

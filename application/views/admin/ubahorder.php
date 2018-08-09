@@ -28,28 +28,20 @@
              <div class="page-header">  
                     <form role="form" class="form-horizontal" action="<?php echo base_url('index.php/admin/ubahord'); ?>" method="post">
                                     <div class="form-group">
-                                        <label> Id Order </label>
-                                        <input type="text" name="id_order" value="<?php echo $key['id_order']; ?>" class="form-control">
+                                        <label> Kode Order </label>
+                                        <input type="text" name="kode_order" value="<?php echo $key['kode_order']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label> Id Customer </label>
                                         <input type="text" name="id_customer" value="<?php echo $key['id_customer']; ?>" class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <label> Id Produk </label>
-                                        <input type="text" name="id_produk" value="<?php echo $key['id_produk']; ?>" class="form-control">
-                                    </div>
                                      <div class="form-group">
-                                         <label> Tanggal Bayar </label>
-                                         <input type="date" name="tgl_byr" value="<?php echo $key['tgl_byr']; ?>" class="form-control">
+                                         <label> Tanggal Order </label>
+                                         <input type="date" name="tgl_order" value="<?php echo $key['tgl_order']; ?>" class="form-control">
                                      </div>
                                      <div class="form-group">
                                         <label> Total Bayar </label>
-                                        <input type="text" name="total_byr" value="<?php echo $key['total_byr']; ?>" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label> Bayar Via </label>
-                                        <input type="text" name="bayar_via" value="<?php echo $key['bayar_via']; ?>" class="form-control">
+                                        <input type="text" name="total" value="<?php echo $key['total']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label> Keterangan </label>

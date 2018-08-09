@@ -23,9 +23,9 @@ class Admin extends CI_Controller {
 	{
 		$this->tem_olshop->tampil('admin/dashboardku');
 	}
-	public function halaman()
+	public function savehalaman()
 	{
-		$this->tem_olshop->tampil('admin/halamanku');
+		$this->tem_olshop->tampil('admin/simpanhalaman');
 	}
 	public function hal()
 	{
@@ -41,7 +41,7 @@ class Admin extends CI_Controller {
 			'deskripsi' => $this->input->post('deskripsi'));
 
 		$this->model->gettamhal($savehal);
-		redirect (base_url ('index.php/admin/halaman'));
+		redirect (base_url ('admin/hal'));
 	}
 	public function ubahhal()
 	{
@@ -124,10 +124,8 @@ class Admin extends CI_Controller {
 		$simord = array (
 				'id_order'=>$this->input->post('id_order'),
 				'id_customer'=>$this->input->post('id_customer'),
-				'id_produk'=>$this->input->post('id_produk'),
-				'tgl_byr'=>$this->input->post('tgl_byr'),
-				'total_byr'=>$this->input->post('total_byr'),
-				'bayar_via'=>$this->input->post('bayar_via'),
+				'tgl_order'=>$this->input->post('tgl_order'),
+				'total'=>$this->input->post('total'),
 				'ket'=>$this->input->post('ket'));
 
 		$this->model->gettamord($simord);
@@ -139,10 +137,8 @@ class Admin extends CI_Controller {
 		$simord = array (
 				'id_order'=>$this->input->post('id_order'),
 				'id_customer'=>$this->input->post('id_customer'),
-				'id_produk'=>$this->input->post('id_produk'),
-				'tgl_byr'=>$this->input->post('tgl_byr'),
-				'total_byr'=>$this->input->post('total_byr'),
-				'bayar_via'=>$this->input->post('bayar_via'),
+				'tgl_order'=>$this->input->post('tgl_order'),
+				'total'=>$this->input->post('total'),
 				'ket'=>$this->input->post('ket'));
 
 		$this->model->geteditorder($simord,$order);

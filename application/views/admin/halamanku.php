@@ -19,11 +19,11 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                              <h2> Data Halaman</h2>
-                            <a href="<?php echo base_url('index.php/admin/halaman'); ?>"></a>
+                            <a href="<?php echo base_url('index.php/admin/hal'); ?>"></a>
                         </div>
                         </div>
                         <div class="panel-body">
-                        <a href="<?php echo base_url ('index.php/admin/hal');?>" class="btn btn-success ">Tambah</a>
+                        <a href="<?php echo base_url ('index.php/admin/savehalaman');?>" class="btn btn-success ">Tambah</a>
                         </button>
                         <br><br>
                             <div class="table-responsive table-bordered">

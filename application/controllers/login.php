@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		$this->load->model('olshopmodel', 'model');
 		}
 	//login admin
-	public function indexx()
+	public function login_admin()
 	{
 		$this->load->view('admin/formlogin');
 	}
@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 				'logged' => true,
 				'username' => $row->username);
 		$this->session->set_userdata($data_session); 
-		redirect (base_url('admin/index/'));
+		redirect (base_url('admin/'));
 		}
 		else {
 			echo "Email dan password salah!";
@@ -34,10 +34,10 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(base_url('login/'));
+		redirect(base_url('login/login_admin'));
 	}
 	//login customer
-	public function index()
+	public function login_cus()
 	{
 		$this->load->view('customer/logincustomer');
 	}
@@ -52,9 +52,10 @@ class Login extends CI_Controller {
 			$row = $this->model->cek_logincus($email,$password)->row();
 			$data_session = array (
 				'logged' => true,
-				'email' => $row->email);
+				'email' => $row->email,
+				'id_customer'=> $row->id_customer);
 		$this->session->set_userdata($data_session);
-		redirect (base_url('customer/index'));
+		redirect (base_url('customer/'));
 		}
 		else {
 			echo "Email dan password salah!";
@@ -63,6 +64,6 @@ class Login extends CI_Controller {
 	public function logoutcus()
 	{
 		$this->session->sess_destroy();
-		redirect(base_url('login/indexcus/'));
+		redirect(base_url('login/login_cus/'));
 	}
 }

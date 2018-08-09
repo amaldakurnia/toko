@@ -36,11 +36,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('index.php/customer/index');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url ('index.php/customer/reegister');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href=<?php echo base_url ('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="<?php echo base_url ('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url ('customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url ('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href=<?php echo base_url ('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a class="active" href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -56,9 +56,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span> 
+	<a class="logo" href="<?php echo base_url ('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
 		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('index.php/customer/pembayaran');?>">
+		<a href="<?php echo base_url ('customer/pembayaran');?>">
 	</a>
 	</h1>
 	</div>
@@ -160,33 +160,16 @@ Body Section
 				</tbody>
             </table>	
 
-            <!--<div>
-            <hr><h5> Detail Shipping </h5>
-			<table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Negara</th>
-                  <th>Provinsi</th>
-                  <th>Kabupaten</th>
-                  <th>Kode Pos</th>
-				  <th>Alamat Lengkap</th>
-				</tr>
-              </thead>
-              <tbody>
-                <tr>
-                
-                  <td><?php //echo $value['id_cart'];?></td>
-                  <td><?php //echo $value['produk'];?></td>
-                  <td><?php //echo $value['deskripsi'];?></td>
-                  <td><?php //echo $value['harga'];?></td>
-                  <td><?php //echo $value['jumlah_barang'];?></td>
-                  </tr>
-				</tbody>
-            </table>
-            </div>
+            	<form action="<?php echo base_url('index.php/customer/tam_bayar');?>" method="post">
+				<input type="hidden" name="id_checkout">
+				<input type="hidden" name="total" value="0">
+				<input type="hidden" name="negara" value="<?php echo $negara; ?>">
+				<input type="hidden" name="provinsi" value="<?php echo $provinsi;?>">
+				<input type="hidden" name="kabupaten" value="<?php echo $kabupaten;?>">
+				<input type="hidden" name="kode_pos" value="<?php echo $kode_pos;?>">
+				<input type="hidden" name="alamat_lengkap" value="<?php echo $alamat_lengkap;?>">
+			
 
-            	<from action="<?php //echo base_url('index.php/customer/tamcheck');?>">
-				<div class="control-group">
 						<label class="span2 control-label" for="inputEmail"> Bayar Via </label>
 						<div class="controls">
 						  <select class="span" name="bayar_via">
@@ -197,11 +180,11 @@ Body Section
 						  <option></option>
 						</select>
 						</div>
-					  </div>-->
+					  </div>
+					  <button type="submit" class="shopBtn btn-large pull-right">Checkout</button>
+					  </form>
 </div>
 </div>
-	<a href="<?php echo base_url ('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('customer/konfirm');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 
 <!-- 

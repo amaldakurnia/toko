@@ -189,14 +189,7 @@ Body Section
                  <tr> 
 				 <td>
 					<form class="form-horizontal" action="<?php echo base_url('customer/tamcheck');?>" method="post">
-						  <input type="hidden" name="id_checkout" placeholder="Id Checkout">
-						  <input type="hidden" name="id_order" placeholder="Id Order">
-						  <input type="hidden" name="id_customer" placeholder="Id Customer">
-						  <input type="hidden" name="nm_produk" placeholder="Nama Produk">
-						  <input type="hidden" name="jumlah_barang" placeholder="Jumlah Barang">
-					      <input type="hidden" name="total" placeholder="Total">
-					      <input type="hidden" name="bayar_via" placeholder="Bayar Via">
-						
+			
 					  <div class="control-group">
 						<label class="span2 control-label" for="inputEmail">Negara</label>
 						<div class="controls">
@@ -232,13 +225,14 @@ Body Section
 						  <button type="submit" class="shopBtn">Click to check the price</button>
 						</div>
 					  </div>
-					</form> 
+					 
 				  </td>
 				  </tr>
               </tbody>
             </table>		
 	<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('customer/pembayaran');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<button type="submit" class="shopBtn  btn-large pull-right">Next <span class="icon-arrow-right"></span></button>
+	</form>
 
 </div>
 </div>

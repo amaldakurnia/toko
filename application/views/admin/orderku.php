@@ -32,10 +32,8 @@
                                         <tr>
                                             <th>Id Order</th>
                                             <th>Id Customer</th>
-                                            <th>Id Produk</th>
-                                            <th>Tanggal Bayar</th>
-                                            <th>Total Bayar</th>
-                                            <th>Bayar Via</th>
+                                            <th>Tanggal Order</th>
+                                            <th>Total</th>
                                             <th>Keterangan</th>
                                             <th></th>
                                         </tr>
@@ -51,23 +49,17 @@
                                         <?php echo $a['id_customer']; ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['id_produk']; ?>
+                                        <?php echo $a['tgl_order']; ?>
                                         </td>
                                         <td>
-                                        <?php echo $a['tgl_byr']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['total_byr']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['bayar_via']; ?>
+                                        <?php echo $a['total']; ?>
                                         </td>
                                         <td>
                                         <?php echo $a['ket']; ?>
                                         </td>
                                         <td align="center">
-                                        <a href="<?php echo base_url ('index.php/admin/editord/').$a['id_order'];?>" class="btn btn-primary ">Edit</a> | 
-                                        <a href="<?php echo base_url ('index.php/admin/hapord/').$a['id_order'];?>" class="btn btn-danger ">Delete</a>
+                                        <a href="<?php echo base_url ('index.php/admin/editord/').$a['kode_order'];?>" class="btn btn-primary ">Edit</a> | 
+                                        <a href="<?php echo base_url ('index.php/admin/hapord/').$a['kode_order'];?>" class="btn btn-danger ">Delete</a>
                                         </td>
                                         </tr>
                                     <?php endforeach ?>

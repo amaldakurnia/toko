@@ -51,7 +51,7 @@ font-size: 16px;"> Last access : Wednesday , 04 July 2018 &nbsp; <a href="<?php 
                         <a  href="<?php echo base_url('index.php/admin/user'); ?>"><i class="fa fa-user fa-3x"></i> User </a>
                     </li>
                      <li>
-                        <a  href="<?php echo base_url('index.php/admin/halaman'); ?>"><i class="fa fa-book fa-3x"></i> Halaman </a>
+                        <a  href="<?php echo base_url('index.php/admin/hal'); ?>"><i class="fa fa-book fa-3x"></i> Halaman </a>
                     </li>
                     <li>
                         <a  href="<?php echo base_url('index.php/admin/kategori'); ?>"><i class="fa fa-tasks fa-3x"></i> Kategori Produk </a>

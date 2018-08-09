@@ -132,7 +132,7 @@ Body Section
     </ul>
 			<tr><td><h4> My Account </h4></td></tr>
                 <a href=""></a>
-                <hr><h5> Detail Order </h5>
+                <hr><h5> Data Akun </h5>
 			<table class="table table-bordered">
               <thead>
                 <tr>
