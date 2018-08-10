@@ -136,17 +136,9 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-
-		<li><a href="<?php echo base_url ('customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+	<?php foreach ($data as $key => $kat) : ?>
+		<li><a href="<?php echo base_url ('customer/prod');?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
+	<?php endforeach;?>
 		<li style="border:0"> &nbsp;</li>
 
 		<li> <a class="totalInCart" href="<?php echo base_url ('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
@@ -322,6 +314,7 @@ New Products
 					<p><strong> Rp.<?php echo $value['harga'];?></strong></p>
 					
 					<form class="form-horizontal qtyFrm" action="<?php echo base_url ('customer/addcart');?>" method="post">
+				<input type="hidden" name="id_produk" value="<?php echo $value['id_produk'];?>">
 				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
 				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
 				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
@@ -425,24 +418,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
+		<?php foreach ($data as $key => $merk) : ?>
 			<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+			<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $value['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 </section>
 
 <!--

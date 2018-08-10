@@ -127,8 +127,9 @@ Navigation Bar Section
 Body Section 
 -->
 	<hr class="soften">
+	<?php foreach ($data->result_array() as $key => $value) : ?>
 	<div>
-		<h1>About us</h1>
+		<h1><?php echo $value['judul_halaman'];?></h1>
 	</div>
 	<hr class="soften">
 	<div class="row">
@@ -138,7 +139,7 @@ Body Section
 			
 		  </h6>
 		  <p>
-			It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br>
+			<?php echo $value['deskripsi'];?><br>
 		  </p>
 		</div> 
 		<div class="span4">
@@ -150,6 +151,7 @@ Body Section
 			12:30pm - 06:00pm<br/>
 		</div>
 	</div>
+<?php endforeach; ?>
 <!-- 
 Clients 
 -->

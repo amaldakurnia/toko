@@ -36,10 +36,13 @@ class Customer extends CI_Controller {
 	 		<strong> Silakan login terlebih dahulu !</strong>
 	 		</div>");
 	 		redirect (base_url('login/'));
-	 	}
+	 	} else {
+	 	$id = $this->session->userdata('id_customer');
 	 	$harga = $this->input->post('jumlah');
 		$data = array(
 			'id_cart' => $this->input->post('id_cart'), 
+			'id_customer'=>$id,
+			'id_produk'=>$this->input->post('id_produk'),
 			'produk' => $this->input->post('produk'),  
 			'deskripsi' => $this->input->post('deskripsi'),
 			'warna' => $this->input->post('warna'),
@@ -49,7 +52,8 @@ class Customer extends CI_Controller {
 
 		$this->model->getaddcart($data);
 		redirect (base_url ('customer/keranjang'));
-		//tampilkan cart setelah added
+		//tampilkan cart set elah added
+	}
 	}
 	public function plus()
 	{
@@ -119,14 +123,9 @@ class Customer extends CI_Controller {
 		//$this->model->gettamcheck($savcheck);
 		$this->load->view('customer/pembayaran',$check);
 	}
-	/*public function pembayaran()
-	{
-		$bayar = $this->uri->segment(3);
-		$pembayaran['data'] = $this->model->get_keranjang($bayar);
-		$this->load->view('customer/pembayaran',$pembayaran);
-	}*/
 	public function tam_bayar()
 	{
+		$this->load->model('Olshopmodel', 'model');
 		$id = $this->session->userdata('id_customer');
 		$simbyr = array (
 				'kode_order'=>$this->input->post('id_order'),
@@ -139,12 +138,12 @@ class Customer extends CI_Controller {
 		$kode = $this->db->insert_id();
 
 		$cek = $this->db->get_where('cartku',array('id_customer' => $id));
-		foreach ($cek->result_array() as $key => $value) {
-			$simcheck = array (
+		foreach ($cek->result_array() as $key => $value) :
+			$simcheck = array(
 				'id_checkout'=>$this->input->post('id_checkout'),
 				'kode_order'=>$kode,
 				'id_customer'=>$id,
-				'nm_produk'=>$value['nm_produk'],
+				'nm_produk'=>$value['deskripsi'],    
 				'jumlah_barang'=>$value['jumlah_barang'],
 				'total'=>$this->input->post('total'),
 				'negara'=>$this->input->post('negara'),
@@ -152,20 +151,39 @@ class Customer extends CI_Controller {
 				'kabupaten'=>$this->input->post('kabupaten'),
 				'kode_pos'=>$this->input->post('kode_pos'),
 				'alamat_lengkap'=>$this->input->post('alamat_lengkap'),
-				'bayar_via'=>$this->input->post('bayar_via'));
+				'bayar_via'=>$this->input->post('bayar_via'),
+				'no_rek'=>$this->input->post('no_rek'));
 
 			$this->model->gettamcheck($simcheck);
-		}
-		
 
-		
-		//redirect (base_url ('customer/index'));
+		endforeach;
+		redirect (base_url ('customer/konfirm'));
 	}
 	public function konfirm()
 	{
 		$konfirm = $this->uri->segment(3);
-		$konfirmasi['data'] = $this->model->get_konfirm($konfirm);
-		$this->load->view('customer/konfirmbayar',$konfirmasi);
+		$data['data'] = $this->model->get_konfirm($konfirm);
+		$this->load->view('customer/konfirmbayar',$data);
+	}
+	public function berhasil()
+	{
+		$this->load->view('customer/konfirmsukses');
+	}
+	public function tamkonfirm()
+	{
+		$id = $this->session->userdata('id_customer');
+		$simkonf = array (
+				'kode_order'=>$this->input->post('kode_order'),
+				'id_customer'=>$id,
+				'id_produk'=>$this->input->post('id_produk'),
+				'nama'=>$this->input->post('nama'),
+				'nominal'=>$this->input->post('nominal'),
+				'tgl_byr'=>date('Y-m-d'),
+				'bayar_via'=>$this->input->post('bayar_via'),
+				'ket'=>'Belum bayar');
+
+		$this->model->get_tamkonfirm($simkonf);
+		redirect (base_url('customer/berhasil'));
 	}
 	public function kontak()
 	{
@@ -222,7 +240,7 @@ class Customer extends CI_Controller {
 	}
 	public function rekonfirm()
 	{
-		$this->load->view('customer/konten');
+		$this->load->view('customer/rekonfirmasi');
 	}
 	public function detprod()
 	{

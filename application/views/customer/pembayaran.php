@@ -181,7 +181,13 @@ Body Section
 						</select>
 						</div>
 					  </div>
-					  <button type="submit" class="shopBtn btn-large pull-right">Checkout</button>
+					  <label class="span2 control-label" for="inputEmail"> No.Rekening </label>
+						<div class="controls">
+						  <input type="text" name="no_rek" placeholder="No.Rekening" >
+						</div>
+					  </div>
+					  <a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+					  <button type="submit" class="shopBtn btn-large pull-right"> Checkout <span class="icon-arrow-right"></span></button>
 					  </form>
 </div>
 </div>

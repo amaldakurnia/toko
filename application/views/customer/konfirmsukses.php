@@ -194,19 +194,23 @@ Body Section
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="<?php echo base_url ('customer/');?>">Home</a> <span class="divider">/</span></li>
-		<li class="active">Page Title</li>
+		<li class="active"> Konfirmasi </li>
     </ul>
 <div class="well well-small">
-	<h2> Ini adalah onlineshop CerrezDistro </h2>	
-	<hr class="soft"/>
-
-
-    <h2>Paragraph</h2>
-<p>CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
-</p>
-
-<hr class="soft"/>
-	
+	<h3> Konfirmasi </h3>	
+	<br>
+	<div class="alert alert-success">
+	<center>
+	<h1> Konfirmasi Sukses </h1>
+	</center>
+	</div>
+	<br>
+	<br>
+		<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+		
+</div>
+</div>
+</div>
 <!-- 
 Clients 
 -->

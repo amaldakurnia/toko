@@ -50,9 +50,13 @@ class Olshopmodel extends CI_Model
 	}
 	public function get_konfirm($konfirm){
 		if(!empty($konfirm)){
-			$this->db->where('id_customer',$konfirm);
+			$this->db->where('id_order',$konfirm);
 		}
-		return $this->db->get('customerku');
+		return $this->db->get('konfirmasiku');
+	}
+	public function get_tamkonfirm($simkonf)
+	{
+		return $this->db->insert('konfirmasiku', $simkonf);
 	}
 	public function get_halamanku ()
 	{
@@ -79,7 +83,7 @@ class Olshopmodel extends CI_Model
 	public function get_hapcart($cart)
 	{
 		$this->db->where('id_cart',$cart);
-		$c = $this->db->dezzlete('cartku');
+		$c = $this->db->delete('cartku');
 	}
 	public function get_plus($plus,$data)
 	{
@@ -89,10 +93,7 @@ class Olshopmodel extends CI_Model
 	{
 		return $this->db->where('id_cart',$min)->update('cartku',$data);
 	}
-	public function gettamcheck($simcheck)
-	{
-		return $this->db->insert('checkoutku', $simcheck);
-	}
+	
 	public function gettamreg($simreg)
 	{
 		return $this->db->insert('customerku', $simreg);
@@ -100,6 +101,10 @@ class Olshopmodel extends CI_Model
 	public function gettam_bayar($simbyr)
 	{  
 		return $this->db->insert('orderku', $simbyr);
+	}
+	public function gettamcheck($simcheck)
+	{
+		return $this->db->insert('checkoutku', $simcheck);
 	}
 	public function get_customerku ()
 	{

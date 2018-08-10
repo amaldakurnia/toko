@@ -138,6 +138,7 @@ Body Section
                  <tr> 
 				 <td>
 					<form class="form-horizontal" action="<?php echo base_url('customer/tamkonfirm');?>" method="post">
+					 <?php foreach ($data->result_array() as $key => $value) : ?>
 					  <div class="control-group">
 						<label class="control-label" for="inputNama">Nama<sup>*</sup></label>
 						<div class="controls">
@@ -147,26 +148,32 @@ Body Section
 					  <div class="control-group">
 						<label class="control-label" for="inputKodeOrder">Kode Order <sup>*</sup></label>
 						<div class="controls">
-			 			  <input type="text" id="inputKodeOrder" name="kode_order" placeholder="Kode Order">
+			 			  <input type="text" id="inputKodeOrder" name="kode_order" value="<?php echo $value['kode_order'];?>" >
+						</div>
+					 </div>
+					 <div class="control-group">
+						<label class="control-label" for="inputKodeOrder"> Id Produk <sup>*</sup></label>
+						<div class="controls">
+			 			  <input type="text" id="inputIdProduk" name="id_produk" value="<?php echo $value['id_produk'];?>" >
 						</div>
 					 </div>
 					 <div class="control-group">
 						<label class="control-label" for="inputNominal">Nominal <sup>*</sup></label>
 						<div class="controls">
-						  <input type="text" id="inputNominal" name="nominal" placeholder="Nominal">
+						  <input type="text" id="inputNominal" name="nominal" value="<?php echo $value['nominal'];?>" >
 						</div>
 					 </div>
 						 <div class="control-group">
-							<label class="control-label" for="inputTanggalBayar">Tanggal Bayar <sup>*</sup></label>
+							<label class="control-label" for="inputTanggalBayar">Tanggal Order <sup>*</sup></label>
 							<div class="controls">
-							  <input type="text" id="inputTanggal Bayar" name="tgl_byr" placeholder="Tanggal Bayar">
+							  <input type="text" id="inputTanggal Order" name="tgl_order" value="<?php echo $value['tgl_byr'];?>">
 							</div>
 						 </div>
 						 <div class="control-group">
 							<label class="control-label" for="inputBayar Via">Bayar Via <sup>*</sup></label>
 							<div class="controls">
 							<select class="span" id="inputBayarVia" name="bayar_via">
-						  <option>-</option>
+						  <option><?php echo $value['bayar_via'];?></option>
 						  <option>ATM BNI</option>
 						  <option>ATM BCA</option>
 						  <option>Indomaret</option>
@@ -178,7 +185,7 @@ Body Section
 						 <div class="control-group">
 						<label class="control-label" for="inputKeterangan">Keterangan <sup>*</sup></label>
 							<div class="controls">
-						   <input type="text" id="inputKeterangan" name="ket" placeholder="Keterangan">
+						   <input type="text" id="inputKeterangan" name="ket" value="<?php echo $value['ket'];?>" >
 						</div>
 						 </div>
 					 
@@ -187,6 +194,7 @@ Body Section
 						  <button type="submit" class="shopBtn">Konfirmasi</button>
 						</div>
 					  </div>
+					<?php endforeach; ?>
 					</form> 
 				  </td>
 				  </tr>

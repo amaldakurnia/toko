@@ -212,6 +212,7 @@ New Products
 					<p><strong><?php echo $value['harga'];?></strong></p>
 
 					<form class="form-horizontal qtyFrm" action="<?php echo base_url ('customer/addcart');?>" method="post">
+				<input type="hidden" name="id_produk" value="<?php echo $value['id_produk'];?>">
 				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
 				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
 				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
