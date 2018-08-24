@@ -15,11 +15,28 @@ class Olshopmodel extends CI_Model
 
 		return $this->db->get('customerku');
 	}
-	public function get_all_produk($prod){
+	public function get_all_produk($prod=null){
 		//$hasil=$this->db->query('select * from produku');k
 //		return $hasil->result_array();
 		if (!empty($prod)) {
 			$this->db->where('id_produk',$prod);
+			$this->db->or_where('id_merk',$prod);
+		}
+		return $this->db->get('produkku');
+	}
+	public function get_merk_produk($id=null){
+		//$hasil=$this->db->query('select * from produku');k
+//		return $hasil->result_array();
+		if (!empty($id)) {
+			$this->db->or_where('id_merk',$id);
+		}
+		return $this->db->get('produkku');
+	}
+	public function get_kat_produk($id=null){
+		//$hasil=$this->db->query('select * from produku');k
+//		return $hasil->result_array();
+		if (!empty($id)) {
+			$this->db->or_where('id_kategori',$id);
 		}
 		return $this->db->get('produkku');
 	}
@@ -32,9 +49,27 @@ class Olshopmodel extends CI_Model
 	public function get_keranjang($cart){
 		$this->db->join('produkku','produkku.id_produk=cartku.id_produk');
 		if (!empty($cart)) {
-			$this->db->where('id',$cart);
+			$this->db->where('id_customer',$cart);
 		}
 		return $this->db->get('cartku');
+	}
+	public function get_hitung()
+	{
+		$hitung = 0;
+		$id = $this->session->userdata('id_customer');
+		if(!empty($id))
+		{
+			$data = $this->db->get_where('cartku',array('id_customer'=>$id));
+			foreach ($data->result_array() as $key => $value) {
+				$hitung+= str_replace('', '',$value['total']);
+			}
+		}
+		return $hitung;
+	}
+	public function gethapcheck($id)
+	{
+		$this->db->where('id_customer',$id);
+		$c = $this->db->delete('cartku');
 	}
 	public function get_order($order){
 		if(!empty($order)){
@@ -48,33 +83,57 @@ class Olshopmodel extends CI_Model
 		}
 		return $this->db->get('checkoutku');
 	}
-	public function get_konfirm($konfirm){
-		if(!empty($konfirm)){
-			$this->db->where('id_order',$konfirm);
+	public function get_konfirm($r=null){
+		//$this->db->join('customerku','customerku.id_customer=orderku.id_customer');
+		$this->db->order_by('kode_order','DESC');
+		if(!empty($r)){
+			$this->db->where('kode_order',$r);
 		}
-		return $this->db->get('konfirmasiku');
+		return $this->db->get('orderku');
 	}
-	public function get_tamkonfirm($simkonf)
+		public function get_ok($id=null,$ok=null)
+		{
+		if(!empty($id)&&$this->db->where('ket',$ok)){
+			$this->db->where('id_customer',$id);
+		}
+		return $this->db->order_by('kode_order','DESC')->get('orderku');
+	}
+	public function get_cek($konfirm=null)
 	{
-		return $this->db->insert('konfirmasiku', $simkonf);
+		$this->db->join('orderku','orderku.kode_order=checkoutku.kode_order');
+		$this->db->order_by('id_checkout','DESC');
+		if(!empty($konfirm)){
+			$this->db->where('orderku.kode_order',$konfirm);
+		}
+		return $this->db->get('checkoutku');
 	}
+	public function get_kontakku ()
+	{
+		$kontak = $this->db->query('select * from kontakku');
+		return $kontak->result_array();
+	}
+	public function getubahkontak ($k)
+	{
+		return $this->db->get_where('kontakku', array('id'=>$k));
+	}
+	public function geteditkontak ($save_kontak, $k)
+	{
+		$this->db->where ('id', $k);
+		return $this->db->update ('kontakku',$save_kontak);
+	} 
 	public function get_halamanku ()
 	{
 		$data = $this->db->query('select * from halamanku');
 		return $data->result_array();
 	} 
-	public function gettamhal($savehal)
-	{
-		return $this->db->insert('halamanku', $savehal);
-	}
 	public function getubahhal ($hall)
 	{
 		return $this->db->get_where('halamanku', array('id_halaman'=>$hall));
 	}
-	public function getedithal ($savehal, $hal)
+	public function getedithal ($svhal, $hall)
 	{
 		$this->db->where ('id_halaman', $hall);
-		return $this->db->update ('halamanku',$savehal);
+		return $this->db->update ('halamanku',$svhal);
 	}
 	public function getaddcart($simcart)
 	{
@@ -101,6 +160,10 @@ class Olshopmodel extends CI_Model
 	public function gettam_bayar($simbyr)
 	{  
 		return $this->db->insert('orderku', $simbyr);
+	}
+	public function updatetam_bayar($simbyr,$id)
+	{
+		return $this->db->where('kode_order',$id)->update('orderku',$simbyr);
 	}
 	public function gettamcheck($simcheck)
 	{
@@ -247,7 +310,7 @@ class Olshopmodel extends CI_Model
 		$this->db->where ('kode_order',$order);
 		return $this->db->delete ('orderku');
 	}
-	public function get_merk($merk)
+	public function get_merk($merk=null)
 	{
 		/*$this->db->select('*');
 		$this->db->from('merkku');
@@ -263,17 +326,25 @@ class Olshopmodel extends CI_Model
 		$akun = $this->db->query('select * from customerku');
 		return $akun->result_array();
 	}
-	public function get_kategori()
+	public function get_kategori($kat=null)
 	{
 		if (!empty($kat)) {
 			$this->db->where('id_kategori',$kat);
 		}
 		return $this->db->get('kategoriku');
 	}
-	public function get_hal($hal){
-		if (!empty($hal)) {
-			$this->db->where('id_halaman',$hal);
-		}
-		return $this->db->get('halamanku');
+	public function get_konfigwebku ()
+	{
+		$data = $this->db->query('select * from konfigwebku');
+		return $data->result_array();
+	} 
+	public function getubahkonfig ($k_web)
+	{
+		return $this->db->get_where('konfigwebku', array('id_konfig'=>$k_web));
+	}
+	public function geteditkweb ($simkweb, $k_web)
+	{
+		$this->db->where ('id_konfig', $k_web);
+		return $this->db->update ('konfigwebku',$simkweb);
 	}
 }

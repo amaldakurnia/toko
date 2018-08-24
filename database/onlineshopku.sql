@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Agu 2018 pada 05.47
--- Versi Server: 10.1.9-MariaDB
+-- Generation Time: Aug 24, 2018 at 04:15 AM
+-- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cartku`
+-- Table structure for table `cartku`
 --
 
 CREATE TABLE `cartku` (
@@ -38,18 +38,10 @@ CREATE TABLE `cartku` (
   `total` bigint(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `cartku`
---
-
-INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
-(54, 1, 2, 'a1.jpg', 'Jam Tangan', 'Emas', 475000, 1, 475000),
-(55, 1, 6, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 1, 300000);
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `checkoutku`
+-- Table structure for table `checkoutku`
 --
 
 CREATE TABLE `checkoutku` (
@@ -69,31 +61,18 @@ CREATE TABLE `checkoutku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `checkoutku`
+-- Dumping data for table `checkoutku`
 --
 
 INSERT INTO `checkoutku` (`id_checkout`, `kode_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`, `no_rek`) VALUES
-(4, 35, 1, 'Jam Tangan', 1, 0, 'Indonesia', 'Sedney', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', 'Indomaret', ''),
-(5, 35, 1, 'Gelang C17', 1, 0, 'Indonesia', 'Sedney', 'Tangerang', '15370', 'Kp.Megu Cisoka Tangerang Banten', 'Indomaret', ''),
-(8, 42, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(9, 42, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', ''),
-(10, 43, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(11, 43, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', ''),
-(12, 44, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(13, 44, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', ''),
-(14, 45, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(15, 45, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', ''),
-(16, 46, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(17, 46, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', ''),
-(18, 47, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', 'Indomaret', ''),
-(19, 47, 1, 'Gelang C17', 1, 0, '', '', '', '', '', 'Indomaret', ''),
-(20, 48, 1, 'Jam Tangan', 1, 0, '', '', '', '', '', '-', ''),
-(21, 48, 1, 'Gelang C17', 1, 0, '', '', '', '', '', '-', '');
+(14, 15, 4, 'Cincin C79', 2, 2000000, '', '', '', '', '', 'ATM', '0773456721'),
+(15, 15, 4, 'Jam Tangan', 2, 950000, '', '', '', '', '', 'ATM', '0773456721'),
+(16, 16, 6, 'Cincin C79', 2, 2000000, 'Malaysia', 'Banten', 'Sleman', '55720', 'Kp.Megu Cisoka Tangerang Banten', 'ATM', '0773456721');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customerku`
+-- Table structure for table `customerku`
 --
 
 CREATE TABLE `customerku` (
@@ -108,18 +87,18 @@ CREATE TABLE `customerku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customerku`
+-- Dumping data for table `customerku`
 --
 
 INSERT INTO `customerku` (`id_customer`, `nama_dpn`, `nama_blkng`, `email`, `password`, `tgl_lahir`, `rek`, `no_rek`) VALUES
-(1, 'Nur', 'Amalia', 'nuramalia123@gmail.com', 'amalia12', '2018-07-31', 'BCA', '0508765321'),
 (4, 'Latif', 'Hendrawan', 'atep974@gmail.com', 'atep123', '1992-05-21', 'CIMB NIAGA', '0700213476'),
+(5, 'Amalia', 'Rahma', 'nuramalia123@gmail.com', 'amalia12', '2018-07-31', 'BNi', '0506427066'),
 (6, 'Yaskun', 'Amalda', 'amaldakurnia@gmail.com', 'yaskun02', '2018-08-07', 'BNi', '5062745712');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `halamanku`
+-- Table structure for table `halamanku`
 --
 
 CREATE TABLE `halamanku` (
@@ -130,7 +109,7 @@ CREATE TABLE `halamanku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `halamanku`
+-- Dumping data for table `halamanku`
 --
 
 INSERT INTO `halamanku` (`id_halaman`, `id_menu`, `judul_halaman`, `deskripsi`) VALUES
@@ -139,7 +118,7 @@ INSERT INTO `halamanku` (`id_halaman`, `id_menu`, `judul_halaman`, `deskripsi`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategoriku`
+-- Table structure for table `kategoriku`
 --
 
 CREATE TABLE `kategoriku` (
@@ -148,7 +127,7 @@ CREATE TABLE `kategoriku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategoriku`
+-- Dumping data for table `kategoriku`
 --
 
 INSERT INTO `kategoriku` (`id_kategori`, `nm_kategori`) VALUES
@@ -165,24 +144,31 @@ INSERT INTO `kategoriku` (`id_kategori`, `nm_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfigwebku`
+-- Table structure for table `konfigwebku`
 --
 
 CREATE TABLE `konfigwebku` (
   `id_konfig` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `deskripsi` varchar(100) NOT NULL,
+  `deskripsi` text NOT NULL,
   `email` varchar(50) NOT NULL,
-  `tlp` int(30) NOT NULL,
+  `tlp` varchar(50) NOT NULL,
   `share1` varchar(50) NOT NULL,
   `share2` varchar(50) NOT NULL,
   `share3` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `konfigwebku`
+--
+
+INSERT INTO `konfigwebku` (`id_konfig`, `nama`, `deskripsi`, `email`, `tlp`, `share1`, `share2`, `share3`) VALUES
+(1, 'www.onlineshopcerrezdistroo.com', ' CerrezStore adalah toko online yang menyediakan berbagai produk.', 'cerrezstoree31@gmail.com', '0800 1234 678', 'https://facebook.com', 'https://www.instagram.com', 'https://www.twitter.com');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfirmasiku`
+-- Table structure for table `konfirmasiku`
 --
 
 CREATE TABLE `konfirmasiku` (
@@ -197,17 +183,61 @@ CREATE TABLE `konfirmasiku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `konfirmasiku`
+-- Dumping data for table `konfirmasiku`
 --
 
 INSERT INTO `konfirmasiku` (`kode_order`, `id_customer`, `id_produk`, `nama`, `nominal`, `tgl_byr`, `bayar_via`, `ket`) VALUES
-(1, 1, 2, 'andra', 479000, '2018-08-06', 'BCA', 'Lunas\r\n'),
-(4, 1, 9, '', 479000, '2018-08-10', 'ATM BNI', 'Belum bayar');
+(1, 1, 2, 'andra', 479000, '2018-08-06', 'BCA', 'Lunas\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `merkku`
+-- Table structure for table `kontakku`
+--
+
+CREATE TABLE `kontakku` (
+  `id` int(11) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `info` varchar(50) NOT NULL,
+  `tlp` varchar(50) NOT NULL,
+  `fax` varchar(40) NOT NULL,
+  `web` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kontakku`
+--
+
+INSERT INTO `kontakku` (`id`, `alamat`, `info`, `tlp`, `fax`, `web`) VALUES
+(1, '2601 Mission St.<br/> 			Bantul, Yogyakarta 55714', 'info@cerilodiprasta.com', 'Tel 123-456-6780', 'Fax 123-456-5679', 'web:www.cerilodiprasta.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menuku`
+--
+
+CREATE TABLE `menuku` (
+  `id_menu` int(11) NOT NULL,
+  `nm_menu` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `menuku`
+--
+
+INSERT INTO `menuku` (`id_menu`, `nm_menu`) VALUES
+(1, 'Home'),
+(2, 'List View'),
+(3, 'Grid View'),
+(4, 'Three Column'),
+(5, 'Four Column'),
+(6, 'Rekonfirmasi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `merkku`
 --
 
 CREATE TABLE `merkku` (
@@ -217,7 +247,7 @@ CREATE TABLE `merkku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `merkku`
+-- Dumping data for table `merkku`
 --
 
 INSERT INTO `merkku` (`id_merk`, `nm_merk`, `gambarr`) VALUES
@@ -231,7 +261,7 @@ INSERT INTO `merkku` (`id_merk`, `nm_merk`, `gambarr`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orderku`
+-- Table structure for table `orderku`
 --
 
 CREATE TABLE `orderku` (
@@ -243,24 +273,18 @@ CREATE TABLE `orderku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `orderku`
+-- Dumping data for table `orderku`
 --
 
 INSERT INTO `orderku` (`kode_order`, `id_customer`, `tgl_order`, `total`, `ket`) VALUES
-(1, 1, '2018-07-23', 700000, 'Belum Bayar'),
-(35, 1, '2018-08-09', 0, 'Belum bayar'),
-(42, 1, '2018-08-10', 0, 'Belum bayar'),
-(43, 1, '2018-08-10', 0, 'Belum bayar'),
-(44, 1, '2018-08-10', 0, 'Belum bayar'),
-(45, 1, '2018-08-10', 0, 'Belum bayar'),
-(46, 1, '2018-08-10', 0, 'Belum bayar'),
-(47, 1, '2018-08-10', 0, 'Belum bayar'),
-(48, 1, '2018-08-10', 0, 'Belum bayar');
+(14, 4, '2018-08-18', 2950000, 'Belum bayar'),
+(15, 4, '2018-08-18', 2950000, 'Belum bayar'),
+(16, 6, '2018-08-18', 2000000, 'Lunas');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produkku`
+-- Table structure for table `produkku`
 --
 
 CREATE TABLE `produkku` (
@@ -277,7 +301,7 @@ CREATE TABLE `produkku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `produkku`
+-- Dumping data for table `produkku`
 --
 
 INSERT INTO `produkku` (`id_produk`, `nm_produk`, `warna`, `bahan`, `deskripsi`, `gambar`, `id_kategori`, `id_merk`, `harga`, `stok`) VALUES
@@ -291,7 +315,7 @@ INSERT INTO `produkku` (`id_produk`, `nm_produk`, `warna`, `bahan`, `deskripsi`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `userku`
+-- Table structure for table `userku`
 --
 
 CREATE TABLE `userku` (
@@ -301,7 +325,7 @@ CREATE TABLE `userku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `userku`
+-- Dumping data for table `userku`
 --
 
 INSERT INTO `userku` (`id_user`, `username`, `password`) VALUES
@@ -344,12 +368,30 @@ ALTER TABLE `kategoriku`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
+-- Indexes for table `konfigwebku`
+--
+ALTER TABLE `konfigwebku`
+  ADD PRIMARY KEY (`id_konfig`);
+
+--
 -- Indexes for table `konfirmasiku`
 --
 ALTER TABLE `konfirmasiku`
   ADD PRIMARY KEY (`kode_order`),
   ADD UNIQUE KEY `id_produk` (`id_produk`),
   ADD UNIQUE KEY `bayar_via` (`bayar_via`);
+
+--
+-- Indexes for table `kontakku`
+--
+ALTER TABLE `kontakku`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menuku`
+--
+ALTER TABLE `menuku`
+  ADD PRIMARY KEY (`id_menu`);
 
 --
 -- Indexes for table `merkku`
@@ -383,12 +425,12 @@ ALTER TABLE `userku`
 -- AUTO_INCREMENT for table `cartku`
 --
 ALTER TABLE `cartku`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `checkoutku`
 --
 ALTER TABLE `checkoutku`
-  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `customerku`
 --
@@ -398,12 +440,22 @@ ALTER TABLE `customerku`
 -- AUTO_INCREMENT for table `halamanku`
 --
 ALTER TABLE `halamanku`
-  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --
 ALTER TABLE `kategoriku`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `kontakku`
+--
+ALTER TABLE `kontakku`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `menuku`
+--
+ALTER TABLE `menuku`
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `merkku`
 --
@@ -413,7 +465,7 @@ ALTER TABLE `merkku`
 -- AUTO_INCREMENT for table `orderku`
 --
 ALTER TABLE `orderku`
-  MODIFY `kode_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `kode_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `produkku`
 --

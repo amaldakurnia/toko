@@ -127,7 +127,7 @@ Navigation Bar Section
 Body Section 
 -->
 	<hr class="soften">
-	<?php foreach ($data->result_array() as $key => $value) : ?>
+	<?php foreach ($data as $key => $value) : ?>
 	<div>
 		<h1><?php echo $value['judul_halaman'];?></h1>
 	</div>

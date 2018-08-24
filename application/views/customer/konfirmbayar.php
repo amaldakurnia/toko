@@ -133,59 +133,49 @@ Body Section
     </ul>
 
 <table class="table table-bordered">
+			
 			<tbody>
-                <tr><td><h3>Konfirmasi Pembayaran</h3></td></tr>
+                <tr><td><div class="alert alert-success">
+                <center><h2>Konfirmasi Pembayaran</h2></center>
+                </td></tr>
                  <tr> 
 				 <td>
-					<form class="form-horizontal" action="<?php echo base_url('customer/tamkonfirm');?>" method="post">
-					 <?php foreach ($data->result_array() as $key => $value) : ?>
+					<form class="form-horizontal" action="<?php echo base_url('customer/konf');?>" method="post">
+					<input type="hidden" name="kode_order" value="<?php echo $value['kode_order'];?>">
 					  <div class="control-group">
 						<label class="control-label" for="inputNama">Nama<sup>*</sup></label>
 						<div class="controls">
-						  <input type="text" id="inputNama" name="nama" placeholder="Nama">
+						  <input type="text" id="inputNama" name="nama" placeholder="Nama" required="">
 						</div>
 					 </div>
 					  <div class="control-group">
 						<label class="control-label" for="inputKodeOrder">Kode Order <sup>*</sup></label>
 						<div class="controls">
-			 			  <input type="text" id="inputKodeOrder" name="kode_order" value="<?php echo $value['kode_order'];?>" >
-						</div>
-					 </div>
-					 <div class="control-group">
-						<label class="control-label" for="inputKodeOrder"> Id Produk <sup>*</sup></label>
-						<div class="controls">
-			 			  <input type="text" id="inputIdProduk" name="id_produk" value="<?php echo $value['id_produk'];?>" >
+			 			  <input type="text" id="inputKodeOrder" name="kode_order" value="<?php echo $value['kode_order'];?>" readonly >
 						</div>
 					 </div>
 					 <div class="control-group">
 						<label class="control-label" for="inputNominal">Nominal <sup>*</sup></label>
 						<div class="controls">
-						  <input type="text" id="inputNominal" name="nominal" value="<?php echo $value['nominal'];?>" >
+						  <input type="text" id="inputNominal" name="nominal" value="<?php echo $value['total'];?>" readonly >
 						</div>
 					 </div>
 						 <div class="control-group">
 							<label class="control-label" for="inputTanggalBayar">Tanggal Order <sup>*</sup></label>
 							<div class="controls">
-							  <input type="text" id="inputTanggal Order" name="tgl_order" value="<?php echo $value['tgl_byr'];?>">
+							  <input type="text" id="inputTanggal Order" name="tgl_order" value="<?php echo $value['tgl_order'];?>" readonly >
 							</div>
 						 </div>
 						 <div class="control-group">
 							<label class="control-label" for="inputBayar Via">Bayar Via <sup>*</sup></label>
 							<div class="controls">
-							<select class="span" id="inputBayarVia" name="bayar_via">
-						  <option><?php echo $value['bayar_via'];?></option>
-						  <option>ATM BNI</option>
-						  <option>ATM BCA</option>
-						  <option>Indomaret</option>
-						  <option>Alfamart</option>
-						  <option></option>
-						</select>
+							<input type="text" name="bayar_via" value="<?php echo $cek['bayar_via'];?>" readonly >
 							</div>
 						 </div>
 						 <div class="control-group">
 						<label class="control-label" for="inputKeterangan">Keterangan <sup>*</sup></label>
 							<div class="controls">
-						   <input type="text" id="inputKeterangan" name="ket" value="<?php echo $value['ket'];?>" >
+						   <input type="text" id="inputKeterangan" name="ket" value="<?php echo $value['ket'];?>" readonly >
 						</div>
 						 </div>
 					 
@@ -194,15 +184,14 @@ Body Section
 						  <button type="submit" class="shopBtn">Konfirmasi</button>
 						</div>
 					  </div>
-					<?php endforeach; ?>
 					</form> 
 				  </td>
 				  </tr>
+				  </div>
               </tbody>
             </table>
 
 	<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="<?php echo base_url('customer/berhasil');?>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 
 </div>
@@ -215,24 +204,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 

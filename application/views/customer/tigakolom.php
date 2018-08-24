@@ -182,24 +182,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 

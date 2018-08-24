@@ -12,9 +12,10 @@ class Tem_olshop {
 		$olshop['konten']=$this->aku->load->view($nama,$data, true);
 		 $this->aku->load->view('admin/templates', $olshop);
 	}
-	/*function tampilcus($a=null,$d=null)
+
+	function tampil_cus($a=null,$d=null)
 	{
-		$custom['kontenn']=$this->aa->load->view($a,$d, true);
-		 $this->aa->load->view('customer/templatescus', $custom);
-	}*/
+		$custom['isi']=$this->aa->load->view($a,$d, true);
+		 $this->aa->load->view('customer/awal', $custom);
+	}
 }

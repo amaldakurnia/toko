@@ -4,7 +4,7 @@
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Bootstrap Admin Template : Binary Admin</title>
-	<!-- BOOTSTRAP STYLES-->
+    <!-- BOOTSTRAP STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
     <link href="<?php echo base_url(); ?>assets/backend/assets/css/font-awesome.css" rel="stylesheet" />
@@ -15,71 +15,39 @@
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                             <h2> Data Halaman</h2>
-                            <a href="<?php echo base_url('index.php/admin/hal'); ?>"></a>
-                        </div>
-                        </div>
-                        <div class="panel-body">
-                        <a href="<?php echo base_url ('index.php/admin/savehalaman');?>" class="btn btn-success ">Tambah</a>
-                        </button>
-                        <br><br>
-                            <div class="table-responsive table-bordered">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Id Halaman</th>
-                                            <th>Id Menu</th>
-                                            <th>Judul Halaman</th>
-                                            <th>Deskripsi</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                <?php if (!empty ($list)): ?>
-                                    <?php foreach ($list as $key=>$a) : ?>
-                                        <tr>
-                                        <td>
-                                        <?php echo $key+1 ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['id_menu']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['judul_halaman']; ?>
-                                        </td>
-                                        <td>
-                                        <?php echo $a['deskripsi']; ?>
-                                        </td>
-                                        <td align="center">
-                                    <a href="<?php echo base_url ('index.php/admin/edithal/').$a['id_halaman'];?>" class="btn btn-primary ">Edit</a> | 
-                                    <a href="<?php echo base_url ('index.php/admin/haphal/').$a['id_halaman'];?>" class="btn btn-danger ">Delete</a>
-                                        </td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                <?php else : ?>
-                                    <tr>
-                                    <td colspan="3">Data Kosong</td>
-                                    </tr>
-                                <?php endif ?>
-                                </tbody>
-                                </table>
-                                </div>
-
-
+<body> 
+        <!-- /. NAV SIDE  -->
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2> Halaman </h2>  
+                        <a href="<?php echo base_url('index.php/admin/hal'); ?>"></a> 
+                        
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                 <hr />
+                 <?php foreach ($hal as $key => $a) : ?>
+                    <h4><b>ABOUT</b></h4>
+                    <b><p> Judul Halaman </p></b>
+                    <?php echo $a['judul_halaman'];?> 
+                    <b><p> Deskripsi </p></b>
+                    <?php echo $a['deskripsi'];?>  
+                    <br>
+                    <br>
+                     <a href="<?php echo base_url ('index.php/admin/edithal/').$a['id_halaman'];?>" class="btn btn-primary ">Edit</a>
+                <?php endforeach; ?>
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+             </div> <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.metisMenu.js"></script>
       <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    <script src="<?php echo base_url();?>assets/js/custom.js"></script>
     
    
 </body>
 </html>
+

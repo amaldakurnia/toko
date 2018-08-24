@@ -37,11 +37,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url('index.php/customer/');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="<?php echo base_url('index.php/customer/account');?>"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url('index.php/customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url('index.php/customer/contact');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url('index.php/customer/cart');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url('customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -95,10 +95,13 @@ Navigation Bar Section
 			  <li class=""><a href="<?php echo base_url ('customer/empat');?>">Four Column</a></li>
 			  <li class=""><a href="<?php echo base_url ('customer/rekonfirm');?>">Rekonfirmasi</a></li>
 			</ul>
-			<form action="<?php echo base_url('customer/search_data');?>" class="navbar-search pull-left">
-			  <input type="text" name="keyword" placeholder="Search" class="search-query span2">
-			  <input type="submit" name="search_submit" value=" Submit ">
+			
+			 <form action="<?php echo base_url ('customer/search_data') ; ?> " class="
+			   navbar-search pull-left" method="post">
+			  <input type="text" name="keywoard" placeholder="Search" class="search-query span1">
+			  <input type="hidden" name="search_submit">
 			</form>
+
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>

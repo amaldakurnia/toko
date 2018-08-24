@@ -9,8 +9,6 @@ class Admin extends CI_Controller {
 		if ($this->session->userdata('logged')<>1) {
 			redirect(base_url('login/'));
 		}
-
-		
 	/*public function index()
 	{
 		$this->load->view('admin/templates');*/
@@ -29,37 +27,53 @@ class Admin extends CI_Controller {
 	}
 	public function hal()
 	{
-		$data = $this->model->get_halamanku();
-		$this->tem_olshop->tampil('admin/halamanku',array('list'=>$data));
-	}
-	public function tam_hal()
-	{
-		$savehal = array(
-			'id_halaman' => $this->input->post('id_halaman'), 
-			'id_menu' => $this->input->post('id_menu'),  
-			'judul_halaman' => $this->input->post('judul_halaman'),
-			'deskripsi' => $this->input->post('deskripsi'));
-
-		$this->model->gettamhal($savehal);
-		redirect (base_url ('admin/hal'));
+		$h = $this->uri->segment(3);
+		$hal['hal'] = $this->model->get_halamanku();
+		$this->tem_olshop->tampil('admin/halamanku',$hal);
 	}
 	public function ubahhal()
 	{
 		$hall = $this->input->post('id_halaman');
-		$savehal = array(
+		$svhal = array(
 			'id_halaman' => $this->input->post('id_halaman'), 
 			'id_menu' => $this->input->post('id_menu'),  
 			'judul_halaman' => $this->input->post('judul_halaman'),
 			'deskripsi' => $this->input->post('deskripsi'));
 
-		$this->model->getedithal($savehal);
-		redirect (base_url ('index.php/admin/halamanku')); 
+		$this->model->getedithal($svhal,$hall);
+		redirect (base_url ('index.php/admin/hal')); 
 	}
 	public function edithal ()
 	{
 		$hall = $this->uri->segment (3);
 		$a ['list'] = $this->model->getubahhal($hall);
 		$this->tem_olshop->tampil('admin/ubahhalaman', $a);
+	}
+	public function kontak()
+	{
+		$k = $this->uri->segment(3);
+		$kontak['kontakk'] = $this->model->get_kontakku();
+		$this->tem_olshop->tampil('admin/kontakku',$kontak);
+	}
+	public function ubahkontak()
+	{
+		$kontak = $this->input->post('id');
+		$save_kontak = array(
+			'id' => $this->input->post('id'), 
+			'alamat' => $this->input->post('alamat'),  
+			'info' => $this->input->post('info'),
+			'tlp' => $this->input->post('tlp'),
+			'fax' => $this->input->post('fax'),
+			'web' => $this->input->post('web'));
+
+		$this->model->geteditkontak($save_kontak,$kontak);
+		redirect (base_url ('index.php/admin/kontak')); 
+	}
+	public function editkontak ()
+	{
+		$kontak = $this->uri->segment (3);
+		$k ['list'] = $this->model->getubahkontak($kontak);
+		$this->tem_olshop->tampil('admin/ubahkontak', $k);
 	}
 	public function customer()
 	{
@@ -391,6 +405,30 @@ class Admin extends CI_Controller {
 	}
 	public function konfigweb()
 	{
-		$this->tem_olshop->tampil('admin/konfigurasiwebku');
+		$k = $this->uri->segment(3);
+		$data['konfweb'] = $this->model->get_konfigwebku();
+		$this->tem_olshop->tampil('admin/konfigurasiwebku',$data);
+	}
+	public function ubahkonfig()
+	{
+		$k_web = $this->input->post('id_konfig');
+		$simkweb = array (
+				'id_konfig'=>$this->input->post('id_konfig'),
+				'nama'=>$this->input->post('nama'),
+				'deskripsi'=>$this->input->post('deskripsi'),
+				'email'=>$this->input->post('email'),
+				'tlp'=>$this->input->post('tlp'),
+				'share1'=>$this->input->post('share1'),
+				'share2'=>$this->input->post('share2'),
+				'share3'=>$this->input->post('share3'));
+
+		$this->model->geteditkweb($simkweb,$k_web);
+		redirect (base_url ('index.php/admin/konfigweb')); 
+	}
+	public function editkweb ()
+	{
+		$k_web = $this->uri->segment (3);
+		$k ['list'] = $this->model->getubahkonfig($k_web);
+		$this->tem_olshop->tampil('admin/ubahkonfigurasi', $k);
 	}
 }

@@ -155,21 +155,21 @@ Body Section
                   <td><?php echo $value['warna'];?></td>
                   <td>Rp. <?php echo $value['harga'];?></td>
                   <td>
-                  <input class="span" style="max-width:34px" placeholder="" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">
-				  <div class="input-append">
+                  <!--<input class="span" style="max-width:34px" placeholder="" id="appendedInputButtons" size="16" type="text" value="<?php echo $value['jumlah_barang'];?>">-->
+				  <div class="input-append" style="display:flex;max-width:80px;">
 				  <form action="<?php echo base_url('customer/plus/').$value['id_cart'];?>" method="post">
 				  <input type="hidden" name="plus" value="<?php echo $value['id_cart'];?>">
-					<input class="span" name="jumlah_barang" placeholder="0" id="number" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
-					<input type="submit" class="btn btn-mini" value="+">
+					<input class="span1" name="jumlah_barang" placeholder="0" id="number" type="text" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
+					<input type="submit" class="btn btn-mini" style="height:100%;width:22px;" value="+">
 				  </form>
 
 				  <form action="<?php echo base_url('customer/min/').$value['id_cart'];?>" method="post">
 				  <input type="hidden" name="min" value="<?php echo $value['id_cart'];?>">
 					<input class="span" name="jumlah_barang" placeholder="0" id="number1" type="hidden" name="jumlah_barang" value="<?php echo $value['jumlah_barang'];?>">
-					<input type="submit" class="btn btn-mini" value="-">
+					<input type="submit" class="btn btn-mini" style="height:100%;width:22px;" value="-">
 				  </form>
 					
-					<a href="<?php echo base_url('customer/hapcart/').$value['id_cart'];?>" class="btn btn-mini btn-danger"><span class="icon-remove"></span></a>
+					<a style="height:100%;" href="<?php echo base_url('customer/hapcart/').$value['id_cart'];?>" class="btn btn-danger"><span class="icon-remove"></span></a>
 
 				  </div>
 				 </td>
@@ -177,8 +177,8 @@ Body Section
                 </tr>
                 <?php endforeach; ?>
                 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td></td>
+                  <td colspan="5" class="alignR">Total products:	</td>
+                  <td><?php echo $total;?></td>
                 </tr>
 				</tbody>
             </table><br/>
@@ -219,10 +219,10 @@ Body Section
 						<div class="controls">
 						  <input type="text" name="kode_pos" placeholder="Kode Pos">
 						</div>
-
+						<br>
 					  <div class="control-group">
 						<div class="controls">
-						  <button type="submit" class="shopBtn">Click to check the price</button>
+						  <button type="submit" class="shopBtn">Check price</button>
 						</div>
 					  </div>
 					 
@@ -231,7 +231,6 @@ Body Section
               </tbody>
             </table>		
 	<a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<button type="submit" class="shopBtn  btn-large pull-right">Next <span class="icon-arrow-right"></span></button>
 	</form>
 
 </div>
@@ -245,25 +244,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
-	</div>
+	<?php endforeach; ?>
 </section>
 
 <!--

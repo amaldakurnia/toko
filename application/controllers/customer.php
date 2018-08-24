@@ -6,27 +6,39 @@ class Customer extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Olshopmodel', 'model');
-
-		if ($this->session->userdata('logged')<>1) 
-		{
-			redirect(base_url('login/login_cus/'));
-		}
 	}
 	public function index()
 	{//tampilan awal 
 		$a['data'] = $this->model->get_produkku();
+		$a['merk'] = $this->model->get_merk()->result_array();
+	 	$a['kat'] = $this->model->get_kategori()->result_array();
+		$a['merkprod'] = $this->model->get_merk_produk()->result_array();
+		$a['katprod'] = $this->model->get_kat_produk()->result_array();
+		$a['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/awal',$a);
 	}
 	public function keranjang()
 	{//menampilkan data cart 
-		$cart = $this->uri->segment(3);
-		$k['data'] = $this->model->get_keranjang($cart);
-		$this->load->view('customer/keranjang',$k);
+		if ($this->session->userdata('logged')<>1) {
+			redirect(base_url('login/login_cus'));
+		} else {
+		$cart = $this->session->userdata('id_customer');
+		$keranjang['data'] = $this->model->get_keranjang($cart);
+		$keranjang['total'] = $this->model->get_hitung();
+		$keranjang['merk'] = $this->model->get_merk()->result_array();
+		$keranjang['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/keranjang',$keranjang);}
 	}
 	public function indexx()
 	{//menampilkan data produk
 		$data['data']=$this->model->get_all_produk();
 		$this->load->view('customer/cartku',array('list'=>$data));
+	}
+	public function samping()
+	{
+		$sam = $this->uri->segment(3);
+		$samping['data'] = $this->model->get_all_produk();
+		$this->load->view('customer/awal',$samping);
 	}
 	 public function addcart(){ //fungsi Add To Cart
 	 	if ($this->session->userdata('logged')<>1)
@@ -35,7 +47,7 @@ class Customer extends CI_Controller {
 	 		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 	 		<strong> Silakan login terlebih dahulu !</strong>
 	 		</div>");
-	 		redirect (base_url('login/'));
+	 		redirect (base_url('login/login_cus'));
 	 	} else {
 	 	$id = $this->session->userdata('id_customer');
 	 	$harga = $this->input->post('jumlah');
@@ -106,11 +118,12 @@ class Customer extends CI_Controller {
 	{
 		$ship = $this->uri->segment(3);
 		$shipping['data'] = $this->model->get_shipping($ship);
+		$shipping['merk'] = $this->model->get_merk()->result_array();
 		$this->load->view('customer/keranjang',$shipping);
 	}
 	public function tamcheck()
 	{
-		$bayar = $this->uri->segment(3);
+		$bayar = $this->session->userdata('id_customer');
 		$check = array (
 				'negara'=>$this->input->post('negara'),
 				'provinsi'=>$this->input->post('provinsi'),
@@ -118,13 +131,15 @@ class Customer extends CI_Controller {
 				'kode_pos'=>$this->input->post('kode_pos'),
 				'alamat_lengkap'=>$this->input->post('alamat_lengkap'),
 				'bayar_via'=>$this->input->post('bayar_via'),
-				'data' => $this->model->get_keranjang($bayar));
+				'data' => $this->model->get_keranjang($bayar),
+				'total' => $this->model->get_hitung());
 
 		//$this->model->gettamcheck($savcheck);
+		$check['merk'] = $this->model->get_merk()->result_array();
 		$this->load->view('customer/pembayaran',$check);
 	}
 	public function tam_bayar()
-	{
+	{ 
 		$this->load->model('Olshopmodel', 'model');
 		$id = $this->session->userdata('id_customer');
 		$simbyr = array (
@@ -138,14 +153,14 @@ class Customer extends CI_Controller {
 		$kode = $this->db->insert_id();
 
 		$cek = $this->db->get_where('cartku',array('id_customer' => $id));
-		foreach ($cek->result_array() as $key => $value) :
+		foreach ($cek->result_array() as $key => $value) {
 			$simcheck = array(
 				'id_checkout'=>$this->input->post('id_checkout'),
 				'kode_order'=>$kode,
 				'id_customer'=>$id,
 				'nm_produk'=>$value['deskripsi'],    
 				'jumlah_barang'=>$value['jumlah_barang'],
-				'total'=>$this->input->post('total'),
+				'total'=>$value['total'],
 				'negara'=>$this->input->post('negara'),
 				'provinsi'=>$this->input->post('provinsi'),
 				'kabupaten'=>$this->input->post('kabupaten'),
@@ -155,49 +170,64 @@ class Customer extends CI_Controller {
 				'no_rek'=>$this->input->post('no_rek'));
 
 			$this->model->gettamcheck($simcheck);
+			$this->model->gethapcheck($id);
 
-		endforeach;
-		redirect (base_url ('customer/konfirm'));
+		}
+		$data['value'] = $this->model->get_konfirm()->row_array();
+		$data['cek'] = $this->model->get_cek()->row_array();
+		$data['merk'] = $this->model->get_merk()->result_array();
+		$this->load->view('customer/konfirmbayar',$data);
 	}
 	public function konfirm()
 	{
-		$konfirm = $this->uri->segment(3);
-		$data['data'] = $this->model->get_konfirm($konfirm);
+		//$konfirm = $this->session->userdata('id_customer');
+		$r = $this->uri->segment(3);
+		$data['value'] = $this->model->get_konfirm($r)->row_array();
+		$data['cek'] = $this->model->get_cek()->row_array();
+		$data['merk'] = $this->model->get_merk()->result_array();
+		$data['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/konfirmbayar',$data);
+	}
+	public function konf()
+	{
+		$id = $this->input->post('kode_order');
+		$simbyr['ket'] = 'Lunas';
+ 
+		$this->model->updatetam_bayar($simbyr,$id);
+		redirect (base_url('customer/berhasil'));
 	}
 	public function berhasil()
 	{
-		$this->load->view('customer/konfirmsukses');
-	}
-	public function tamkonfirm()
-	{
-		$id = $this->session->userdata('id_customer');
-		$simkonf = array (
-				'kode_order'=>$this->input->post('kode_order'),
-				'id_customer'=>$id,
-				'id_produk'=>$this->input->post('id_produk'),
-				'nama'=>$this->input->post('nama'),
-				'nominal'=>$this->input->post('nominal'),
-				'tgl_byr'=>date('Y-m-d'),
-				'bayar_via'=>$this->input->post('bayar_via'),
-				'ket'=>'Belum bayar');
-
-		$this->model->get_tamkonfirm($simkonf);
-		redirect (base_url('customer/berhasil'));
+		$sukses['merk'] = $this->model->get_merk()->result_array();
+		$sukses['kat'] = $this->model->get_kategori()->result_array();
+		$sukses['samping'] = $this->model->get_all_produk()->result_array();
+		$sukses['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/konfirmsukses',$sukses);
 	}
 	public function kontak()
 	{
-		$this->load->view('customer/kontak');
+		$ko = $this->uri->segment(3);
+		$kontak['kontak'] = $this->model->get_kontakku($ko);
+		$kontak['merk'] = $this->model->get_merk()->result_array();
+		$kontak['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/kontak',$kontak);
 	}
 	public function tentang()
 	{
 		$hal = $this->uri->segment(3);
 		$halaman['data'] = $this->model->get_halamanku($hal);
-		$this->load->view('customer/info_olshop');
+		$halaman['merk'] = $this->model->get_merk()->result_array();
+		$halaman['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/info_olshop',$halaman);
 	}
 	public function register()
 	{
-		$this->load->view('customer/register');
+		$reg = $this->uri->segment(3);
+		$register['merk'] = $this->model->get_merk()->result_array();
+		$register['kat'] = $this->model->get_kategori()->result_array();
+		$register['samping'] = $this->model->get_all_produk()->result_array();
+		$register['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/register',$register);
 	}
 	public function tamreg()
 	{
@@ -218,46 +248,98 @@ class Customer extends CI_Controller {
 	{
 		$prod = $this->uri->segment(3);
 		$daftar['data'] = $this->model->get_all_produk($prod);
+		$daftar['merk'] = $this->model->get_merk()->result_array();
+		$daftar['kat'] = $this->model->get_kategori()->result_array();
+		$daftar['samping'] = $this->model->get_all_produk()->result_array();
+		$daftar['merkprod'] = $this->model->get_merk_produk()->result_array();
+		$daftar['katprod'] = $this->model->get_kat_produk()->result_array();
+		$daftar['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/daftarproduk',$daftar);
+	}
+	public function merk_prod()
+	{
+		$id = $this->uri->segment(3);
+		$merk_prod['merk'] = $this->model->get_merk()->result_array();
+		$merk_prod['kat'] = $this->model->get_kategori()->result_array();
+		$merk_prod['samping'] = $this->model->get_all_produk()->result_array();
+		$merk_prod['data'] = $this->model->get_merk_produk($id);
+		$this->load->view('customer/gridkolom',$merk_prod);
+	}
+	public function kat_prod()
+	{
+		$id = $this->uri->segment(3);
+		$kat_prod['merk'] = $this->model->get_merk()->result_array();
+		$kat_prod['kat'] = $this->model->get_kategori()->result_array();
+		$kat_prod['samping'] = $this->model->get_all_produk()->result_array();
+		$kat_prod['data'] = $this->model->get_merk_produk()->result_array();
+		$kat_prod['data'] = $this->model->get_kat_produk($id);
+		$this->load->view('customer/gridkolom',$kat_prod);
 	}
 	public function tampilgrid()
 	{
 		$prod = $this->uri->segment(3);
 		$grid['data'] = $this->model->get_all_produk($prod);
+		$grid['merk'] = $this->model->get_merk()->result_array();
+		$grid['kat'] = $this->model->get_kategori()->result_array();
+		$grid['samping'] = $this->model->get_all_produk()->result_array();
+		$grid['mprod'] = $this->model->get_merk_produk()->result_array();
 		$this->load->view('customer/gridkolom',$grid);
 	}
 	public function tiga()
 	{
 		$prod = $this->uri->segment(3);
 		$tiga['data'] = $this->model->get_all_produk($prod);
+		$tiga['merk'] = $this->model->get_merk()->result_array();
+		$tiga['mprod'] = $this->model->get_merk_produk()->result_array();
+		$tiga['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/tigakolom',$tiga);
 	}
 	public function empat()
 	{
 		$prod = $this->uri->segment(3);
 		$empat['data'] = $this->model->get_all_produk($prod);
+		$empat['merk'] = $this->model->get_merk()->result_array();
+		$empat['mprod'] = $this->model->get_merk_produk()->result_array();
+		$empat['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/empatkolom',$empat);
 	}
 	public function rekonfirm()
-	{
-		$this->load->view('customer/rekonfirmasi');
+	{	if ($this->session->userdata('logged')<>1) {
+			redirect(base_url('login/login_cus'));
+		} else {
+		$ok = 'Belum bayar';
+		$id = $this->session->userdata('id_customer');
+		$rekonf['data'] = $this->model->get_orderku();
+		$rekonf['ok'] = $this->model->get_ok($id,$ok)->result_array();
+		$rekonf['merk'] = $this->model->get_merk()->result_array();
+		$rekonf['kat'] = $this->model->get_kategori()->result_array();
+		$rekonf['samping'] = $this->model->get_all_produk()->result_array();
+		$rekonf['konfweb'] = $this->model->get_konfigwebku();
+		$this->load->view('customer/rekonfirmasi',$rekonf);
+		}
 	}
 	public function detprod()
 	{
 		$prod = $this->uri->segment(3);
 		$detail['data'] = $this->model->get_all_produk($prod);
+		$detail['merk'] = $this->model->get_merk()->result_array();
+		$detail['kat'] = $this->model->get_kategori()->result_array();
+		$detail['samping'] = $this->model->get_all_produk()->result_array();
+		$detail['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/detproduk',$detail);
 	}
 	public function prod()
 	{
 		$prod = $this->uri->segment(3);
 		$produk['data'] = $this->model->get_all_produk($prod);
+		$produk['merk'] = $this->model->get_merk()->result_array();
+		$produk['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/produk',$produk);
 	}
 	public function merk()
 	{
 		$merk = $this->uri->segment(3);
-		$merkku['data'] = $this->model->get_merk($merk);
+		$merkku['merk'] = $this->model->get_merk($merk);
 		$this->load->view('customer/merk',$merkku);
 	}
 	public function kategori()
@@ -269,8 +351,14 @@ class Customer extends CI_Controller {
 	}
 	public function akun()
 	{
+		if ($this->session->userdata('logged')<>1) {
+			redirect(base_url('login/login_cus'));
+		} else {
 		$akun = $this->uri->segment(3);
 		$akunn['akun'] = $this->model->get_account($akun);
+		$akunn['merk'] = $this->model->get_merk()->result_array();
+		$akunn['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/akun',$akunn);
+		}
 	}
 }

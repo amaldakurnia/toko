@@ -39,7 +39,10 @@ class Login extends CI_Controller {
 	//login customer
 	public function login_cus()
 	{
-		$this->load->view('customer/logincustomer');
+		$a['data'] = $this->model->get_produkku();
+		$a['merk'] = $this->model->get_merk()->result_array();
+	 	$a['kat'] = $this->model->get_kategori()->result_array();
+		$this->load->view('customer/logincustomer',$a);
 	}
 	public function logincuss()
 	{

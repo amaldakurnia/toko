@@ -26,19 +26,29 @@
                 </div>
                  <!-- /. ROW  -->
                  <hr />
+                 <?php foreach ($konfweb as $key => $a) : ?>
+
                     <b><p> Nama Website </p></b>
-                    www.onlineshopcerrezdistro.com
+                    <?php echo $a['nama'];?> 
                     <b><p> Deskripsi Website </p></b>
-                    CerrezStore adalah toko online yang menyediakan berbagai produk untuk menunjang aktivitas sehari-hari yang mencakup fashion,gadget,alat kosmetik,alat elektronik,hobi dan koleksi,fotografi,perlengkapan olahraga,otomotif,vitamin dan suplemen,perlengkapan rumah,makanan dan minuman,souvenir,dan pesta .
+                    <?php echo $a['deskripsi'];?> 
                     <b><p> Email </p></b>
-                    cerrezstore31@gmail.com
+                    <?php echo $a['email'];?> 
                     <b><p> Telepon </p></b>
-                    089616693303
+                    <?php echo $a['tlp'];?>  
                     <b><p> Link Share </p></b>
                     <div class="row">
+                    <br>
+                    <!--<?php //echo $a['share1'];?> 
+                    <?php //echo $a['share2'];?> 
+                    <?php //echo $a['share3'];?> -->
                     <a  href="https://facebook.com"><i class="fa fa-facebook fa-4x" ></i>
                     <a  href="https://www.instagram.com"><i class="fa fa-instagram fa-4x" ></i>
+                    <br>
+                    <br>
+                     <a href="<?php echo base_url ('index.php/admin/editkweb/').$a['id_konfig'];?>" class="btn btn-primary ">Edit</a>
                     </div>
+                <?php endforeach; ?>
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->

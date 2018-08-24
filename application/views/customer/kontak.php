@@ -137,18 +137,21 @@ Body Section
 
 		<div class="absoluteBlk">
 		<div class="well wellsmall">
+		<?php foreach ($kontak as $key => $v) : ?>
 		<h4>Contact Details</h4>
 		<h5>
-			2601 Mission St.<br/>
-			Bantul, Yogyakarta 55714<br/><br/>
+			<?php echo $v['alamat'];?><br/></br>
 			 
-			info@cerilodiprasta.com<br/>
-			﻿Tel 123-456-6780<br/>
-			Fax 123-456-5679<br/>
-			web:www.cerilodiprasta.com
+			<?php echo $v['info'];?><br/>
+			﻿<?php echo $v['tlp'];?><br/>
+			<?php echo $v['fax'];?></br>
+			<?php echo $v['web'];?><br/>
+
+			
 		</h5>
 		</div>
 		</div>
+	<?php endforeach; ?>
 		</div>
 		
 		<div class="span4">
@@ -192,24 +195,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 
@@ -220,7 +210,7 @@ Footer
 <div class="row-fluid">
 <div class="span2">
 <h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
+<a href="<?php echo base_url('customer/akun');?>">YOUR ACCOUNT</a><br>
 <a href="#">PERSONAL INFORMATION</a><br>
 <a href="#">ADDRESSES</a><br>
 <a href="#">DISCOUNT</a><br>
@@ -228,11 +218,11 @@ Footer
  </div>
 <div class="span2">
 <h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
+<a href="<?php echo base_url('customer/kontak');?>">CONTACT</a><br>
 <a href="#">SITEMAP</a><br>
 <a href="#">LEGAL NOTICE</a><br>
 <a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
+<a href="<?php echo base_url('customer/tentang');?>">ABOUT US</a><br>
  </div>
 <div class="span2">
 <h5>Our Offer</h5>
@@ -256,21 +246,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/shop.js"></script>
   </body>
 </html>

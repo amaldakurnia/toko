@@ -69,12 +69,14 @@ Lower Header Section
 	
 	</div>
 	<div class="span4 alignR">
-	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
+	<?php foreach ($konfweb as $key => $a) : ?>
+	<p><br> <strong> Support (24/7) :  <?php echo $a['tlp'];?> </strong><br><br></p>
 	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 	<span class="btn btn-warning btn-mini">$</span>
 	<span class="btn btn-mini">&pound;</span>
 	<span class="btn btn-mini">&euro;</span>
 	</div>
+	<?php endforeach; ?>
 </div>
 </header>
 
@@ -136,9 +138,11 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-	<?php foreach ($data as $key => $kat) : ?>
-		<li><a href="<?php echo base_url ('customer/prod');?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
+
+	<?php foreach ($kat as $key => $kat) : ?>
+		<li><a href="<?php echo base_url('customer/kat_prod/').$kat['id_kategori'];?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
 	<?php endforeach;?>
+
 		<li style="border:0"> &nbsp;</li>
 
 		<li> <a class="totalInCart" href="<?php echo base_url ('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
@@ -159,36 +163,19 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+			  <?php foreach ($data as $key => $value) : ?>
+
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/img/<?php echo $value['gambar'];?>" alt="">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>">VIEW</a><span class="pull-right"> Rp. <?php echo $value['harga'];?></span></h4>
 				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url(); ?>assets/fronted/assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
+				<?php endforeach; ?>
 			  </div>
 			</li>
 		  </ul>
+	</div> 
 
-	</div>
 	<div class="span9">
 	<div class="well np">
 		<div id="myCarousel" class="carousel slide homCar">
@@ -349,52 +336,42 @@ New Products
 	Featured Products
 	-->
 		<div class="well well-small">
-		  <h3><a class="btn btn-mini pull-right" href="<?php echo base_url('customer/prod'); ?>" title="View more">VIew More<span class="icon-plus"></span></a> Featured Products  </h3>
+		  <h3><a class="btn btn-mini pull-right" href="<?php echo base_url('customer/detprod'); ?>" title="View more">VIew More<span class="icon-plus"></span></a> Featured Products  </h3>
 		  <hr class="soften"/>
 		  <div class="row-fluid">
 		  <ul class="thumbnails">
-			<li class="span4">
+		  <?php foreach ($data as $key => $value) : ?>
+			<li class="span4"  style="margin-left: 5px;">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="<?php echo base_url('customer/detprod'); ?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/d.jpg" alt=""></a>
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>"><img src="<?php echo base_url(); ?>assets/img/<?php echo $value['gambar'];?>" alt=""></a>
 				<div class="caption">
-				  <h5>Manicure & Pedicure</h5>
+				  <h5><?php echo $value['nm_produk'];?></h5>
 				  <h4>
-					  <a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
-					  <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-					  <span class="pull-right">$22.00</span>
+					  
+					  <span class="pull-right"> Rp. <?php echo $value['harga'];?> </span>
+					  <form class="form-horizontal qtyFrm" action="<?php echo base_url ('customer/addcart');?>" method="post">
+				<input type="hidden" name="id_produk" value="<?php echo $value['id_produk'];?>">
+				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
+				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
+				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
+
+					<div class="controls">
+					<input type="hidden" class="span11" name="id_cart" class="span6" placeholder="Id">
+					</div>
+					<div class="controls">
+					<input type="hidden" class="span11" name="jumlah" class="span6" value="1">
+					</div>
+					<div class="controls">
+					  <input type="hidden" class="span11" name="warna" class="span6" value="<?php echo $value['warna'];?>">
+				  </div>
+				  <a class="defaultBtn" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
+				  <button type="submit" class="shopBtn"><span class=" icon-plus"></span></button>
+				</form>
 				  </h4>
 				</div>
-			  </div>
 			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="<?php echo base_url('customer/detprod'); ?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/e.jpg" alt=""></a>
-				<div class="caption">
-				  <h5>Manicure & Pedicure</h5>
-				  <h4>
-					  <a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
-					  <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-					  <span class="pull-right">$22.00</span>
-				  </h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="<?php echo base_url('customer/detprod'); ?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/f.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>Manicure & Pedicure</h5>
-				  <h4>
-					  <a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
-					  <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-					  <span class="pull-right">$22.00</span>
-				  </h4>
-				</div>
-			  </div>
-			</li>
+				 <?php endforeach; ?>
 		  </ul>	
 	</div>
 	</div>
@@ -418,9 +395,9 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<?php foreach ($data as $key => $merk) : ?>
+		<?php foreach ($merk as $key => $merk) : ?>
 			<div class="span2">
-			<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $value['gambarr'];?>"></a>
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
 	<?php endforeach; ?>
 </section>
@@ -432,7 +409,7 @@ Footer
 <div class="row-fluid">
 <div class="span2">
 <h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
+<a href="<?php echo base_url('customer/akun');?>">YOUR ACCOUNT</a><br>
 <a href="#">PERSONAL INFORMATION</a><br>
 <a href="#">ADDRESSES</a><br>
 <a href="#">DISCOUNT</a><br>
@@ -477,7 +454,7 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
- 
+
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>

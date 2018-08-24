@@ -38,7 +38,7 @@
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
 				<a href="<?php echo base_url('customer/');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="#"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
 				<a href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
@@ -181,24 +181,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="<?php echo base_url ('customer/prod');?>"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 

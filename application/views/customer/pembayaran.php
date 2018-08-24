@@ -157,12 +157,17 @@ Body Section
                   <td><?php echo $value['total'];?></td>
                 </tr>
                 <?php endforeach; ?>
+                <tr>
+                  <td colspan="5" class="alignR">Total products:	</td>
+                  <td><?php echo $total;?></td>
+                </tr>
 				</tbody>
             </table>	
 
             	<form action="<?php echo base_url('index.php/customer/tam_bayar');?>" method="post">
 				<input type="hidden" name="id_checkout">
-				<input type="hidden" name="total" value="0">
+				<input type="hidden" name="id_order">
+				<input type="hidden" name="total" value="<?php echo $total;?>">
 				<input type="hidden" name="negara" value="<?php echo $negara; ?>">
 				<input type="hidden" name="provinsi" value="<?php echo $provinsi;?>">
 				<input type="hidden" name="kabupaten" value="<?php echo $kabupaten;?>">
@@ -173,25 +178,24 @@ Body Section
 						<label class="span2 control-label" for="inputEmail"> Bayar Via </label>
 						<div class="controls">
 						  <select class="span" name="bayar_via">
-						  <option>-</option>
+						  <option><?php echo $bayar_via;?></option>
 						  <option>ATM</option>
 						  <option>Indomaret</option>
 						  <option>Alfamart</option>
 						  <option></option>
 						</select>
 						</div>
-					  </div>
-					  <label class="span2 control-label" for="inputEmail"> No.Rekening </label>
+					 
+					 <label class="span2 control-label" for="inputNoRek"> No.Rekening </label>
 						<div class="controls">
 						  <input type="text" name="no_rek" placeholder="No.Rekening" >
 						</div>
-					  </div>
+						<br><br>
+
 					  <a href="<?php echo base_url('customer/prod');?>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
 					  <button type="submit" class="shopBtn btn-large pull-right"> Checkout <span class="icon-arrow-right"></span></button>
 					  </form>
 </div>
-</div>
-
 
 <!-- 
 Clients 
@@ -201,24 +205,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 
