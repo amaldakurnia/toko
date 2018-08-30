@@ -41,7 +41,7 @@
 				<a href="<?php echo base_url('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.<?php echo $total;?> </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -134,18 +134,13 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url ('index.php/customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
-		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp. </span></strong></a></li>
+	
+		<?php foreach ($kat as $key => $kat) : ?>
+		<li><a href="<?php echo base_url('customer/kat_prod/').$kat['id_kategori'];?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
+	<?php endforeach;?>
+
+	<li style="border:0"> &nbsp;</li>
+		<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.<?php echo $total;?> </span></strong></a></li>
 	</ul>
 </div>
 
@@ -163,31 +158,15 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url ();?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<?php foreach ($data as $key => $value) : ?>
+
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/img/<?php echo $value['gambar'];?>" alt="">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url ('customer/detprod');?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>">VIEW</a><span class="pull-right"> Rp. <?php echo $value['harga'];?></span></h4>
 				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url ();?>assets/fronted/assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url ();?>assets/fronted/assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
+				<?php endforeach; ?>
+				
 			  </div>
 			</li>
 		  </ul>
@@ -258,24 +237,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href=""><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
+	<?php endforeach; ?>
 	</div>
 </section>
 

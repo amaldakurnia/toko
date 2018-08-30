@@ -179,10 +179,13 @@ Body Section
 						<div class="controls">
 						  <select class="span" name="bayar_via">
 						  <option><?php echo $bayar_via;?></option>
-						  <option>ATM</option>
+						  <option>BCA</option>
+						  <option>BNI</option>
+						  <option>BRI</option>
+						  <option>Mandiri</option>
+						  <option>CIMB NIAGA</option>
 						  <option>Indomaret</option>
 						  <option>Alfamart</option>
-						  <option></option>
 						</select>
 						</div>
 					 

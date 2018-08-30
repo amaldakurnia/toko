@@ -127,9 +127,8 @@ Navigation Bar Section
 Body Section 
 -->
 	<hr class="soften">
-	<?php foreach ($data as $key => $value) : ?>
 	<div>
-		<h1><?php echo $value['judul_halaman'];?></h1>
+		<h1><?php echo $data['judul_halaman'];?></h1>
 	</div>
 	<hr class="soften">
 	<div class="row">
@@ -139,7 +138,7 @@ Body Section
 			
 		  </h6>
 		  <p>
-			<?php echo $value['deskripsi'];?><br>
+			<?php echo $data['deskripsi'];?><br>
 		  </p>
 		</div> 
 		<div class="span4">
@@ -151,7 +150,6 @@ Body Section
 			12:30pm - 06:00pm<br/>
 		</div>
 	</div>
-<?php endforeach; ?>
 <!-- 
 Clients 
 -->

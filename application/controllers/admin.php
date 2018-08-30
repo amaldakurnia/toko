@@ -27,9 +27,8 @@ class Admin extends CI_Controller {
 	}
 	public function hal()
 	{
-		$h = $this->uri->segment(3);
-		$hal['hal'] = $this->model->get_halamanku();
-		$this->tem_olshop->tampil('admin/halamanku',$hal);
+		$hal = $this->model->get_halamanku()->result_array();
+		$this->tem_olshop->tampil('admin/halamanku',array('list'=>$hal));
 	}
 	public function ubahhal()
 	{

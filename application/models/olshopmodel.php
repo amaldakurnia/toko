@@ -20,7 +20,7 @@ class Olshopmodel extends CI_Model
 //		return $hasil->result_array();
 		if (!empty($prod)) {
 			$this->db->where('id_produk',$prod);
-			$this->db->or_where('id_merk',$prod);
+			//$this->db->or_where('id_merk',$prod);
 		}
 		return $this->db->get('produkku');
 	}
@@ -107,24 +107,14 @@ class Olshopmodel extends CI_Model
 		}
 		return $this->db->get('checkoutku');
 	}
-	public function get_kontakku ()
+	public function get_halamanku ($hal=null)
 	{
-		$kontak = $this->db->query('select * from kontakku');
-		return $kontak->result_array();
-	}
-	public function getubahkontak ($k)
-	{
-		return $this->db->get_where('kontakku', array('id'=>$k));
-	}
-	public function geteditkontak ($save_kontak, $k)
-	{
-		$this->db->where ('id', $k);
-		return $this->db->update ('kontakku',$save_kontak);
-	} 
-	public function get_halamanku ()
-	{
-		$data = $this->db->query('select * from halamanku');
-		return $data->result_array();
+		if (!empty($hal)) {
+			$this->db->where('id_halaman',$hal);
+		}
+		
+		$data = $this->db->get('halamanku');
+		return $data;
 	} 
 	public function getubahhal ($hall)
 	{

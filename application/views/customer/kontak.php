@@ -42,7 +42,7 @@
 				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
+				<a href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.<?php echo $total;?> </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -137,21 +137,13 @@ Body Section
 
 		<div class="absoluteBlk">
 		<div class="well wellsmall">
-		<?php foreach ($kontak as $key => $v) : ?>
-		<h4>Contact Details</h4>
+		<h4><?php echo $kontak['judul_halaman'];?></h4>
 		<h5>
-			<?php echo $v['alamat'];?><br/></br>
-			 
-			<?php echo $v['info'];?><br/>
-			﻿<?php echo $v['tlp'];?><br/>
-			<?php echo $v['fax'];?></br>
-			<?php echo $v['web'];?><br/>
-
-			
+			<?php echo $kontak['deskripsi'];?><br/></br>
 		</h5>
 		</div>
 		</div>
-	<?php endforeach; ?>
+
 		</div>
 		
 		<div class="span4">

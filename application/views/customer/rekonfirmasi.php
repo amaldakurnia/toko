@@ -41,7 +41,7 @@
 				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
 				<a href="<?php echo base_url ('customer/register'); ?>"><span class="icon-edit"></span> Free Register </a> 
 				<a href="<?php echo base_url ('customer/kontak'); ?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('customer/keranjang'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.0 </span></a>
+				<a href="<?php echo base_url ('customer/keranjang'); ?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.<?php echo $total;?> </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -137,7 +137,7 @@ Body Section
 		<li><a href="<?php echo base_url('customer/kat_prod/').$kat['id_kategori'];?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
 	<?php endforeach;?>
 				<li style="border:0"> &nbsp;</li>
-				<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.0 </span></strong></a></li>
+				<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.<?php echo $total;?> </span></strong></a></li>
 			</ul>
 		</div>
 		  <div class="well well-small alert alert-warning cntr">

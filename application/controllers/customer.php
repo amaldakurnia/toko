@@ -15,6 +15,7 @@ class Customer extends CI_Controller {
 		$a['merkprod'] = $this->model->get_merk_produk()->result_array();
 		$a['katprod'] = $this->model->get_kat_produk()->result_array();
 		$a['konfweb'] = $this->model->get_konfigwebku();
+		$a['total'] = $this->model->get_hitung();
 		$this->load->view('customer/awal',$a);
 	}
 	public function keranjang()
@@ -105,6 +106,13 @@ class Customer extends CI_Controller {
 	{	//search data produk
 		$keyword = $this->input->post('keywoard');
 		$data['produk'] = $this->model->get_search($keyword);
+		$data['total'] = $this->model->get_hitung();
+		$data['data'] = $this->model->get_produkku();
+		$data['merk'] = $this->model->get_merk()->result_array();
+	 	$data['kat'] = $this->model->get_kategori()->result_array();
+		$data['merkprod'] = $this->model->get_merk_produk();
+		$data['katprod'] = $this->model->get_kat_produk()->result_array();
+		$data['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/search_view',$data);
 	}
 
@@ -176,6 +184,7 @@ class Customer extends CI_Controller {
 		$data['value'] = $this->model->get_konfirm()->row_array();
 		$data['cek'] = $this->model->get_cek()->row_array();
 		$data['merk'] = $this->model->get_merk()->result_array();
+		$data['total'] = $this->model->get_hitung();
 		$this->load->view('customer/konfirmbayar',$data);
 	}
 	public function konfirm()
@@ -186,6 +195,7 @@ class Customer extends CI_Controller {
 		$data['cek'] = $this->model->get_cek()->row_array();
 		$data['merk'] = $this->model->get_merk()->result_array();
 		$data['konfweb'] = $this->model->get_konfigwebku();
+		$data['total'] = $this->model->get_hitung();
 		$this->load->view('customer/konfirmbayar',$data);
 	}
 	public function konf()
@@ -202,20 +212,22 @@ class Customer extends CI_Controller {
 		$sukses['kat'] = $this->model->get_kategori()->result_array();
 		$sukses['samping'] = $this->model->get_all_produk()->result_array();
 		$sukses['konfweb'] = $this->model->get_konfigwebku();
+		$sukses['total'] = $this->model->get_hitung();
 		$this->load->view('customer/konfirmsukses',$sukses);
 	}
 	public function kontak()
 	{
-		$ko = $this->uri->segment(3);
-		$kontak['kontak'] = $this->model->get_kontakku($ko);
+		$hal = 2;
+		$kontak['kontak'] = $this->model->get_halamanku($hal)->row_array();
 		$kontak['merk'] = $this->model->get_merk()->result_array();
 		$kontak['konfweb'] = $this->model->get_konfigwebku();
+		$kontak['total'] = $this->model->get_hitung();
 		$this->load->view('customer/kontak',$kontak);
 	}
 	public function tentang()
 	{
-		$hal = $this->uri->segment(3);
-		$halaman['data'] = $this->model->get_halamanku($hal);
+		$hal = 1;
+		$halaman['data'] = $this->model->get_halamanku($hal)->row_array();
 		$halaman['merk'] = $this->model->get_merk()->result_array();
 		$halaman['konfweb'] = $this->model->get_konfigwebku();
 		$this->load->view('customer/info_olshop',$halaman);
@@ -227,6 +239,8 @@ class Customer extends CI_Controller {
 		$register['kat'] = $this->model->get_kategori()->result_array();
 		$register['samping'] = $this->model->get_all_produk()->result_array();
 		$register['konfweb'] = $this->model->get_konfigwebku();
+		$register['total'] = $this->model->get_hitung();
+
 		$this->load->view('customer/register',$register);
 	}
 	public function tamreg()
@@ -254,6 +268,7 @@ class Customer extends CI_Controller {
 		$daftar['merkprod'] = $this->model->get_merk_produk()->result_array();
 		$daftar['katprod'] = $this->model->get_kat_produk()->result_array();
 		$daftar['konfweb'] = $this->model->get_konfigwebku();
+		$daftar['total'] = $this->model->get_hitung();
 		$this->load->view('customer/daftarproduk',$daftar);
 	}
 	public function merk_prod()
@@ -263,6 +278,7 @@ class Customer extends CI_Controller {
 		$merk_prod['kat'] = $this->model->get_kategori()->result_array();
 		$merk_prod['samping'] = $this->model->get_all_produk()->result_array();
 		$merk_prod['data'] = $this->model->get_merk_produk($id);
+		$merk_prod['total'] = $this->model->get_hitung();
 		$this->load->view('customer/gridkolom',$merk_prod);
 	}
 	public function kat_prod()
@@ -273,6 +289,7 @@ class Customer extends CI_Controller {
 		$kat_prod['samping'] = $this->model->get_all_produk()->result_array();
 		$kat_prod['data'] = $this->model->get_merk_produk()->result_array();
 		$kat_prod['data'] = $this->model->get_kat_produk($id);
+		$kat_prod['total'] = $this->model->get_hitung();
 		$this->load->view('customer/gridkolom',$kat_prod);
 	}
 	public function tampilgrid()
@@ -283,6 +300,7 @@ class Customer extends CI_Controller {
 		$grid['kat'] = $this->model->get_kategori()->result_array();
 		$grid['samping'] = $this->model->get_all_produk()->result_array();
 		$grid['mprod'] = $this->model->get_merk_produk()->result_array();
+		$grid['total'] = $this->model->get_hitung();
 		$this->load->view('customer/gridkolom',$grid);
 	}
 	public function tiga()
@@ -292,6 +310,7 @@ class Customer extends CI_Controller {
 		$tiga['merk'] = $this->model->get_merk()->result_array();
 		$tiga['mprod'] = $this->model->get_merk_produk()->result_array();
 		$tiga['konfweb'] = $this->model->get_konfigwebku();
+		$tiga['total'] = $this->model->get_hitung();
 		$this->load->view('customer/tigakolom',$tiga);
 	}
 	public function empat()
@@ -301,6 +320,7 @@ class Customer extends CI_Controller {
 		$empat['merk'] = $this->model->get_merk()->result_array();
 		$empat['mprod'] = $this->model->get_merk_produk()->result_array();
 		$empat['konfweb'] = $this->model->get_konfigwebku();
+		$empat['total'] = $this->model->get_hitung();
 		$this->load->view('customer/empatkolom',$empat);
 	}
 	public function rekonfirm()
@@ -315,6 +335,7 @@ class Customer extends CI_Controller {
 		$rekonf['kat'] = $this->model->get_kategori()->result_array();
 		$rekonf['samping'] = $this->model->get_all_produk()->result_array();
 		$rekonf['konfweb'] = $this->model->get_konfigwebku();
+		$rekonf['total'] = $this->model->get_hitung();
 		$this->load->view('customer/rekonfirmasi',$rekonf);
 		}
 	}
@@ -326,6 +347,7 @@ class Customer extends CI_Controller {
 		$detail['kat'] = $this->model->get_kategori()->result_array();
 		$detail['samping'] = $this->model->get_all_produk()->result_array();
 		$detail['konfweb'] = $this->model->get_konfigwebku();
+		$detail['total'] = $this->model->get_hitung();
 		$this->load->view('customer/detproduk',$detail);
 	}
 	public function prod()
@@ -334,6 +356,9 @@ class Customer extends CI_Controller {
 		$produk['data'] = $this->model->get_all_produk($prod);
 		$produk['merk'] = $this->model->get_merk()->result_array();
 		$produk['konfweb'] = $this->model->get_konfigwebku();
+		$produk['total'] = $this->model->get_hitung();
+		$produk['kat'] = $this->model->get_kategori()->result_array();
+		$produk['samping'] = $this->model->get_all_produk()->result_array();
 		$this->load->view('customer/produk',$produk);
 	}
 	public function merk()
@@ -358,6 +383,7 @@ class Customer extends CI_Controller {
 		$akunn['akun'] = $this->model->get_account($akun);
 		$akunn['merk'] = $this->model->get_merk()->result_array();
 		$akunn['konfweb'] = $this->model->get_konfigwebku();
+		$akunn['total'] = $this->model->get_hitung();
 		$this->load->view('customer/akun',$akunn);
 		}
 	}

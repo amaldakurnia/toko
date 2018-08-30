@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2018 at 04:15 AM
+-- Generation Time: Aug 30, 2018 at 04:09 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -38,6 +38,14 @@ CREATE TABLE `cartku` (
   `total` bigint(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cartku`
+--
+
+INSERT INTO `cartku` (`id_cart`, `id_customer`, `id_produk`, `produk`, `deskripsi`, `warna`, `harga`, `jumlah_barang`, `total`) VALUES
+(2, 5, 6, 'c1.jpg', 'Gelang C17', 'Biru, Oranye,Pink da', 300000, 2, 600000),
+(3, 5, 2, 'a1.jpg', 'Jam Tangan', 'Emas', 475000, 1, 475000);
+
 -- --------------------------------------------------------
 
 --
@@ -67,7 +75,9 @@ CREATE TABLE `checkoutku` (
 INSERT INTO `checkoutku` (`id_checkout`, `kode_order`, `id_customer`, `nm_produk`, `jumlah_barang`, `total`, `negara`, `provinsi`, `kabupaten`, `kode_pos`, `alamat_lengkap`, `bayar_via`, `no_rek`) VALUES
 (14, 15, 4, 'Cincin C79', 2, 2000000, '', '', '', '', '', 'ATM', '0773456721'),
 (15, 15, 4, 'Jam Tangan', 2, 950000, '', '', '', '', '', 'ATM', '0773456721'),
-(16, 16, 6, 'Cincin C79', 2, 2000000, 'Malaysia', 'Banten', 'Sleman', '55720', 'Kp.Megu Cisoka Tangerang Banten', 'ATM', '0773456721');
+(16, 16, 6, 'Cincin C79', 2, 2000000, 'Malaysia', 'Banten', 'Sleman', '55720', 'Kp.Megu Cisoka Tangerang Banten', 'ATM', '0773456721'),
+(17, 17, 5, 'Gelang', 1, 950000, 'Indonesia', 'Yogyakarta', 'Bantul', '55724', 'Sewon Timbulharjo Bantul', 'Indomaret', '0023685488'),
+(18, 18, 6, 'Cincin C79', 3, 3000000, 'Indonesia', 'Yogyakarta', 'Bantul', '55725', 'Rendeng Kulon ,Timbulharjo', 'BCA', '05134567875');
 
 -- --------------------------------------------------------
 
@@ -105,7 +115,7 @@ CREATE TABLE `halamanku` (
   `id_halaman` int(5) NOT NULL,
   `id_menu` int(5) NOT NULL,
   `judul_halaman` varchar(50) NOT NULL,
-  `deskripsi` varchar(200) NOT NULL
+  `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -113,7 +123,8 @@ CREATE TABLE `halamanku` (
 --
 
 INSERT INTO `halamanku` (`id_halaman`, `id_menu`, `judul_halaman`, `deskripsi`) VALUES
-(1, 1, 'About Us', 'I''m a paragraph. Click here to add your own text and edit me.');
+(1, 1, 'About Us', 'I''m a paragraph. Click here to add your own text and edit me.'),
+(2, 2, 'Contact Us', 'Contact Details2601 Mission St.Bantul, Yogyakarta 55714                         info@cerilodiprasta.com  \r\n\r\n                                                 Tel 123-456-6780                        \r\n\r\n\r\nFax 123-456-56\r\nweb:www.cerilodiprasta.com');
 
 -- --------------------------------------------------------
 
@@ -192,28 +203,6 @@ INSERT INTO `konfirmasiku` (`kode_order`, `id_customer`, `id_produk`, `nama`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kontakku`
---
-
-CREATE TABLE `kontakku` (
-  `id` int(11) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
-  `info` varchar(50) NOT NULL,
-  `tlp` varchar(50) NOT NULL,
-  `fax` varchar(40) NOT NULL,
-  `web` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kontakku`
---
-
-INSERT INTO `kontakku` (`id`, `alamat`, `info`, `tlp`, `fax`, `web`) VALUES
-(1, '2601 Mission St.<br/> 			Bantul, Yogyakarta 55714', 'info@cerilodiprasta.com', 'Tel 123-456-6780', 'Fax 123-456-5679', 'web:www.cerilodiprasta.com');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `menuku`
 --
 
@@ -277,9 +266,10 @@ CREATE TABLE `orderku` (
 --
 
 INSERT INTO `orderku` (`kode_order`, `id_customer`, `tgl_order`, `total`, `ket`) VALUES
-(14, 4, '2018-08-18', 2950000, 'Belum bayar'),
-(15, 4, '2018-08-18', 2950000, 'Belum bayar'),
-(16, 6, '2018-08-18', 2000000, 'Lunas');
+(16, 6, '2018-08-18', 2000000, 'Lunas'),
+(17, 5, '2018-08-24', 950000, 'Belum bayar'),
+(18, 6, '2018-08-28', 3000000, 'Belum bayar'),
+(19, 6, '2018-08-28', 3000000, 'Lunas');
 
 -- --------------------------------------------------------
 
@@ -382,12 +372,6 @@ ALTER TABLE `konfirmasiku`
   ADD UNIQUE KEY `bayar_via` (`bayar_via`);
 
 --
--- Indexes for table `kontakku`
---
-ALTER TABLE `kontakku`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `menuku`
 --
 ALTER TABLE `menuku`
@@ -425,12 +409,12 @@ ALTER TABLE `userku`
 -- AUTO_INCREMENT for table `cartku`
 --
 ALTER TABLE `cartku`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `checkoutku`
 --
 ALTER TABLE `checkoutku`
-  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_checkout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `customerku`
 --
@@ -440,17 +424,12 @@ ALTER TABLE `customerku`
 -- AUTO_INCREMENT for table `halamanku`
 --
 ALTER TABLE `halamanku`
-  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_halaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `kategoriku`
 --
 ALTER TABLE `kategoriku`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `kontakku`
---
-ALTER TABLE `kontakku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `menuku`
 --
@@ -465,7 +444,7 @@ ALTER TABLE `merkku`
 -- AUTO_INCREMENT for table `orderku`
 --
 ALTER TABLE `orderku`
-  MODIFY `kode_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `kode_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `produkku`
 --

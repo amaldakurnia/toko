@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title> Shopping Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-    <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
+     <link href="<?php echo base_url(); ?>assets/fronted/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="<?php echo base_url(); ?>assets/fronted/style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
@@ -21,7 +21,7 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/fronted/assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url();?>assets/fronted/assets/ico/favicon.ico">
   </head>
 <body>
 <!-- 
@@ -37,11 +37,11 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="<?php echo base_url ('customer/');?>"> <span class="icon-home"></span> Home</a> 
-				<a href="<?php echo base_url ('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
-				<a href="<?php echo base_url ('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
-				<a href="<?php echo base_url ('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
-				<a href="<?php echo base_url ('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp. </span></a>
+				<a href="<?php echo base_url('customer/');?>"> <span class="icon-home"></span> Home</a> 
+				<a href="<?php echo base_url('customer/akun');?>"><span class="icon-user"></span> My Account</a> 
+				<a href="<?php echo base_url('customer/register');?>"><span class="icon-edit"></span> Free Register </a> 
+				<a href="<?php echo base_url('customer/kontak');?>"><span class="icon-envelope"></span> Contact us</a>
+				<a href="<?php echo base_url('customer/keranjang');?>"><span class="icon-shopping-cart"></span> Item <span class="badge badge-warning"> Rp.<?php echo $total;?> </span></a>
 				<a href="<?php echo base_url ('login/logoutcus'); ?>"><span class=""></span> Logout <span class="badge badge-warning"></span></a>
 			</div>
 		</div>
@@ -57,9 +57,9 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<?php echo base_url ('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
-		<img src="<?php echo base_url(); ?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
-		<a href="<?php echo base_url ('customer/prod');?>">
+	<a class="logo" href="<?php echo base_url('customer/');?>"><span>Twitter Bootstrap ecommerce template</span> 
+		<img src="<?php echo base_url();?>assets/fronted/assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		<a href="<?php echo base_url ('customer/gridkolom');?>">
 	</a>
 	</h1>
 	</div>
@@ -88,16 +88,19 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="<?php echo base_url('customer/'); ?>">Home	</a></li>
-			  <li class=""><a href="<?php echo base_url('customer/daftar'); ?>">List View</a></li>
-			  <li class=""><a href="<?php echo base_url('customer/tampilgrid'); ?>">Grid View</a></li>
-			  <li class=""><a href="<?php echo base_url('customer/tiga'); ?>">Three Column</a></li>
-			  <li class=""><a href="<?php echo base_url('customer/empat'); ?>">Four Column</a></li>
-			  <li class=""><a href="<?php echo base_url('customer/rekonfirm'); ?>">Rekonfirmasi</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/');?>">Home	</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/daftar');?>">List View</a></li>
+			  <li class="active"><a href="<?php echo base_url ('customer/tampilgrid');?>">Grid View</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/tiga');?>">Three Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/empat');?>">Four Column</a></li>
+			  <li class=""><a href="<?php echo base_url ('customer/rekonfirm');?>">Rekonfirmasi</a></li>
 			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
+			
+			<form action="<?php echo base_url ('customer/search_data') ; ?> " class="navbar-search pull-left" method="post">
+			  <input type="text" name="keywoard" placeholder="Search" class="search-query span1">
+			  <input type="hidden" name="search_submit">
 			</form>
+			
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
@@ -130,18 +133,13 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="<?php echo base_url ('customer/prod');?>"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="#"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+	
+		<?php foreach ($kat as $key => $kat) : ?>
+		<li><a href="<?php echo base_url('customer/kat_prod/').$kat['id_kategori'];?>"><span class="icon-chevron-right"></span><?php echo $kat['nm_kategori'];?></a></li>
+	<?php endforeach;?>
+
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="<?php echo base_url ('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="<?php echo base_url('customer/keranjang');?>"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;"> Rp.<?php echo $total;?> </span></strong></a></li>
 	</ul>
 </div>
 
@@ -151,7 +149,7 @@ Body Section
 					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
 				  </p>
 			  </div>
-			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+			  <div class="well well-small" ><a href="#"><img src="<?php echo base_url ();?>assets/fronted/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
 			
 			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 			<br>
@@ -159,54 +157,57 @@ Body Section
 			<ul class="nav nav-list promowrapper">
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod'); ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url();?>assets/fronted/assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
+				<?php foreach ($samping as $key => $value) : ?>
+
+				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<img src="<?php echo base_url(); ?>assets/img/<?php echo $value['gambar'];?>" alt="">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod'); ?>">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="<?php echo base_url('customer/detprod/').$value['id_produk']; ?>">VIEW</a> <span class="pull-right"> Rp. <?php echo $value['harga'];?></span></h4>
 				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url();?>assets/fronted/assets/img/shopping-cart-template.png" alt="shopping cart template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
-			  </div>
-			</li>
-			<li style="border:0"> &nbsp;</li>
-			<li>
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<img src="<?php echo base_url();?>assets/fronted/assets/img/bootstrap-template.png" alt="bootstrap template">
-				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
-				</div>
+				<?php endforeach; ?>
 			  </div>
 			</li>
 		  </ul>
 
 	</div>
 	<div class="span9">
-<!-- 
+<!--
 New Products
 -->
 	<div class="well well-small">
 	<h3>Our Products </h3>
 		<div class="row-fluid">
-		<?php foreach ($data->result_array() as $key => $value) : ?>
 		  <ul class="thumbnails">
-			<li class="span4">
+		  <?php foreach ($data->result_array() as $key => $value) : ?>
+			<li class="span4" style="margin-left:5px;">
 			  <div class="thumbnail">
 				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>" class="overlay"></a>
-				<a class="zoomTool" href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>"><img src="<?php echo base_url();?>assets/img/<?php echo $value['gambar'];?>"></a>
+				<a class="zoomTool" href="<?php echo base_url('index.php/customer/detprod/').$value['id_produk'];?>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="<?php echo base_url('customer/detprod/').$value['id_produk'];?>">
+				<img src="<?php echo base_url ();?>assets/img/<?php echo $value['gambar'];?>" alt=""></a>
 				<div class="caption cntr">
 					<p><?php echo $value['nm_produk'];?></p>
-					<p><strong> Rp. <?php echo $value['harga'];?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+					<p><strong><?php echo $value['harga'];?></strong></p>
+
+					<form class="form-horizontal qtyFrm" action="<?php echo base_url ('customer/addcart');?>" method="post">
+				<input type="hidden" name="id_produk" value="<?php echo $value['id_produk'];?>">
+				<input type="hidden" name="produk" value="<?php echo $value['gambar'];?>">
+				<input type="hidden" name="deskripsi" value="<?php echo $value['nm_produk'];?>">
+				<input type="hidden" name="harga" value="<?php echo $value['harga'];?>">
+
+					<div class="controls">
+					<input type="hidden" class="span11" name="id_cart" class="spn6" placeholder="Id">
+					</div>
+					<div class="controls">
+					<input type="hidden" class="span11" name="jumlah" class="span6" value="1">
+					</div>
+					<div class="controls">
+					  <input type="hidden" class="span11" name="warna" class="span6" value="<?php echo $value['warna'];?>">
+				  </div>
+				  <p>
+				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+				</form>
+					
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 
 						<a class="pull-left" href="#"> Add to Compare </a>
@@ -218,7 +219,6 @@ New Products
 			<?php endforeach; ?>
 		  </ul>
 		</div>
-	
 	</div>
 	</div>
 	</div>
@@ -230,25 +230,11 @@ Clients
 	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
 	<hr class="soften"/>
 	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/1.png"></a>
+		<?php foreach ($merk as $key => $merk) : ?>
+			<div class="span2">
+			<a href="<?php echo base_url('customer/merk_prod/').$merk['id_merk'];?>"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/<?php echo $merk['gambarr'];?>"></a>
 		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/2.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/3.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/4.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/5.png"></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src="<?php echo base_url(); ?>assets/fronted/assets/img/6.png"></a>
-		</div>
-	</div>
+	<?php endforeach; ?>
 </section>
 
 <!--
@@ -266,11 +252,11 @@ Footer
  </div>
 <div class="span2">
 <h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
+<a href="<?php echo base_url ('customer/kontak');?>">CONTACT</a><br>
 <a href="#">SITEMAP</a><br>
 <a href="#">LEGAL NOTICE</a><br>
 <a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
+<a href="<?php echo base_url ('customer/tentang');?>">ABOUT US</a><br>
  </div>
 <div class="span2">
 <h5>Our Offer</h5>
@@ -294,21 +280,21 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <div class="copyright">
 <div class="container">
 	<p class="pull-right">
-		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="<?php echo base_url();?>assets/fronted/assets/img/disc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="<?php echo base_url(); ?>assets/fronted/assets/img/disc.png" alt="payment"></a>
 	</p>
 	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url();?>assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/shop.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/fronted/assets/js/shop.js"></script>
   </body>
 </html>

@@ -26,16 +26,47 @@
                 </div>
                  <!-- /. ROW  -->
                  <hr />
-                 <?php foreach ($hal as $key => $a) : ?>
-                    <h4><b>ABOUT</b></h4>
-                    <b><p> Judul Halaman </p></b>
-                    <?php echo $a['judul_halaman'];?> 
-                    <b><p> Deskripsi </p></b>
-                    <?php echo $a['deskripsi'];?>  
-                    <br>
-                    <br>
-                     <a href="<?php echo base_url ('index.php/admin/edithal/').$a['id_halaman'];?>" class="btn btn-primary ">Edit</a>
-                <?php endforeach; ?>
+                    <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Id Halaman</th>
+                                            <th>Id Menu</th>
+                                            <th>Judul</th>
+                                            <th>Deskripsi</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <?php if (!empty ($list)): ?>
+                                    <?php foreach ($list as $key=>$a) : ?>
+                                        <tr>
+                                        <td>
+                                        <?php echo $key+1 ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['id_menu']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['judul_halaman']; ?>
+                                        </td>
+                                        <td>
+                                        <?php echo $a['deskripsi']; ?>
+                                        </td>
+                                        <td align="center">
+                                        <a href="<?php echo base_url ('index.php/admin/edithal/').$a['id_halaman'];?>" class="btn btn-primary ">Edit</a>
+                                        </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php else : ?>
+                                    <tr>
+                                    <td colspan="3">Data Kosong</td>
+                                    </tr>
+                                <?php endif ?>
+                                </tbody>
+                            </table>
+                                </div>
+            
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
